@@ -38,14 +38,16 @@ public class GridScript : MonoBehaviour {
 	public int getTileTime () {
 		float rand = Random.value;
 		switch (tileName) {
-		case "hexagonAll_sheet_1":
+		case "hexart_1_3":
 			if (rand < 0.1f) //10% chance
-				;//do something
+				Debug.Log("RANDOM ENCOUNTER");//do something
 			return 1;
-		case "hexagonAll_sheet_14":
+		case "hexart_1_4":
 			return 2;
-		case "hexagonAll_sheet_3":
+		case "hexart_1_9":
 			return 3;
+		case "hexart_1_10":
+			return 5;
 		default:
 			return 0;
 		}
