@@ -879,6 +879,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &729319272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729319276}
+  - component: {fileID: 729319275}
+  - component: {fileID: 729319274}
+  - component: {fileID: 729319273}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &729319273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729319272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ForceModuleActive: 0
+--- !u!114 &729319274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729319272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &729319275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729319272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
+--- !u!4 &729319276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729319272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880915383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,23 +1691,14 @@ GameObject:
   - component: {fileID: 2067402564}
   - component: {fileID: 2067402563}
   - component: {fileID: 2067402562}
-  - component: {fileID: 2067402561}
   - component: {fileID: 2067402560}
   - component: {fileID: 2067402559}
   - component: {fileID: 2067402558}
   - component: {fileID: 2067402557}
-  - component: {fileID: 2067402556}
-  - component: {fileID: 2067402555}
   - component: {fileID: 2067402554}
   - component: {fileID: 2067402553}
   - component: {fileID: 2067402552}
   - component: {fileID: 2067402551}
-  - component: {fileID: 2067402550}
-  - component: {fileID: 2067402549}
-  - component: {fileID: 2067402548}
-  - component: {fileID: 2067402547}
-  - component: {fileID: 2067402546}
-  - component: {fileID: 2067402545}
   - component: {fileID: 2067402544}
   - component: {fileID: 2067402543}
   - component: {fileID: 2067402542}
@@ -1644,6 +1710,22 @@ GameObject:
   - component: {fileID: 2067402539}
   - component: {fileID: 2067402538}
   - component: {fileID: 2067402537}
+  - component: {fileID: 2067402600}
+  - component: {fileID: 2067402599}
+  - component: {fileID: 2067402598}
+  - component: {fileID: 2067402597}
+  - component: {fileID: 2067402596}
+  - component: {fileID: 2067402595}
+  - component: {fileID: 2067402594}
+  - component: {fileID: 2067402561}
+  - component: {fileID: 2067402556}
+  - component: {fileID: 2067402555}
+  - component: {fileID: 2067402550}
+  - component: {fileID: 2067402549}
+  - component: {fileID: 2067402548}
+  - component: {fileID: 2067402547}
+  - component: {fileID: 2067402546}
+  - component: {fileID: 2067402545}
   m_Layer: 0
   m_Name: Flowchart Test
   m_TagString: Untagged
@@ -1664,7 +1746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 192.52768, y: -57.905636}
+  scrollPos: {x: 97.07765, y: -371.85553}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -1675,8 +1757,7 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 2067402528}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -2556,13 +2637,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1135.9215
-    y: 537.45526
+    x: 1183.0715
+    y: 536.30524
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 94
+  itemId: 120
   blockName: Crag V1.5d
   description: 
   eventHandler: {fileID: 0}
@@ -2583,7 +2664,7 @@ MonoBehaviour:
   itemId: 105
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 0}
+  targetBlock: {fileID: 2067402600}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -2775,7 +2856,7 @@ MonoBehaviour:
   - {fileID: 2067402587}
 --- !u!114 &2067402537
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067402490}
@@ -2874,13 +2955,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1264.0216
-    y: 536.30524
+    x: 1277.8213
+    y: 644.40546
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 94
+  itemId: 121
   blockName: Crag V1.5e
   description: 
   eventHandler: {fileID: 0}
@@ -2901,7 +2982,7 @@ MonoBehaviour:
   itemId: 102
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 0}
+  targetBlock: {fileID: 2067402595}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -2948,13 +3029,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 1004.3716
-    y: 537.4553
+    x: 942.27106
+    y: 539.75525
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 94
+  itemId: 119
   blockName: Crag V1.5c
   description: 
   eventHandler: {fileID: 0}
@@ -2972,10 +3053,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 99
+  itemId: 164
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 0}
+  targetBlock: {fileID: 2067402544}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -2989,24 +3070,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 98
+  itemId: 163
   indentLevel: 0
-  storyText: 
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 2067402556}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &2067402547
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3015,24 +3090,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 869.3721
-    y: 537.45557
-    width: 120
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 94
-  blockName: Crag V1.5b
+  itemId: 162
+  indentLevel: 0
+  text: 'Alright cutie, welcome to the team.
+
+'
   description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2067402546}
-  - {fileID: 2067402545}
+  targetBlock: {fileID: 2067402566}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &2067402548
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3041,18 +3116,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 96
+  itemId: 161
   indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 0}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
-  callMode: 0
+  text: Nice tat! Welcome to the team!
+  description: 
+  targetBlock: {fileID: 2067402566}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &2067402549
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3061,24 +3140,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 95
+  itemId: 160
   indentLevel: 0
-  storyText: 
+  text: 'But can you fight?
+
+'
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
+  targetBlock: {fileID: 2067402544}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &2067402550
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3087,24 +3166,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 720.5723
-    y: 539.7554
-    width: 120
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 94
-  blockName: Crag V1.5a
+  itemId: 159
+  indentLevel: 0
+  text: D'AWWWWW.
   description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2067402549}
-  - {fileID: 2067402548}
+  targetBlock: {fileID: 2067402541}
+  hideIfVisited: 0
+  interactable:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  setMenuDialog: {fileID: 0}
+  hideThisOption:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
 --- !u!114 &2067402551
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3159,7 +3236,7 @@ MonoBehaviour:
   itemId: 91
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 2067402561}
+  targetBlock: {fileID: 2067402555}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -3193,24 +3270,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 89
-  indentLevel: 0
-  text: 'But can you fight?
-
-'
+  nodeRect:
+    serializedVersion: 2
+    x: 946.1654
+    y: 486.18185
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 83
+  blockName: Vigil C1.4b
   description: 
-  targetBlock: {fileID: 2067402544}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2067402550}
+  - {fileID: 2067402549}
 --- !u!114 &2067402556
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3219,22 +3296,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 841589fc622bc494aa5405f416fa1301, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 88
-  indentLevel: 0
-  text: D'AWWWWW.
+  nodeRect:
+    serializedVersion: 2
+    x: 956.2295
+    y: 787.33307
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 131
+  blockName: Vigil 1.6a
   description: 
-  targetBlock: {fileID: 0}
-  hideIfVisited: 0
-  interactable:
-    booleanRef: {fileID: 0}
-    booleanVal: 1
-  setMenuDialog: {fileID: 0}
-  hideThisOption:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2067402548}
+  - {fileID: 2067402547}
 --- !u!114 &2067402557
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3283,12 +3362,13 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 81
+  itemId: 117
   blockName: Vigil C1.4a
   description: 
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 2067402557}
+  - {fileID: 2067402545}
 --- !u!114 &2067402559
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3334,7 +3414,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 81
+  itemId: 116
   blockName: Vigil C1.4d
   description: 
   eventHandler: {fileID: 0}
@@ -3349,24 +3429,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067402490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 943.6719
-    y: 486.85565
-    width: 121.299995
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 83
-  blockName: Vigil C1.4b_c
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 2067402556}
-  - {fileID: 2067402555}
+  itemId: 148
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 2067402597}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &2067402562
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3486,7 +3560,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 76
+  itemId: 115
   blockName: SUCCESS
   description: 
   eventHandler: {fileID: 0}
@@ -3709,7 +3783,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 69
+  itemId: 114
   blockName: Crag 1.4c
   description: 
   eventHandler: {fileID: 0}
@@ -3735,7 +3809,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 69
+  itemId: 113
   blockName: Crag 1.4b
   description: 
   eventHandler: {fileID: 0}
@@ -3815,7 +3889,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 64
+  itemId: 112
   blockName: Crag 1.4d
   description: 
   eventHandler: {fileID: 0}
@@ -4064,7 +4138,7 @@ MonoBehaviour:
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
-  itemId: 55
+  itemId: 111
   blockName: Vigil C1.3c
   description: 
   eventHandler: {fileID: 0}
@@ -4171,3 +4245,182 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &2067402594
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067402490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 147
+  indentLevel: 0
+  storyText: Well you can hang with me little, uhh- What's your name?
+  description: 
+  character: {fileID: 563293445}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2067402595
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067402490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 953.06586
+    y: 640.28156
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 125
+  blockName: Vigil C1.5b
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2067402594}
+  - {fileID: 2067402561}
+--- !u!114 &2067402596
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067402490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 137
+  indentLevel: 0
+  storyText: 'He points to a name written on his back. "Crag-Slag"
+
+
+'
+  description: 
+  character: {fileID: 1613721408}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2067402597
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067402490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 953.9813
+    y: 708.13403
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 139
+  blockName: Crag 1.6
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2067402596}
+  - {fileID: 2067402546}
+--- !u!114 &2067402598
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067402490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 135
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 2067402566}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &2067402599
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067402490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 134
+  indentLevel: 0
+  storyText: Welcome to the team then Crag-Slag!
+  description: 
+  character: {fileID: 563293445}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &2067402600
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2067402490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 1137.0665
+    y: 643.73224
+    width: 120
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 122
+  blockName: Vigil C1.5a
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 2067402599}
+  - {fileID: 2067402598}
