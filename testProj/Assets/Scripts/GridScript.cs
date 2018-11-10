@@ -29,8 +29,8 @@ public class GridScript : MonoBehaviour {
 
 		Vector3 worldPoint = ray.GetPoint (-ray.origin.z / ray.direction.z);
 		Vector3Int position = grid.WorldToCell (worldPoint);
-		Debug.Log ("position = " + position);
-		Debug.Log(map2.GetTile(position).name);
+		//Debug.Log ("position = " + position);
+		//Debug.Log(map2.GetTile(position).name);
 		clickedPos = position;
 		tileName = map2.GetTile (position).name;
 	}
@@ -38,15 +38,13 @@ public class GridScript : MonoBehaviour {
 	public int getTileTime () {
 		float rand = Random.value;
 		switch (tileName) {
-		case "hexart_1_3":
-			if (rand < 0.1f) //10% chance
-				Debug.Log("RANDOM ENCOUNTER");//do something
+		case "hexart_1_3": // grasslands
 			return 1;
-		case "hexart_1_4":
+		case "hexart_1_4": //tall grass
 			return 2;
-		case "hexart_1_9":
+		case "hexart_1_9": // forest
 			return 3;
-		case "hexart_1_10":
+		case "hexart_1_10": // mountains
 			return 5;
 		default:
 			return 0;

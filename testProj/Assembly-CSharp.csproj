@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BarScript.cs" />
+     <Compile Include="Assets\Scripts\BattleManager.cs" />
+     <Compile Include="Assets\Scripts\EnemiesScipt.cs" />
      <Compile Include="Assets\Scripts\GameManager_1.cs" />
      <Compile Include="Assets\Scripts\GridScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
