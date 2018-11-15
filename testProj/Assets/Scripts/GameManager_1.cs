@@ -121,7 +121,7 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_9": //forest
 			if (rand < 0.9f) //10% chance
 			{
-				StartCoroutine(BattleControl ());
+				StartCoroutine(BattleControl (tileName));
 			}
 			break;
 		case "hexart_1_10": //mountains
@@ -137,10 +137,10 @@ public class GameManager_1 : MonoBehaviour {
 	}
 
 	// Access BattleManager script to control battle flow
-	private IEnumerator BattleControl() {
+	private IEnumerator BattleControl(string battleLoc) {
 		Debug.Log("Fight for your right to party!");
 		battleOver = false;
-		yield return StartCoroutine(battleMGR.SetupBattle ()); //Check if stays here
+		yield return StartCoroutine(battleMGR.SetupBattle (battleLoc)); //Check if stays here
 		Debug.Log("The Battle has ended!");
 		battleOver = true;
 	}

@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour {
 	public Vector3Int currPos;
 	float health = 100;
 	float stamina = 100;
-	int strength = 10;
+	int strength = 5;
 	int speed = 5;
 
 	float max_health = 100;
@@ -41,5 +41,15 @@ public class PlayerScript : MonoBehaviour {
 	}
 	public void setStamina(float val){
 		stamina = val;
+	}
+
+	// Strength Functions
+	public int getStrength(){
+		return strength;
+	}
+
+	// Speed Functions
+	public int getSpeed(){
+		return speed;
 	}
 }

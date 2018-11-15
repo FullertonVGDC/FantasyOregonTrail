@@ -6,10 +6,31 @@ public class BattleManager : GameManager_1 {
 
 	public Camera battleCam;
 	public GameObject battlePanel;
+	public GameObject Fighter_Space;
 	public bool isPlayerTurn;
 	public bool battleInProgress;
-	//Player 1 (possibly add companions)
+
+	private int enemyTotal = 0;
+	public GameObject targetEnemy;
+	public int targetIndex;
+	public GameObject targetIndicator;
+	[SerializeField] //testing purposes
+	List<GameObject> enemyList;
+	[SerializeField] //testing purposes
+	List<GameObject> turnOrder;
+
+	//(possibly add companions)
+
+	public GameObject enemyHpBar_1;
+	public GameObject enemyHpBar_2;
+	private EnemyBarScript enemyBar_1;
+	private EnemyBarScript enemyBar_2;
+
 	//Enemy 1 (possibly add more than 1)
+	public GameObject slimeMonster;
+	private GameObject enemy_1;
+	private GameObject enemy_2;
+	//private SlimeScript slimeInfo;
 
 	private float turnDelay = 2f;
 	private WaitForSeconds m_turnWait;
@@ -17,6 +38,8 @@ public class BattleManager : GameManager_1 {
 
 	// Use this for initialization
 	void Start () {
+		enemyBar_1 = enemyHpBar_1.GetComponent<EnemyBarScript> ();
+		enemyBar_2 = enemyHpBar_2.GetComponent<EnemyBarScript> ();
 		m_turnWait = new WaitForSeconds (turnDelay);
 	}
 	
@@ -28,11 +51,42 @@ public class BattleManager : GameManager_1 {
 
 	#region Prepare/End Battle
 	// Setup Battle
-	public IEnumerator SetupBattle(){
-		//Place enemies
+	public IEnumerator SetupBattle(string battleLoc){
+		enemyList = new List<GameObject>(); // refresh List
+		yield return StartCoroutine (SetupEnemies(battleLoc, enemyList));
 		yield return StartCoroutine(SetupUI());
-		yield return StartCoroutine(StartBattle());
+		yield return StartCoroutine(StartBattle(enemyList));
 		yield return StartCoroutine (EndBattle ());
+	}
+
+	private IEnumerator SetupEnemies(string battleLoc, List<GameObject> enemyList){
+		//choose # of enemies first
+		//enemyTotal = Random.Range(1,3); // 1 or 2
+		enemyTotal = 2;
+		//Choose Monster Types based on location
+
+		//Enemy_1
+		enemy_1 = Instantiate (slimeMonster); //Choose Monster
+		enemyBar_1.setEnemyBar(enemy_1);
+		enemy_1.transform.parent = Fighter_Space.transform;
+		enemy_1.transform.localPosition = new Vector3 (-8, -10, 0);
+		enemy_1.GetComponent<EnemiesScipt> ().setEnemyNum (1);
+		targetEnemy = enemy_1;
+		targetIndex = 0;
+		targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,2,0);
+		enemyList.Add (enemy_1);
+
+		if (enemyTotal == 2) {
+			//Enemy_2
+			enemy_2 = Instantiate (slimeMonster);
+			enemyBar_2.setEnemyBar (enemy_2);
+			enemy_2.transform.parent = Fighter_Space.transform;
+			enemy_2.transform.localPosition = new Vector3 (-6, -11, 0);
+			enemy_2.GetComponent<EnemiesScipt> ().setEnemyNum (2);
+			enemyList.Add (enemy_2);
+		}
+
+		yield return null;
 	}
 
 	//Turn on Proper camera & UI
@@ -51,37 +105,80 @@ public class BattleManager : GameManager_1 {
 	#endregion
 
 	#region TurnControl
-	public IEnumerator StartBattle(){
-		isPlayerTurn = true;
+	public IEnumerator StartBattle(List<GameObject> enemyList){
+		turnOrder = new List<GameObject>();
+		StartCoroutine(SetupTurnOrder(turnOrder));
+
+		if (playerinfo.getSpeed() >= 0)
+			isPlayerTurn = true;
+		else
+			isPlayerTurn = false;
+
 		battleInProgress = true;
 		yield return m_turnWait;
-		//Loop the Battle Here
-		while(battleInProgress){
-			if (isPlayerTurn) {
-				Debug.Log ("Players Turn");
-				yield return StartCoroutine (PlayerTurn());
-			} 
-			else { // Enemies Turn
-				Debug.Log("Enemy Goes");
-				yield return StartCoroutine (EnemyTurn());
-				battleInProgress = false;
-			}
 
+		//Loop the Battle Here
+		int turnIndex = 0;
+		while(battleInProgress){
+			
+			if (turnIndex + 1 >= turnOrder.Count)
+				turnIndex = 0;
+			GameObject fighter = turnOrder [turnIndex];
+			turnIndex++;
+
+			if (!fighter) {
+				Debug.Log ("Enemy can't go [dead]");
+				yield return null;
+			}
+			else if (fighter.tag == "Player") {
+				isPlayerTurn = true;
+				yield return StartCoroutine (PlayerTurn ());
+				yield return StartCoroutine (checkBattleOver ());
+				if (!battleInProgress)
+					break;
+			} else {
+				yield return StartCoroutine (EnemyTurn(fighter)); // for enemy 1
+				yield return StartCoroutine (checkBattleOver ());
+				if (!battleInProgress)
+					break;
+			}
+		} // end while loop
+	}
+
+	public IEnumerator SetupTurnOrder(List<GameObject> battleOrder){
+		battleOrder.Add (playerObj);
+		foreach(GameObject enemy in enemyList){
+			battleOrder.Add(enemy);
 		}
+		yield return null;
 	}
 
 	public IEnumerator PlayerTurn() {
+		Debug.Log ("Players Turn");
 		while(isPlayerTurn){
 			yield return null;
 		}
 		yield return null;
 	}
-	public IEnumerator EnemyTurn() {
-		// wait for enemy to finish
+	// For 1 enemies Turn
+	public IEnumerator EnemyTurn(GameObject currentEnemy) {
+		Debug.Log ("Enemy Attacks");
+		EnemiesScipt enemyInfo = currentEnemy.GetComponent<EnemiesScipt> ();
+		// Attack_1
+		float damage = enemyInfo.Attack1(); // choose attack
 		yield return m_turnWait;
-		playerinfo.addHealth(-20); // example attack
-		yield return m_turnWait;
-		isPlayerTurn = true;
+		playerinfo.addHealth(damage); // example attack
+
+		//or other Attacks...
+
+	}
+
+	public IEnumerator checkBattleOver(){
+		if (enemyTotal <= 0 || playerinfo.getHealth () <= 0) {
+			battleInProgress = false;
+			Debug.Log ("You win!");
+			yield return m_turnWait;
+		}
 	}
 	#endregion
 
@@ -90,24 +187,70 @@ public class BattleManager : GameManager_1 {
 	//Button interactions
 	public void Attack1_OnClick(){
 		//deal attack 1 dmg
-		Debug.Log("You attack1");
-		isPlayerTurn = false;
+		if(isPlayerTurn){
+			Debug.Log("You attack1");
+			DealDamage (playerinfo.getStrength (), targetEnemy);
+			isPlayerTurn = false;
+		}
 	}
 	public void Attack2_OnClick(){
 		//deal attack 2 dmg
-		Debug.Log("You attack2");
-		isPlayerTurn = false;
+		if (isPlayerTurn) {
+			Debug.Log ("You attack2");
+			playerinfo.addStamina (-20);
+			DealDamage (playerinfo.getStrength()*2, targetEnemy);
+			isPlayerTurn = false;
+		}
 	}
 	public void Attack3_OnClick(){
 		//deal attack 3 dmg
-		Debug.Log("You attack3");
-		isPlayerTurn = false;
+		if (isPlayerTurn) {
+			Debug.Log ("You attack3");
+			isPlayerTurn = false;
+		}
 	}
 	public void Flee_OnClick(){
 		//you attempt to run
-		Debug.Log("You run away");
-		isPlayerTurn = false;
-		battleInProgress = false;
+		if (isPlayerTurn) {
+			Debug.Log ("You run away");
+			isPlayerTurn = false;
+			battleInProgress = false;
+		}
+	}
+
+	public void ChangeTarget_OnClick(){
+		
+		if (enemyTotal < 1) {
+			Debug.Log ("halp");
+			targetEnemy = null;
+		}
+		else {
+			if (targetIndex + 1 < enemyList.Count){
+				targetIndex ++;
+				targetEnemy = enemyList[targetIndex];
+			}
+			else{
+				targetIndex = 0;
+				targetEnemy = enemyList [targetIndex];
+			}
+			targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,2,0);
+			Debug.Log ("New Target: " + targetEnemy);
+		}
+	}
+	#endregion
+
+	#region Damage Control
+	public void DealDamage(int damage, GameObject targEnemy){ //make enemy choice 2nd parameter
+		EnemiesScipt enemyInfo = targEnemy.GetComponent<EnemiesScipt> ();
+
+		enemyInfo.health -= damage;
+		if (enemyInfo.health <= 0) {
+			Destroy (targEnemy);
+			enemyList.Remove(targEnemy);
+			enemyTotal--;
+			ChangeTarget_OnClick();
+			GameObject.FindGameObjectWithTag("enemyHealthBar_" + enemyInfo.enemy_id.ToString()).SetActive(false);
+		}
 	}
 	#endregion
 

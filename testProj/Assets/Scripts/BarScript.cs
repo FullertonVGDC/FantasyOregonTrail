@@ -46,6 +46,7 @@ public class BarScript : MonoBehaviour {
 			bar.fillAmount = changeAmt (gameMGR.gameTime, 24);
 			barText.text = gameMGR.gameTime.ToString() + " / 24";
 		}
+
 	}
 
 	private float changeAmt(float val, float max)

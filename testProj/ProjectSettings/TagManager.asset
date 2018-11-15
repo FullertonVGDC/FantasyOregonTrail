@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - car_tile
-  - test2
+  - enemy
+  - canvas
+  - spawn_enemy1
+  - enemyHealthBar_1
+  - enemyHealthBar_2
+  - enemyHealthBar
   layers:
   - Default
   - TransparentFX
