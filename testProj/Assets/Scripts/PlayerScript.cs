@@ -24,9 +24,13 @@ public class PlayerScript : MonoBehaviour {
 	}
 	public void addHealth(float val){
 		health += val;
+		if (health > max_health)
+			health = max_health;
 	}
 	public void setHealth(float val){
 		health = val;
+		if (health > max_health)
+			health = max_health;
 	}
 
 	//Stamina Functions
@@ -38,9 +42,13 @@ public class PlayerScript : MonoBehaviour {
 	}
 	public void addStamina(float val){
 		stamina += val;
+		if (stamina > max_stamina)
+			stamina = max_stamina;
 	}
 	public void setStamina(float val){
 		stamina = val;
+		if (stamina > max_stamina)
+			stamina = max_stamina;
 	}
 
 	// Strength Functions

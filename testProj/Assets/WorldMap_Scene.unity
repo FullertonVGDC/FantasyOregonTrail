@@ -136,8 +136,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 19634923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.86, y: -9.64, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalPosition: {x: -15, y: -10, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 480488927}
   m_RootOrder: 1
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7abbc9b1e98b29c4f9bdd827e3f0ae82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdc9c0916f9c3ef4688c114abe08d161, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -290,7 +290,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 366735859}
   - {fileID: 1038618239}
+  - {fileID: 594340132}
+  - {fileID: 1325887834}
   m_Father: {fileID: 188336782}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -422,8 +425,6 @@ RectTransform:
   - {fileID: 1699574616}
   - {fileID: 966412159}
   - {fileID: 109746277}
-  - {fileID: 594340132}
-  - {fileID: 1325887834}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -781,6 +782,81 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 346203732}
+  m_CullTransparentMesh: 0
+--- !u!1 &366735858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366735859}
+  - component: {fileID: 366735861}
+  - component: {fileID: 366735860}
+  m_Layer: 5
+  m_Name: BattleInfo_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &366735859
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366735858}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 109746277}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 80, y: -86.5}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &366735860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366735858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Battle Info
+--- !u!222 &366735861
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366735858}
   m_CullTransparentMesh: 0
 --- !u!1 &388150340
 GameObject:
@@ -6401,7 +6477,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 188336782}
+    m_TransformParent: {fileID: 109746277}
     m_Modifications:
     - target: {fileID: 224531048640048566, guid: aacc2bfd2a7cf894b9991b4ec06d9639,
         type: 2}
@@ -6441,7 +6517,7 @@ Prefab:
     - target: {fileID: 224531048640048566, guid: aacc2bfd2a7cf894b9991b4ec06d9639,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224531048640048566, guid: aacc2bfd2a7cf894b9991b4ec06d9639,
         type: 2}
@@ -6608,7 +6684,7 @@ RectTransform:
   - {fileID: 388150341}
   - {fileID: 1852584724}
   m_Father: {fileID: 109746277}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6921,7 +6997,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 188336782}
+    m_TransformParent: {fileID: 109746277}
     m_Modifications:
     - target: {fileID: 224329459511091414, guid: 2df913e7e9daf9c4691648a54df00939,
         type: 2}
@@ -6961,7 +7037,7 @@ Prefab:
     - target: {fileID: 224329459511091414, guid: 2df913e7e9daf9c4691648a54df00939,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224329459511091414, guid: 2df913e7e9daf9c4691648a54df00939,
         type: 2}
@@ -7592,15 +7668,20 @@ MonoBehaviour:
   battlePanel: {fileID: 109746276}
   Fighter_Space: {fileID: 480488926}
   isPlayerTurn: 0
+  isMovement: 0
   battleInProgress: 0
+  battleInfo_Text: {fileID: 366735860}
   targetEnemy: {fileID: 0}
   targetIndex: 0
   targetIndicator: {fileID: 1228161240}
   enemyList: []
   turnOrder: []
+  playerObj_Battle: {fileID: 19634923}
   enemyHpBar_1: {fileID: 1357666288}
   enemyHpBar_2: {fileID: 2067986531}
   slimeMonster: {fileID: 1704723996391626, guid: 8e2973f2506196f4cb9b1137e2014564,
+    type: 2}
+  wolfMonster: {fileID: 1419118025036390, guid: 4e585cb164bfe2f419f0e412f4d45a10,
     type: 2}
 --- !u!1 &1527637590
 GameObject:
