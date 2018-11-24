@@ -96,6 +96,9 @@ public class BattleManager : GameManager_1 {
 			enemyList.Add (enemy_2);
 		}
 
+		turnOrder = new List<GameObject>();
+		StartCoroutine(SetupTurnOrder(turnOrder));
+
 		yield return null;
 	}
 
@@ -106,13 +109,9 @@ public class BattleManager : GameManager_1 {
 		{
 		case "hexart_1_9": //forests
 			if (rand == 1)
-			{
-				return slimeMonster;
-			}
+			{	return slimeMonster;  }
 			else if (rand == 2)
-			{
-				return wolfMonster;
-			}
+			{	return wolfMonster;   }
 			break;
 		default:
 			break;
@@ -138,17 +137,10 @@ public class BattleManager : GameManager_1 {
 
 	#region TurnControl
 	public IEnumerator StartBattle(List<GameObject> enemyList){
-		turnOrder = new List<GameObject>();
-		StartCoroutine(SetupTurnOrder(turnOrder));
-
-		if (playerinfo.getSpeed() >= 0)
-			isPlayerTurn = true;
-		else
-			isPlayerTurn = false;
+		//turnOrder = new List<GameObject>();
+		//StartCoroutine(SetupTurnOrder(turnOrder));
 
 		battleInProgress = true;
-		yield return m_turnWait;
-
 		//Loop the Battle Here
 		int turnIndex = 0;
 		while(battleInProgress){

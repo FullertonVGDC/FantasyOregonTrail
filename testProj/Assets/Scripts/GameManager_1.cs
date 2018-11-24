@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 
 public class GameManager_1 : MonoBehaviour {
@@ -12,6 +13,11 @@ public class GameManager_1 : MonoBehaviour {
 
 	private GridScript gridinfo;
 	protected PlayerScript playerinfo;
+
+	public GameObject pauseMenu;
+	public Text PauseText;
+	List<string> logList;
+	public Text log_whole;
 
 	private BattleManager battleMGR;
 
@@ -27,7 +33,7 @@ public class GameManager_1 : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		
+		logList = new List<string>(); // refresh List
 	}
 	
 	// Update is called once per frame
@@ -36,6 +42,18 @@ public class GameManager_1 : MonoBehaviour {
 			gridinfo.getTile ();
 			movePlayer ();
 			//checkHiddenTiles();
+		}
+
+		if (Input.GetKeyUp (KeyCode.Escape)) {
+			if (pauseMenu.activeSelf)
+				pauseMenu.SetActive (false);
+			else {
+				PauseText.text = "Stats:\nHealth: " + playerinfo.getHealth () + " / " + playerinfo.getMaxHealth ()
+				+ "\nStamina: " + playerinfo.getStamina () + " / " + playerinfo.getMaxStamina ()
+				+ "\nSpeed: " + playerinfo.getSpeed () + "\nStrength: " + playerinfo.getStrength ();
+				pauseMenu.SetActive (true);
+			}
+				
 		}
 
 		//move camera left
@@ -52,15 +70,11 @@ public class GameManager_1 : MonoBehaviour {
 			mainCam.transform.transform.position -= (new Vector3(0,camSpeed * Time.deltaTime,0));
 		}
 
-		if (gameTime >= 24) {
-			Debug.Log ("New Day!");
-			gameTime = 0;
-		}
-
 		if (playerinfo.getHealth () <= 0) {
 			Debug.Log ("Game Over!");
 			playerinfo.addHealth (100);
 		}
+
 	}
 
 	void movePlayer() {
@@ -72,9 +86,16 @@ public class GameManager_1 : MonoBehaviour {
 			playerinfo.currPos = gridinfo.clickedPos;
 			//add player time
 			gameTime += gridinfo.getTileTime ();
-			//check for random ecounter
-			randomEncounter(gridinfo.tileName);
-			Debug.Log ("gameTime = " + gameTime);
+			if (gameTime >= 24) {
+				StartCoroutine(CampFireScene());
+				AddLogItem ("New Day!\n");
+				gameTime = 0;
+			} else {
+				//check for random ecounter
+				randomEncounter(gridinfo.tileName);
+				Debug.Log ("gameTime = " + gameTime);
+			}
+
 		} else
 			Debug.Log ("Invalid Movement");
 
@@ -106,30 +127,51 @@ public class GameManager_1 : MonoBehaviour {
 	}
 
 	void randomEncounter(string tileName){
-		float rand = Random.value;
+		float rand = Random.Range(1,100);
 
 		switch (tileName) {
 		case "hexart_1_3": //grassland
-			if (rand < 0.1f) //10% chance
+			if (rand < 10f) //10% chance
 			{
 				playerinfo.addStamina(-10);
-				Debug.Log("You're out of shape. [-10ST]");//do something
+				AddLogItem("You're out of shape. [-10ST]\n");
+			}
+			else if (rand < 20f) //10% chance
+			{
+				playerinfo.addStamina(10);
+				playerinfo.addHealth (5);
+				AddLogItem("You find a relaxing spot to rest. [+10Stm, +5Hp]\n");
 			}
 			break;
 		case "hexart_1_4": //tallgrass
 			break;
-		case "hexart_1_9": //forest
-			if (rand < 0.9f) //10% chance
+		case "hexart_1_6": //cave
+			break;
+		case "hexart_1_7": //Volcanoes
+			if (rand < 50f)
 			{
-				StartCoroutine(BattleControl (tileName));
+				playerinfo.addHealth(-20);
+				playerinfo.addStamina(-40);
+				AddLogItem("The Volcano erupts sending lava and molten rock everywhere. [-20Hp, -40Stm]\n");
 			}
+			else if (rand < 70f) //20% chance
+			{	StartCoroutine(BattleControl (tileName)); }
+			break;
+		case "hexart_1_8": //dungeon
+			StartCoroutine(BattleControl (tileName));
+			break;
+		case "hexart_1_9": //forest
+			if (rand < 10f) //10% chance
+			{	StartCoroutine(BattleControl (tileName));  }
 			break;
 		case "hexart_1_10": //mountains
-			if (rand < 0.1f) //10% chance
+			if (rand < 10f) //10% chance
 			{
 				playerinfo.addHealth(-10);
-				Debug.Log("You simply suck at this. [-10HP]");//do something
+				AddLogItem("You simply suck at this. [-10HP]\n");
 			}
+			else if (rand < 30f) //20% chance
+			{	StartCoroutine(BattleControl (tileName)); }
 			break;
 		default:
 			break;
@@ -138,11 +180,29 @@ public class GameManager_1 : MonoBehaviour {
 
 	// Access BattleManager script to control battle flow
 	private IEnumerator BattleControl(string battleLoc) {
-		Debug.Log("Fight for your right to party!");
+		AddLogItem("Fight for your right to party!\n");
+		log_whole.transform.parent.gameObject.SetActive (false);
 		battleOver = false;
 		yield return StartCoroutine(battleMGR.SetupBattle (battleLoc)); //Check if stays here
-		Debug.Log("The Battle has ended!");
+		log_whole.transform.parent.gameObject.SetActive (true);
+		AddLogItem("The Battle has ended!\n");
 		battleOver = true;
 	}
 
+	public void AddLogItem(string txt){
+		logList.Add (txt);
+		Debug.Log (txt);
+		log_whole.text = "";
+		if (logList.Count > 5)
+			logList.RemoveAt (0);
+		for(int i=0; i < logList.Count; i++){
+			log_whole.text += logList [i];
+		}
+	}
+
+
+	private IEnumerator CampFireScene(){
+		Debug.Log ("Campfire Scene Happens");
+		yield return null;
+	}
 }

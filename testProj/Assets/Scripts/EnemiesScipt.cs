@@ -30,4 +30,11 @@ public class EnemiesScipt : MonoBehaviour {
 	public float Attack1(){
 		return -strength;
 	}
+
+	public float Attack2(){
+		return -strength*2;
+	}
+	public void Attack3(){
+		strength *= 2;
+	}
 }
