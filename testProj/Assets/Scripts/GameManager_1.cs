@@ -93,7 +93,7 @@ public class GameManager_1 : MonoBehaviour {
 			} else {
 				//check for random ecounter
 				randomEncounter(gridinfo.tileName);
-				Debug.Log ("gameTime = " + gameTime);
+				Debug.Log ("location = " + gridinfo.tileName);
 			}
 
 		} else
@@ -130,7 +130,13 @@ public class GameManager_1 : MonoBehaviour {
 		float rand = Random.Range(1,100);
 
 		switch (tileName) {
-		case "hexart_1_3": //grassland
+		case "hexart_1_1": //town
+			playerinfo.setStamina (100);
+			playerinfo.setHealth (100);
+			// go to town scene
+			break;
+		case "hexart_1_3": //hills
+		case "hexart_1_4": //grassland
 			if (rand < 10f) //10% chance
 			{
 				playerinfo.addStamina(-10);
@@ -143,15 +149,16 @@ public class GameManager_1 : MonoBehaviour {
 				AddLogItem("You find a relaxing spot to rest. [+10Stm, +5Hp]\n");
 			}
 			break;
-		case "hexart_1_4": //tallgrass
-			break;
 		case "hexart_1_6": //cave
+			//reveal hidden space
+			AddLogItem ("You find a hidden Cave!\n");
+			StartCoroutine (BattleControl (tileName));
 			break;
 		case "hexart_1_7": //Volcanoes
 			if (rand < 50f)
 			{
 				playerinfo.addHealth(-20);
-				playerinfo.addStamina(-40);
+				playerinfo.addStamina(-20);
 				AddLogItem("The Volcano erupts sending lava and molten rock everywhere. [-20Hp, -40Stm]\n");
 			}
 			else if (rand < 70f) //20% chance
@@ -189,7 +196,7 @@ public class GameManager_1 : MonoBehaviour {
 		battleOver = true;
 	}
 
-	public void AddLogItem(string txt){
+	public void AddLogItem(string txt=""){
 		logList.Add (txt);
 		Debug.Log (txt);
 		log_whole.text = "";

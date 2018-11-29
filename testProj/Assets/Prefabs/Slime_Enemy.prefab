@@ -67,8 +67,8 @@ MonoBehaviour:
   enemy_id: 1
   health: 10
   maxHealth: 10
-  strength: 5
-  hpb: {fileID: 1348105250970284, guid: aacc2bfd2a7cf894b9991b4ec06d9639, type: 2}
+  strength: 3
+  speed: 0
 --- !u!212 &212471891868093222
 SpriteRenderer:
   m_ObjectHideFlags: 1

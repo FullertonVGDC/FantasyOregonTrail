@@ -9,72 +9,72 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1419118025036390}
+  m_RootGameObject: {fileID: 1802440618639700}
   m_IsPrefabAsset: 1
---- !u!1 &1419118025036390
+--- !u!1 &1802440618639700
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4764354548327284}
-  - component: {fileID: 212182124134228196}
-  - component: {fileID: 114876639767219682}
-  - component: {fileID: 114298578389584786}
+  - component: {fileID: 4399396091178984}
+  - component: {fileID: 212419608452734726}
+  - component: {fileID: 114363933355214488}
+  - component: {fileID: 114746766958144388}
   m_Layer: 0
-  m_Name: Wolf_Enemy
+  m_Name: FrostGoat_Enemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4764354548327284
+--- !u!4 &4399396091178984
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419118025036390}
+  m_GameObject: {fileID: 1802440618639700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9, y: -9, z: 0}
+  m_LocalPosition: {x: -14.141693, y: 3.8355103, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114298578389584786
+--- !u!114 &114363933355214488
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419118025036390}
+  m_GameObject: {fileID: 1802440618639700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931103030a1dfe24e92cf768487e0ddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114746766958144388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1802440618639700}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fba99752f91c70419e48fff06f328d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_id: 1
-  health: 20
-  maxHealth: 20
-  strength: 3
-  speed: 3
---- !u!114 &114876639767219682
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419118025036390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931103030a1dfe24e92cf768487e0ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &212182124134228196
+  health: 30
+  maxHealth: 30
+  strength: 7
+  speed: 5
+--- !u!212 &212419608452734726
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419118025036390}
+  m_GameObject: {fileID: 1802440618639700}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 07d5acd746706e3478d38784cd87d4e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 94933c3e1673d1540a54b9cd19994447, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -372,7 +372,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Credits:\n\nProgramming: \n\nArt/Graphics: \n\nWriter: \n\nSound/Music: "
+  m_Text: "Credits:\n\nWriter: \nIan,\nMeleana\n\nArt/Graphics: \nPaola,\nCindy\n\nWriter:
+    \nDaniel,\nIan\n\nSound/Music: \nYafu"
 --- !u!222 &71430866
 CanvasRenderer:
   m_ObjectHideFlags: 0

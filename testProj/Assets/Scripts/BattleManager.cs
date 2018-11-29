@@ -34,7 +34,14 @@ public class BattleManager : GameManager_1 {
 
 	//Enemy 1 (possibly add more than 1)
 	public GameObject slimeMonster;
-	public GameObject wolfMonster;
+	public GameObject hyenaMonster;
+	public GameObject gnollMonster;
+	public GameObject frostGoatMonster;
+	public GameObject banditMonster;
+	public GameObject mimicMonster;
+	public GameObject fireElemMonster;
+	public GameObject goblinMonster;
+
 	private GameObject enemy_1;
 	private GameObject enemy_2;
 	//private SlimeScript slimeInfo;
@@ -75,7 +82,6 @@ public class BattleManager : GameManager_1 {
 		//enemyTotal = 2;
 
 		//Enemy_1
-		//enemy_1 = Instantiate (slimeMonster); //Choose Monster
 		enemy_1 = Instantiate(ChooseMonster(battleLoc));
 		enemyBar_1.setEnemyBar(enemy_1);
 		enemy_1.transform.parent = Fighter_Space.transform;
@@ -103,15 +109,48 @@ public class BattleManager : GameManager_1 {
 	}
 
 	GameObject ChooseMonster(string location) {
-		float rand = Random.Range(1,3); // (inclusive, exclusive)
+		float rand = Random.Range(1,100); // (inclusive, exclusive)
 
 		switch (location) 
 		{
-		case "hexart_1_9": //forests
-			if (rand == 1)
+		case "hexart_1_3": //hills
+		case "hexart_1_4": //grasslands
+			if (rand < 50)
 			{	return slimeMonster;  }
-			else if (rand == 2)
-			{	return wolfMonster;   }
+			else if (rand < 80)
+			{	return hyenaMonster;   }
+			else if (rand < 100)
+			{	return gnollMonster;   }
+			break;
+		case "hexart_1_6": //cave
+			if (rand < 50)
+			{	return slimeMonster;  }
+			else if (rand < 80)
+			{	return goblinMonster;   }
+			else if (rand < 100)
+			{	return banditMonster;   }
+			break;
+		case "hexart_1_7": //volcanoes
+			if (rand < 50)
+			{	return hyenaMonster;  }
+			else if (rand < 80)
+			{	return gnollMonster;   }
+			else if (rand < 100)
+			{	return fireElemMonster;   }
+			break;
+		case "hexart_1_9": //forests
+			if (rand < 50)
+			{	return slimeMonster;  }
+			else if (rand < 100)
+			{	return goblinMonster;   }
+			break;
+		case "hexart_1_10": //mountains
+			if (rand < 50)
+			{	return slimeMonster;  }
+			else if (rand < 80)
+			{	return banditMonster;   }
+			else if (rand < 100)
+			{	return frostGoatMonster;   }
 			break;
 		default:
 			break;
@@ -240,7 +279,7 @@ public class BattleManager : GameManager_1 {
 	public void Attack1_OnClick(){
 		//deal attack 1 dmg
 		if(isPlayerTurn){
-			Debug.Log("You attack1");
+			Debug.Log ("You attack1");
 			StartCoroutine (MovingAnim(playerObj_Battle, new Vector3(2,0,0)));
 			DealDamage (playerinfo.getStrength (), targetEnemy);
 			isPlayerTurn = false;
@@ -248,7 +287,7 @@ public class BattleManager : GameManager_1 {
 	}
 	public void Attack2_OnClick(){
 		//deal attack 2 dmg
-		if (isPlayerTurn) {
+		if (isPlayerTurn && playerinfo.getStamina() >= 20) {
 			Debug.Log ("You attack2");
 			StartCoroutine (MovingAnim(playerObj_Battle, new Vector3(2,0,0)));
 			playerinfo.addStamina (-20);
@@ -258,19 +297,29 @@ public class BattleManager : GameManager_1 {
 	}
 	public void Attack3_OnClick(){
 		//deal attack 3 dmg
-		if (isPlayerTurn) {
+		if (isPlayerTurn && playerinfo.getStamina() >= 30) {
 			Debug.Log ("You attack3");
+			playerinfo.addStamina (-30);
+			playerinfo.addHealth (20);
 			isPlayerTurn = false;
 		}
 	}
 	public void Flee_OnClick(){
 		//you attempt to run
 		if (isPlayerTurn) {
-			Debug.Log ("You run away");
+			Debug.Log ("You successfully flee!");
 			isPlayerTurn = false;
 			battleInProgress = false;
+			if (enemyTotal > 1) {
+				GameObject.FindGameObjectWithTag("enemyHealthBar_2").SetActive(false);
+				GameObject[] del = GameObject.FindGameObjectsWithTag ("enemy"); // destroy all enemies
+				for (int i = 0; i < del.Length; i++) {
+					Destroy (del[i]);
+				}
+			}
+			else
+				Destroy (GameObject.FindGameObjectWithTag ("enemy")); //destroy only enemy
 			GameObject.FindGameObjectWithTag("enemyHealthBar_1").SetActive(false);
-			GameObject.FindGameObjectWithTag("enemyHealthBar_2").SetActive(false);
 		}
 	}
 

@@ -26,6 +26,8 @@ public class PlayerScript : MonoBehaviour {
 		health += val;
 		if (health > max_health)
 			health = max_health;
+		else if (health < 0)
+			health = 0;
 	}
 	public void setHealth(float val){
 		health = val;
@@ -44,6 +46,8 @@ public class PlayerScript : MonoBehaviour {
 		stamina += val;
 		if (stamina > max_stamina)
 			stamina = max_stamina;
+		else if (stamina < 0)
+			stamina = 0;
 	}
 	public void setStamina(float val){
 		stamina = val;
