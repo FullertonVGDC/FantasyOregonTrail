@@ -10,6 +10,7 @@ TagManager:
   - enemyHealthBar_1
   - enemyHealthBar_2
   - enemyHealthBar
+  - Background
   layers:
   - Default
   - TransparentFX
