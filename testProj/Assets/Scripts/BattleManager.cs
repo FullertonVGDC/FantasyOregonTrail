@@ -51,6 +51,8 @@ public class BattleManager : GameManager_1 {
 	private WaitForSeconds m_turnWait;
 	//private WaitForSeconds m_moveWait;
 
+	//Audio Variables
+	public AudioSource swordClash_snd;
 
 	// Use this for initialization
 	void Start () {
@@ -356,6 +358,7 @@ public class BattleManager : GameManager_1 {
 			ChangeTarget_OnClick();
 			GameObject.FindGameObjectWithTag("enemyHealthBar_" + enemyInfo.enemy_id.ToString()).SetActive(false);
 		}
+		swordClash_snd.Play ();
 	}
 	#endregion
 
