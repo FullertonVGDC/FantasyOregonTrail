@@ -1119,7 +1119,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 784365954}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 784365952}
   variables: []
   description: 
   stepPause: 0
@@ -1236,7 +1237,7 @@ MonoBehaviour:
   indentLevel: 0
   _sceneName:
     stringRef: {fileID: 0}
-    stringVal: 
+    stringVal: WorldMap_Scene
   loadingImage: {fileID: 0}
   sceneNameOLD: 
 --- !u!114 &784365953
@@ -1654,7 +1655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1417549988}
+  selectedFlowchart: {fileID: 784365946}
 --- !u!4 &1142995876
 Transform:
   m_ObjectHideFlags: 1
