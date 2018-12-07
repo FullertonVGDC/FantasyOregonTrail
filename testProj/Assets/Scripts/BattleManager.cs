@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : GameManager_1 {
 
@@ -12,6 +13,7 @@ public class BattleManager : GameManager_1 {
 	public bool isMovement;
 	public bool battleInProgress;
 	public Text battleInfo_Text;
+	public bool forTheWin = false;
 
 	private int enemyTotal = 0;
 	public GameObject targetEnemy;
@@ -41,6 +43,7 @@ public class BattleManager : GameManager_1 {
 	public GameObject mimicMonster;
 	public GameObject fireElemMonster;
 	public GameObject goblinMonster;
+	public GameObject bossMonster;
 
 	private GameObject enemy_1;
 	private GameObject enemy_2;
@@ -85,6 +88,7 @@ public class BattleManager : GameManager_1 {
 
 		//Enemy_1
 		enemy_1 = Instantiate(ChooseMonster(battleLoc));
+		if (battleLoc == "hexart_1_8") {enemyTotal = 2;  forTheWin = true;}
 		enemyBar_1.setEnemyBar(enemy_1);
 		enemy_1.transform.parent = Fighter_Space.transform;
 		enemy_1.transform.localPosition = new Vector3 (-8, -10, 0);
@@ -96,11 +100,14 @@ public class BattleManager : GameManager_1 {
 
 		if (enemyTotal == 2) {
 			//Enemy_2
-			enemy_2 = Instantiate(ChooseMonster(battleLoc));
+			if (battleLoc == "hexart_1_8") {enemy_2 = Instantiate(gnollMonster);}
+			else
+				enemy_2 = Instantiate(ChooseMonster(battleLoc));
 			enemyBar_2.setEnemyBar (enemy_2);
 			enemy_2.transform.parent = Fighter_Space.transform;
 			enemy_2.transform.localPosition = new Vector3 (-6, -11, 0);
 			enemy_2.GetComponent<EnemiesScipt> ().setEnemyNum (2);
+			enemy_2.GetComponent<SpriteRenderer> ().sortingOrder = 1;
 			enemyList.Add (enemy_2);
 		}
 
@@ -118,7 +125,7 @@ public class BattleManager : GameManager_1 {
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grasslands
 			if (rand < 50)
-			{	return slimeMonster;  }
+			{	return goblinMonster;  }
 			else if (rand < 80)
 			{	return hyenaMonster;   }
 			else if (rand < 100)
@@ -126,19 +133,22 @@ public class BattleManager : GameManager_1 {
 			break;
 		case "hexart_1_6": //cave
 			if (rand < 50)
-			{	return slimeMonster;  }
+			{	return goblinMonster;  }
 			else if (rand < 80)
 			{	return goblinMonster;   }
 			else if (rand < 100)
 			{	return banditMonster;   }
 			break;
 		case "hexart_1_7": //volcanoes
-			if (rand < 50)
-			{	return hyenaMonster;  }
-			else if (rand < 80)
-			{	return gnollMonster;   }
-			else if (rand < 100)
-			{	return fireElemMonster;   }
+			if (rand < 50) {
+				return hyenaMonster;
+			} else if (rand < 80) {
+				return gnollMonster;
+			} else if (rand < 100) {
+				return gnollMonster;}//return fireElemMonster;   }
+			break;
+		case "hexart_1_8": //Boss Dungeon
+			return bossMonster;
 			break;
 		case "hexart_1_9": //forests
 			if (rand < 50)
@@ -147,17 +157,17 @@ public class BattleManager : GameManager_1 {
 			{	return goblinMonster;   }
 			break;
 		case "hexart_1_10": //mountains
-			if (rand < 50)
-			{	return slimeMonster;  }
+			if (rand < 50) {
+				return banditMonster;}//return slimeMonster;  }
 			else if (rand < 80)
 			{	return banditMonster;   }
 			else if (rand < 100)
-			{	return frostGoatMonster;   }
+				{	return banditMonster;}//return frostGoatMonster;   }
 			break;
 		default:
 			break;
 		}
-		return slimeMonster;
+		return banditMonster;
 	}
 
 	//Turn on Proper camera & UI
@@ -245,11 +255,15 @@ public class BattleManager : GameManager_1 {
 	}
 
 	public IEnumerator checkBattleOver(){
-		if (enemyTotal <= 0 || playerinfo.getHealth () <= 0) {
+		if (enemyTotal <= 0) {
 			battleInProgress = false;
 			battleInfo_Text.text = "Battle Over";
-			Debug.Log ("You win!");
+			Debug.Log ("You won the battle!");
+			if (forTheWin) {Debug.Log ("You beat the game");  SceneManager.LoadScene (sceneName: "MainMenu_Scene");}
 			yield return m_turnWait;
+		}
+		else if (playerinfo.getHealth () <= 0){
+			GameOver();
 		}
 	}
 	#endregion
@@ -284,6 +298,7 @@ public class BattleManager : GameManager_1 {
 			Debug.Log ("You attack1");
 			StartCoroutine (MovingAnim(playerObj_Battle, new Vector3(2,0,0)));
 			DealDamage (playerinfo.getStrength (), targetEnemy);
+			playerinfo.addStamina (5);
 			isPlayerTurn = false;
 		}
 	}
@@ -361,5 +376,10 @@ public class BattleManager : GameManager_1 {
 		swordClash_snd.Play ();
 	}
 	#endregion
+
+	public void GameOver(){
+		Debug.Log ("Game Over");
+		SceneManager.LoadScene (sceneName: "MainMenu_Scene");
+	}
 
 }

@@ -148,6 +148,8 @@ public class GameManager_1 : MonoBehaviour {
 				playerinfo.addHealth (5);
 				AddLogItem("You find a relaxing spot to rest. [+10Stm, +5Hp]\n");
 			}
+			else if (rand < 30f) //10% chance
+			{	StartCoroutine (BattleControl (tileName)); }
 			break;
 		case "hexart_1_6": //cave
 			//reveal hidden space
@@ -161,7 +163,7 @@ public class GameManager_1 : MonoBehaviour {
 				playerinfo.addStamina(-20);
 				AddLogItem("The Volcano erupts sending lava and molten rock everywhere. [-20Hp, -40Stm]\n");
 			}
-			else if (rand < 70f) //20% chance
+			else if (rand < 80f) //30% chance
 			{	StartCoroutine(BattleControl (tileName)); }
 			break;
 		case "hexart_1_8": //dungeon
