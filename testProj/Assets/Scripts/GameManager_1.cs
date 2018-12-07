@@ -5,13 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 
 public class GameManager_1 : MonoBehaviour {
-
 	public int gameTime = 0;
 
 	public Grid grid;
 	public GameObject playerObj;
 
 	private GridScript gridinfo;
+	public Tilemap hiddenTiles;
 	protected PlayerScript playerinfo;
 
 	public GameObject pauseMenu;
@@ -121,9 +121,9 @@ public class GameManager_1 : MonoBehaviour {
 		}
 	}//end checkPossibleMove
 
-	void checkHiddenTiles()
+	void checkHiddenTiles(Vector3Int loc)
 	{
-
+		hiddenTiles.SetTile (loc, null);
 	}
 
 	void randomEncounter(string tileName){
@@ -131,8 +131,8 @@ public class GameManager_1 : MonoBehaviour {
 
 		switch (tileName) {
 		case "hexart_1_1": //town
-			playerinfo.setStamina (100);
-			playerinfo.setHealth (100);
+			playerinfo.setStamina (playerinfo.getMaxStamina());
+			playerinfo.setHealth (playerinfo.getMaxHealth());
 			// go to town scene
 			break;
 		case "hexart_1_3": //hills
@@ -155,6 +155,7 @@ public class GameManager_1 : MonoBehaviour {
 			//reveal hidden space
 			AddLogItem ("You find a hidden Cave!\n");
 			StartCoroutine (BattleControl (tileName));
+			checkHiddenTiles(playerinfo.currPos);
 			break;
 		case "hexart_1_7": //Volcanoes
 			if (rand < 50f)

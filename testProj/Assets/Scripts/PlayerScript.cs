@@ -11,6 +11,10 @@ public class PlayerScript : MonoBehaviour {
 	int strength = 5;
 	int speed = 5;
 
+	public int totalBuffs = 0; //for demo
+	public bool healthBoost = false; //for demo
+	public bool strengthBoost = false; //for demo
+
 	float max_health = 100;
 	float max_stamina = 100;
 	int max_speed = 5;
@@ -63,5 +67,19 @@ public class PlayerScript : MonoBehaviour {
 	// Speed Functions
 	public int getSpeed(){
 		return speed;
+	}
+
+	public void boostStats(int stat){
+		if (!healthBoost && currPos.x==1 && currPos.y==-2) {
+			healthBoost = true;
+			max_health = 120;
+			health = 120;
+			totalBuffs++;
+		}
+		if (!strengthBoost && currPos.x==9 && currPos.y==-6) {
+			strengthBoost = true;
+			strength = 7;
+			totalBuffs++;
+		}
 	}
 }

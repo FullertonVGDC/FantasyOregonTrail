@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657856, g: 0.49641234, b: 0.57481724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -336,6 +336,87 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 109746276}
   m_CullTransparentMesh: 0
+--- !u!1 &129191517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129191518}
+  - component: {fileID: 129191520}
+  - component: {fileID: 129191519}
+  m_Layer: 5
+  m_Name: DemoGameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &129191518
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129191517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 188336782}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.33135986, y: 0.5}
+  m_SizeDelta: {x: 464.5, y: 78.20001}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &129191519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129191517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '
+
+    Congratulations!
+
+    You have completed the demo
+
+    Feel free to roam around and fight some enemies!f'
+--- !u!222 &129191520
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129191517}
+  m_CullTransparentMesh: 0
 --- !u!1 &173593330
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +583,7 @@ RectTransform:
   - {fileID: 109746277}
   - {fileID: 1339871294}
   - {fileID: 989377677}
+  - {fileID: 129191518}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8052,7 +8134,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Attack2
+  m_Text: Bash [2xdmg -20stm]
 --- !u!222 &1004168435
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8270,7 +8352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Attack
+  m_Text: Light Attack
 --- !u!222 &1094986473
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9236,6 +9318,7 @@ MonoBehaviour:
   gameTime: 0
   grid: {fileID: 294354393}
   playerObj: {fileID: 1535888013}
+  hiddenTiles: {fileID: 742684342}
   pauseMenu: {fileID: 989377676}
   PauseText: {fileID: 243768243}
   log_whole: {fileID: 173593332}
@@ -9268,11 +9351,13 @@ MonoBehaviour:
   gameTime: 0
   grid: {fileID: 294354393}
   playerObj: {fileID: 1535888013}
+  hiddenTiles: {fileID: 0}
   pauseMenu: {fileID: 0}
   PauseText: {fileID: 0}
-  log_whole: {fileID: 0}
+  log_whole: {fileID: 173593332}
   mainCam: {fileID: 1255360825}
   camSpeed: 5
+  DEMOTEXT: {fileID: 129191519}
   battleCam: {fileID: 1848030770}
   battlePanel: {fileID: 109746276}
   Fighter_Space: {fileID: 480488926}
@@ -9281,6 +9366,7 @@ MonoBehaviour:
   battleInProgress: 0
   battleInfo_Text: {fileID: 366735860}
   forTheWin: 0
+  isfleeing: 0
   targetEnemy: {fileID: 0}
   targetIndex: 0
   targetIndicator: {fileID: 1228161240}
@@ -9471,6 +9557,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currPos: {x: 0, y: 0, z: 0}
+  totalBuffs: 0
+  healthBoost: 0
+  strengthBoost: 0
 --- !u!1 &1568479317
 GameObject:
   m_ObjectHideFlags: 0
@@ -9853,7 +9942,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Attack3
+  m_Text: Heal [+20hp -30stm]
 --- !u!222 &1852367210
 CanvasRenderer:
   m_ObjectHideFlags: 0

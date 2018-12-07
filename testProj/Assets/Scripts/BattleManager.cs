@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BattleManager : GameManager_1 {
+	public Text DEMOTEXT; //for demo
 
 	public Camera battleCam;
 	public GameObject battlePanel;
@@ -14,6 +15,7 @@ public class BattleManager : GameManager_1 {
 	public bool battleInProgress;
 	public Text battleInfo_Text;
 	public bool forTheWin = false;
+	public bool isfleeing = false;
 
 	private int enemyTotal = 0;
 	public GameObject targetEnemy;
@@ -78,7 +80,7 @@ public class BattleManager : GameManager_1 {
 		yield return StartCoroutine (SetupEnemies(battleLoc, enemyList));
 		yield return StartCoroutine(SetupUI());
 		yield return StartCoroutine(StartBattle(enemyList));
-		yield return StartCoroutine (EndBattle ());
+		yield return StartCoroutine (EndBattle (battleLoc));
 	}
 
 	private IEnumerator SetupEnemies(string battleLoc, List<GameObject> enemyList){
@@ -95,7 +97,7 @@ public class BattleManager : GameManager_1 {
 		enemy_1.GetComponent<EnemiesScipt> ().setEnemyNum (1);
 		targetEnemy = enemy_1;
 		targetIndex = 0;
-		targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,2,0);
+		targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,4,0);
 		enemyList.Add (enemy_1);
 
 		if (enemyTotal == 2) {
@@ -152,7 +154,7 @@ public class BattleManager : GameManager_1 {
 			break;
 		case "hexart_1_9": //forests
 			if (rand < 50)
-			{	return slimeMonster;  }
+			{	return banditMonster;  }
 			else if (rand < 100)
 			{	return goblinMonster;   }
 			break;
@@ -179,9 +181,16 @@ public class BattleManager : GameManager_1 {
 	}
 
 	//End Battle
-	private IEnumerator EndBattle(){
+	private IEnumerator EndBattle(string battleLoc){
 		battleCam.gameObject.SetActive (false);
 		battlePanel.gameObject.SetActive (false);
+
+		if (battleLoc == "hexart_1_6" && !isfleeing) {
+			playerinfo.boostStats(playerinfo.totalBuffs);
+			//if(playerinfo.totalBuffs == 1) AddLogItem("Within the cave you found some better armor [+20 Health]\n");
+			//else if(playerinfo.totalBuffs == 2) AddLogItem("Within the cave you found a shiny new sword [+2 Strength]\n");
+		}
+		isfleeing = false;
 		yield return null;
 	}
 	#endregion
@@ -259,7 +268,7 @@ public class BattleManager : GameManager_1 {
 			battleInProgress = false;
 			battleInfo_Text.text = "Battle Over";
 			Debug.Log ("You won the battle!");
-			if (forTheWin) {Debug.Log ("You beat the game");  SceneManager.LoadScene (sceneName: "MainMenu_Scene");}
+			if (forTheWin) {Debug.Log ("You beat the game");  DEMOTEXT.gameObject.SetActive(true);}
 			yield return m_turnWait;
 		}
 		else if (playerinfo.getHealth () <= 0){
@@ -324,6 +333,7 @@ public class BattleManager : GameManager_1 {
 	public void Flee_OnClick(){
 		//you attempt to run
 		if (isPlayerTurn) {
+			isfleeing = true;
 			Debug.Log ("You successfully flee!");
 			isPlayerTurn = false;
 			battleInProgress = false;
@@ -355,7 +365,7 @@ public class BattleManager : GameManager_1 {
 				targetIndex = 0;
 				targetEnemy = enemyList [targetIndex];
 			}
-			targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,2,0);
+			targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,4,0);
 			Debug.Log ("New Target: " + targetEnemy);
 		}
 	}
@@ -379,7 +389,7 @@ public class BattleManager : GameManager_1 {
 
 	public void GameOver(){
 		Debug.Log ("Game Over");
-		SceneManager.LoadScene (sceneName: "MainMenu_Scene");
+		SceneManager.LoadScene (sceneName: "WorldMap_Scene");
 	}
 
 }
