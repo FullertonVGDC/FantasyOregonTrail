@@ -80,7 +80,7 @@ public class GameManager_1 : MonoBehaviour {
 	void movePlayer() {
 		Vector3 cellPoint = grid.CellToWorld (gridinfo.clickedPos);
 		//make sure tile is land one space away
-		if ((gridinfo.tileName != "hexart_1_5") && checkPossibleMove(gridinfo.clickedPos)) {
+		if ((gridinfo.tileName != "hexart_1_11") && checkPossibleMove(gridinfo.clickedPos)) {
 			//move player
 			playerObj.transform.SetPositionAndRotation (cellPoint, Quaternion.identity);
 			playerinfo.currPos = gridinfo.clickedPos;
