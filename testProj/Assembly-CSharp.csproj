@@ -100,6 +100,7 @@
      <Compile Include="Assets\Fungus\Scripts\Commands\Math\Abs.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Math\BaseUnaryMathCommand.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Math\Clamp.cs" />
+     <Compile Include="Assets\Fungus\Scripts\Commands\Math\Curve.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Math\Exp.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Math\Inv.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Math\InvLerp.cs" />
@@ -124,6 +125,7 @@
      <Compile Include="Assets\Fungus\Scripts\Commands\OpenURL.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\PlayAnimState.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\PlayMusic.cs" />
+     <Compile Include="Assets\Fungus\Scripts\Commands\PlaySound.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\PlayUsfxrSound.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Portrait.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Priority\FungusPriorityCount.cs" />
@@ -148,9 +150,11 @@
      <Compile Include="Assets\Fungus\Scripts\Commands\SavePoint.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\SaveVariable.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Say.cs" />
+     <Compile Include="Assets\Fungus\Scripts\Commands\ScaleAdd.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\ScaleFrom.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\ScaleTo.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Scene\ReloadScene.cs" />
+     <Compile Include="Assets\Fungus\Scripts\Commands\SendMessage.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\SetActive.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\SetAnimBool.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\SetAnimFloat.cs" />
@@ -172,6 +176,7 @@
      <Compile Include="Assets\Fungus\Scripts\Commands\SetSpriteOrder.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\SetText.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\SetToggleState.cs" />
+     <Compile Include="Assets\Fungus\Scripts\Commands\SetVariable.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\ShakeCamera.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\ShakePosition.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\ShakeRotation.cs" />
@@ -187,6 +192,7 @@
      <Compile Include="Assets\Fungus\Scripts\Commands\StopTween.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\StopTweens.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Transform\TransformProperty.cs" />
+     <Compile Include="Assets\Fungus\Scripts\Commands\TweenUI.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\VariableCondition.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Vector3\Vector3Arithmetic.cs" />
      <Compile Include="Assets\Fungus\Scripts\Commands\Vector3\Vector3Fields.cs" />
@@ -228,6 +234,7 @@
      <Compile Include="Assets\Fungus\Scripts\Components\Variable.cs" />
      <Compile Include="Assets\Fungus\Scripts\Components\View.cs" />
      <Compile Include="Assets\Fungus\Scripts\Components\Writer.cs" />
+     <Compile Include="Assets\Fungus\Scripts\Components\WriterAudio.cs" />
      <Compile Include="Assets\Fungus\Scripts\EnumFlagAttribute.cs" />
      <Compile Include="Assets\Fungus\Scripts\EventHandlers\ButtonClicked.cs" />
      <Compile Include="Assets\Fungus\Scripts\EventHandlers\DragCancelled.cs" />
@@ -305,6 +312,7 @@
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Components\LuaEnvironmentInitializer.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Components\LuaScript.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Components\LuaStore.cs" />
+     <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Components\LuaUtils.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Interfaces\IExecuteHandlerConfigurator.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Interfaces\IStringSubstituter.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Utils\FungusPrefs.cs" />
@@ -369,6 +377,7 @@
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\DataTypes\Coroutine.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\DataTypes\CoroutineState.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\DataTypes\DataType.cs" />
+     <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\DataTypes\DynValue.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\DataTypes\IScriptPrivateResource.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\DataTypes\RefIdObject.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\DataTypes\ScriptFunctionDelegate.cs" />
@@ -442,6 +451,7 @@
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Interop\BasicDescriptors\IOptimizableDescriptor.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Interop\BasicDescriptors\IOverloadableMemberDescriptor.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Interop\BasicDescriptors\MemberDescriptorAccess.cs" />
+     <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Interop\BasicDescriptors\ParameterDescriptor.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Interop\Converters\ClrToScriptConversions.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Interop\Converters\NumericConversions.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Interop\Converters\ScriptToClrConversions.cs" />
@@ -531,6 +541,7 @@
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Serialization\ObjectValueConverter.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Serialization\SerializationExtensions.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Tree\Expression_.cs" />
+     <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Tree\Expressions\AdjustmentExpression.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Tree\Expressions\BinaryOperatorExpression.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Tree\Expressions\DynamicExprExpression.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Tree\Expressions\ExprListExpression.cs" />
@@ -583,11 +594,13 @@
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrSynth.cs" />
      <Compile Include="Assets\Scripts\BarScript.cs" />
      <Compile Include="Assets\Scripts\BattleManager.cs" />
+     <Compile Include="Assets\Scripts\ButtonHover_Script.cs" />
      <Compile Include="Assets\Scripts\EnemiesScipt.cs" />
      <Compile Include="Assets\Scripts\EnemyBarScript.cs" />
      <Compile Include="Assets\Scripts\GameManager_1.cs" />
      <Compile Include="Assets\Scripts\GridScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\SaveState_Script.cs" />
      <Compile Include="Assets\Scripts\SlimeScript.cs" />
      <Compile Include="Assets\Scripts\SwitchScenes.cs" />
      <None Include="Assets\Fungus\Thirdparty\ThirdPartyNotices.txt" />

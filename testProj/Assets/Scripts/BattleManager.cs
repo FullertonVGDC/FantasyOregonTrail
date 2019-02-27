@@ -90,7 +90,7 @@ public class BattleManager : GameManager_1 {
 
 		//Enemy_1
 		enemy_1 = Instantiate(ChooseMonster(battleLoc));
-		if (battleLoc == "hexart_1_8") {enemyTotal = 2;  forTheWin = true;}
+		if (battleLoc == "hexart_1_8") {enemyTotal = 2;  forTheWin = true;} // for DEMO
 		enemyBar_1.setEnemyBar(enemy_1);
 		enemy_1.transform.parent = Fighter_Space.transform;
 		enemy_1.transform.localPosition = new Vector3 (-8, -10, 0);
@@ -102,7 +102,7 @@ public class BattleManager : GameManager_1 {
 
 		if (enemyTotal == 2) {
 			//Enemy_2
-			if (battleLoc == "hexart_1_8") {enemy_2 = Instantiate(gnollMonster);}
+			if (battleLoc == "hexart_1_8") {enemy_2 = Instantiate(gnollMonster);}  // for DEMO
 			else
 				enemy_2 = Instantiate(ChooseMonster(battleLoc));
 			enemyBar_2.setEnemyBar (enemy_2);
@@ -186,9 +186,7 @@ public class BattleManager : GameManager_1 {
 		battlePanel.gameObject.SetActive (false);
 
 		if (battleLoc == "hexart_1_6" && !isfleeing) {
-			playerinfo.boostStats(playerinfo.totalBuffs);
-			//if(playerinfo.totalBuffs == 1) AddLogItem("Within the cave you found some better armor [+20 Health]\n");
-			//else if(playerinfo.totalBuffs == 2) AddLogItem("Within the cave you found a shiny new sword [+2 Strength]\n");
+			playerinfo.boostStats();
 		}
 		isfleeing = false;
 		yield return null;
@@ -268,7 +266,8 @@ public class BattleManager : GameManager_1 {
 			battleInProgress = false;
 			battleInfo_Text.text = "Battle Over";
 			Debug.Log ("You won the battle!");
-			if (forTheWin) {Debug.Log ("You beat the game");  DEMOTEXT.gameObject.SetActive(true);}
+			playerinfo.addRenown (100);
+			if (forTheWin) {Debug.Log ("You beat the game");  DEMOTEXT.gameObject.SetActive(true);} // for DEMO
 			yield return m_turnWait;
 		}
 		else if (playerinfo.getHealth () <= 0){
@@ -389,6 +388,8 @@ public class BattleManager : GameManager_1 {
 
 	public void GameOver(){
 		Debug.Log ("Game Over");
+		//Lose Renown
+		//Move to a town and continue
 		SceneManager.LoadScene (sceneName: "WorldMap_Scene");
 	}
 

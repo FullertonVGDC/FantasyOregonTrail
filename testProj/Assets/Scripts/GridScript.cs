@@ -35,6 +35,7 @@ public class GridScript : MonoBehaviour {
 		tileName = map2.GetTile (position).name;
 	}
 
+	// returns int value that represents time it takes to travel across
 	public int getTileTime () {
 		float rand = Random.value;
 		switch (tileName) {

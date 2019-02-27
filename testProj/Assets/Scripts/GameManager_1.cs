@@ -50,7 +50,8 @@ public class GameManager_1 : MonoBehaviour {
 			else {
 				PauseText.text = "Stats:\nHealth: " + playerinfo.getHealth () + " / " + playerinfo.getMaxHealth ()
 				+ "\nStamina: " + playerinfo.getStamina () + " / " + playerinfo.getMaxStamina ()
-				+ "\nSpeed: " + playerinfo.getSpeed () + "\nStrength: " + playerinfo.getStrength ();
+				+ "\nSpeed: " + playerinfo.getSpeed () + "\nStrength: " + playerinfo.getStrength ()
+				+ "\nRenown: " + playerinfo.getRenown ();
 				pauseMenu.SetActive (true);
 			}
 				
@@ -123,6 +124,7 @@ public class GameManager_1 : MonoBehaviour {
 
 	void checkHiddenTiles(Vector3Int loc)
 	{
+		// Also handled in PlayerScript.cs
 		hiddenTiles.SetTile (loc, null);
 	}
 
@@ -133,7 +135,7 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_1": //town
 			playerinfo.setStamina (playerinfo.getMaxStamina());
 			playerinfo.setHealth (playerinfo.getMaxHealth());
-			// go to town scene
+			// go to town scene!!!
 			break;
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grassland
@@ -151,7 +153,7 @@ public class GameManager_1 : MonoBehaviour {
 			else if (rand < 30f) //10% chance
 			{	StartCoroutine (BattleControl (tileName)); }
 			break;
-		case "hexart_1_6": //cave
+		case "hexart_1_6": // Hidden Cave
 			//reveal hidden space
 			AddLogItem ("You find a hidden Cave!\n");
 			StartCoroutine (BattleControl (tileName));
@@ -195,6 +197,7 @@ public class GameManager_1 : MonoBehaviour {
 		battleOver = false;
 		yield return StartCoroutine(battleMGR.SetupBattle (battleLoc)); //Check if stays here
 		log_whole.transform.parent.gameObject.SetActive (true);
+
 		AddLogItem("The Battle has ended!\n");
 		battleOver = true;
 	}

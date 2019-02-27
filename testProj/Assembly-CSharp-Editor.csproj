@@ -131,6 +131,7 @@
      <Compile Include="Assets\Fungus\Thirdparty\Reorderable List Field\Editor\ReorderableListEvents.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Reorderable List Field\Editor\ReorderableListFlags.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Reorderable List Field\Editor\ReorderableListGUI.cs" />
+     <Compile Include="Assets\Fungus\Thirdparty\Reorderable List Field\Editor\ReorderableListStyles.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Reorderable List Field\Editor\SerializedPropertyAdaptor.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Editor\SfxrGenerator.cs" />
  <Reference Include="Assembly-UnityScript">
@@ -376,6 +377,9 @@
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.SpatialTracking">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
@@ -387,6 +391,9 @@
  </Reference>
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>D:/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>D:/Unity/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>D:/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>

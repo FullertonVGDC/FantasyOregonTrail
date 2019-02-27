@@ -1,16 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameManager_1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Fungus\Scripts\Components\SayDialog.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GridScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager_1.cs" Line="83" Column="41" />
+      <File FileName="Assets\Scripts\PlayerScript.cs" Line="105" Column="23" />
+      <File FileName="Assets\Scripts\GridScript.cs" Line="38" Column="69" />
+      <File FileName="Assets\Scripts\GameManager_1.cs" Line="126" Column="3" />
       <File FileName="Assets\Scripts\SwitchScenes.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BarScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BattleManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BattleManager.cs" Line="187" Column="3" />
       <File FileName="Assets\Scripts\EnemiesScipt.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EnemyBarScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Fungus\Scripts\Components\SayDialog.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ButtonHover_Script.cs" Line="13" Column="2" />
+      <File FileName="Assets\Scripts\SaveState_Script.cs" Line="10" Column="37" />
+      <File FileName="Assets\Fungus\Scripts\Components\SayDialog.cs" Line="487" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
