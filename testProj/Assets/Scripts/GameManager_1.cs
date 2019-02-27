@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class GameManager_1 : MonoBehaviour {
 	public int gameTime = 0;
+	public Vector3Int startPos = new Vector3Int (0, 0, 0);
 
 	public Grid grid;
 	public GameObject playerObj;
@@ -34,6 +35,7 @@ public class GameManager_1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		logList = new List<string>(); // refresh List
+		playerinfo.currPos = startPos; // replace with last saved location
 	}
 	
 	// Update is called once per frame
@@ -135,7 +137,8 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_1": //town
 			playerinfo.setStamina (playerinfo.getMaxStamina());
 			playerinfo.setHealth (playerinfo.getMaxHealth());
-			// go to town scene!!!
+			//SaveState.saveControl.Save();
+			//show button allowing player to enter town
 			break;
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grassland
@@ -218,4 +221,5 @@ public class GameManager_1 : MonoBehaviour {
 		Debug.Log ("Campfire Scene Happens");
 		yield return null;
 	}
+		
 }

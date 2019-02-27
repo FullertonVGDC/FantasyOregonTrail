@@ -8,8 +8,11 @@ public class SwitchScenes : MonoBehaviour {
 	public void LoadScene(string name) {
 		SceneManager.LoadScene (sceneName: name);
 	}
+		
 
 	public void QuitGame() {
 		Application.Quit ();
 	}
+
+
 }
