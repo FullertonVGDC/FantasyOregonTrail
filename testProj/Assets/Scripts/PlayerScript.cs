@@ -78,29 +78,29 @@ public class PlayerScript : MonoBehaviour {
 			health += 20; // better armor
 			Debug.Log("Upgrade 1 Acquired");
 		}
-		if (currPos.x==9 && currPos.y==-6 && !upgrades[1]) {
+		else if (currPos.x==9 && currPos.y==-6 && !upgrades[1]) {
 			upgrades [1] = true;
 			strength += 2; // better sword
 			Debug.Log("Upgrade 2 Acquired");
 		}
-		if (currPos.x==5 && currPos.y==11 && !upgrades[2]) {
+		else if (currPos.x==5 && currPos.y==11 && !upgrades[2]) {
 			upgrades [2] = true;
 			health += 50; // elixir of health [NEEDS TO BE IMPLEMENTED]
 			Debug.Log("Upgrade 3 Acquired");
 		}
-		if (currPos.x==9 && currPos.y==14 && !upgrades[3]) {
+		else if (currPos.x==9 && currPos.y==14 && !upgrades[3]) {
 			upgrades [3] = true;
 			max_health += 30;
 			health += 30; // shield
 			Debug.Log("Upgrade 4 Acquired");
 		}
-		if (currPos.x==7 && currPos.y==24 && !upgrades[4]) {
+		else if (currPos.x==7 && currPos.y==24 && !upgrades[4]) {
 			upgrades [4] = true;
 			max_speed += 2;
 			speed += 2; // boots of speed
 			Debug.Log("Upgrade 5 Acquired");
 		}
-		if (currPos.x==-2 && currPos.y==25 && !upgrades[5]) {
+		else if (currPos.x==-2 && currPos.y==25 && !upgrades[5]) {
 			upgrades [5] = true;
 			max_stamina += 20; 
 			stamina += 20; // form fit armor

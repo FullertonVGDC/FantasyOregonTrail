@@ -19,6 +19,7 @@ public class GameManager_1 : MonoBehaviour {
 	public Text PauseText;
 	List<string> logList;
 	public Text log_whole;
+	public Button enterTownBTN;
 
 	private BattleManager battleMGR;
 
@@ -84,6 +85,10 @@ public class GameManager_1 : MonoBehaviour {
 		Vector3 cellPoint = grid.CellToWorld (gridinfo.clickedPos);
 		//make sure tile is land one space away
 		if ((gridinfo.tileName != "hexart_1_11") && checkPossibleMove(gridinfo.clickedPos)) {
+			//remove enter town button (will reappear if moving to a town)
+			if(enterTownBTN.IsActive()) { 
+				enterTownBTN.gameObject.SetActive(false); 
+			}
 			//move player
 			playerObj.transform.SetPositionAndRotation (cellPoint, Quaternion.identity);
 			playerinfo.currPos = gridinfo.clickedPos;
@@ -138,7 +143,7 @@ public class GameManager_1 : MonoBehaviour {
 			playerinfo.setStamina (playerinfo.getMaxStamina());
 			playerinfo.setHealth (playerinfo.getMaxHealth());
 			//SaveState.saveControl.Save();
-			//show button allowing player to enter town
+			enterTownBTN.gameObject.SetActive(true);
 			break;
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grassland
@@ -216,6 +221,16 @@ public class GameManager_1 : MonoBehaviour {
 		}
 	}
 
+	public void EnterTownOnClick(){
+		Vector3Int location = playerinfo.currPos;
+		if (location.x==0 && location.y==0) {
+			this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_1");
+		}
+		else if (location.x == -4 && location.y == -5) {
+			this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_2");
+		}
+	}
+		
 
 	private IEnumerator CampFireScene(){
 		Debug.Log ("Campfire Scene Happens");

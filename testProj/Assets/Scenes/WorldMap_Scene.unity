@@ -9413,6 +9413,7 @@ GameObject:
   - component: {fileID: 1514833530}
   - component: {fileID: 1514833529}
   - component: {fileID: 1514833531}
+  - component: {fileID: 1514833532}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -9439,6 +9440,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 989377676}
   PauseText: {fileID: 243768243}
   log_whole: {fileID: 173593332}
+  enterTownBTN: {fileID: 1932257026}
   mainCam: {fileID: 1255360825}
   camSpeed: 5
 --- !u!4 &1514833530
@@ -9473,6 +9475,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   PauseText: {fileID: 0}
   log_whole: {fileID: 173593332}
+  enterTownBTN: {fileID: 0}
   mainCam: {fileID: 1255360825}
   camSpeed: 5
   DEMOTEXT: {fileID: 129191519}
@@ -9512,6 +9515,17 @@ MonoBehaviour:
   bossMonster: {fileID: 1932519231367158, guid: fbbede086cf85214ca3558f5ca076b88,
     type: 2}
   swordClash_snd: {fileID: 813481145}
+--- !u!114 &1514833532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1514833528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764702cdb49f0a94eb8a94897eec4285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1527637590
 GameObject:
   m_ObjectHideFlags: 0
@@ -10391,10 +10405,10 @@ RectTransform:
   m_Father: {fileID: 188336782}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 64}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -161.9, y: 49.5}
+  m_SizeDelta: {x: 117.08002, y: 79.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932257026
 MonoBehaviour:
@@ -10434,7 +10448,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1932257027}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1514833529}
+        m_MethodName: EnterTownOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1932257027
