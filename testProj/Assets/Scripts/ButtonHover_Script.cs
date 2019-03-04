@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonHover_Script : MonoBehaviour, IPointerEnterHandler {
+public class ButtonHover_Script : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
-	public string msg = "";
+	public GameObject panel;
 
 	public void OnPointerEnter(PointerEventData eventData){
-		Debug.Log (msg);
+		//GameObject panel = GetComponentInChildren<GameObject> ();
+		panel.SetActive (true);
 	}
 
 	public void OnPointerExit(PointerEventData eventData){
-		Debug.Log ("leaving item");
+		//GameObject panel = GetComponentInChildren<GameObject> ();
+		panel.SetActive (false);
 	}
 
 }

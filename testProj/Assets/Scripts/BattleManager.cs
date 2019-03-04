@@ -229,11 +229,29 @@ public class BattleManager : GameManager_1 {
 	}
 
 	public IEnumerator SetupTurnOrder(List<GameObject> battleOrder){
-		//Put in order of Speed Stat later
-		battleOrder.Add (playerObj);
+		int tempSpd = 0;
+		bool inserted = false;
+
+		// Sort enemies in descending order based on Speed Stat
+		enemyList.Sort ((e2,e1)=>e2.GetComponent<EnemiesScipt> ().speed.CompareTo(e2.GetComponent<EnemiesScipt> ().speed));
+
+		// Add enemies to battle order and track where to insert the player (based on speed stat).
 		foreach(GameObject enemy in enemyList){
+			Debug.Log ("Enemy Speed: " + enemy.GetComponent<EnemiesScipt> ().speed);
+			tempSpd = enemy.GetComponent<EnemiesScipt> ().speed;
+			if (!inserted && playerObj.GetComponent<PlayerScript> ().getSpeed () >= tempSpd) {
+				battleOrder.Add (playerObj);
+				inserted = true;
+			}
 			battleOrder.Add(enemy);
 		}
+		if (!inserted) {
+			battleOrder.Add (playerObj);
+			inserted = true;
+		}
+
+
+
 			
 		yield return null;
 	}
