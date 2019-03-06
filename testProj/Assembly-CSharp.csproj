@@ -600,7 +600,7 @@
      <Compile Include="Assets\Scripts\GameManager_1.cs" />
      <Compile Include="Assets\Scripts\GridScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
-     <Compile Include="Assets\Scripts\SaveState_Script.cs" />
+     <Compile Include="Assets\Scripts\SaveStateScript.cs" />
      <Compile Include="Assets\Scripts\SlimeScript.cs" />
      <Compile Include="Assets\Scripts\SwitchScenes.cs" />
      <None Include="Assets\Fungus\Thirdparty\ThirdPartyNotices.txt" />

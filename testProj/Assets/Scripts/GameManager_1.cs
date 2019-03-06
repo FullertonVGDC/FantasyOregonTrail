@@ -36,7 +36,11 @@ public class GameManager_1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		logList = new List<string>(); // refresh List
-		playerinfo.currPos = startPos; // replace with last saved location
+		//SaveStateScript.saveControl.Load(playerinfo.setMaxHealth(),playerinfo.setMaxStamina(),playerinfo.setStrength(),playerinfo.setSpeed(),playerinfo.setRenown(),startPos,playerinfo.upgrades);
+		SaveStateScript.saveControl.Load(playerinfo);
+		//playerinfo.currPos = startPos; // replace with last saved location
+		playerObj.transform.SetPositionAndRotation (grid.CellToWorld(playerinfo.currPos), Quaternion.identity);
+		//mainCam.transform.position = playerObj.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -90,6 +94,7 @@ public class GameManager_1 : MonoBehaviour {
 				enterTownBTN.gameObject.SetActive(false); 
 			}
 			//move player
+			Debug.Log("Cell Point: " + cellPoint);
 			playerObj.transform.SetPositionAndRotation (cellPoint, Quaternion.identity);
 			playerinfo.currPos = gridinfo.clickedPos;
 			//add player time
@@ -142,7 +147,7 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_1": //town
 			playerinfo.setStamina (playerinfo.getMaxStamina());
 			playerinfo.setHealth (playerinfo.getMaxHealth());
-			//SaveState.saveControl.Save();
+			SaveStateScript.saveControl.Save(playerinfo.getMaxHealth(),playerinfo.getMaxStamina(),playerinfo.getStrength(),playerinfo.getSpeed(),playerinfo.getRenown(),playerinfo.currPos,playerinfo.upgrades);
 			enterTownBTN.gameObject.SetActive(true);
 			break;
 		case "hexart_1_3": //hills

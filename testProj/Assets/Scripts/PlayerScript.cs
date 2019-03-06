@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
+
 public class PlayerScript : MonoBehaviour {
 
+	//Variables
+	public static PlayerScript savePlayerControl;
 
 	public Vector3Int currPos;
 	float health = 100;
@@ -18,13 +24,12 @@ public class PlayerScript : MonoBehaviour {
 	float max_stamina = 100;
 	int max_speed = 5;
 
+	// PLAYER FUNCTIONS
+
+
 	//Health Functions
-	public float getMaxHealth(){
-		return max_health;
-	}
-	public float getHealth(){
-		return health;
-	}
+	public float getMaxHealth() { return max_health; }
+	public float getHealth()    { return health; }
 	public void addHealth(float val){
 		health += val;
 		if (health > max_health)
@@ -32,6 +37,7 @@ public class PlayerScript : MonoBehaviour {
 		else if (health < 0)
 			health = 0;
 	}
+	public void setMaxHealth(float val) { max_health = health = val; }
 	public void setHealth(float val){
 		health = val;
 		if (health > max_health)
@@ -52,6 +58,7 @@ public class PlayerScript : MonoBehaviour {
 		else if (stamina < 0)
 			stamina = 0;
 	}
+	public void setMaxStamina(float val) { max_stamina = stamina = val; }
 	public void setStamina(float val){
 		stamina = val;
 		if (stamina > max_stamina)
@@ -63,9 +70,17 @@ public class PlayerScript : MonoBehaviour {
 		return strength;
 	}
 
+	public void setStrength(int val){
+		strength = val;
+	}
+
 	// Speed Functions
 	public int getSpeed(){
 		return speed;
+	}
+
+	public void setSpeed(int val){
+		speed = val;
 	}
 
 
@@ -116,6 +131,14 @@ public class PlayerScript : MonoBehaviour {
 	public void addRenown(int val) {
 		renown += val;
 	}
+	public void setRenown(int val){
+		renown = val;
+	}
+
+
+	#region SAVE CONTROLS
+
+	#endregion
 
 
 }
