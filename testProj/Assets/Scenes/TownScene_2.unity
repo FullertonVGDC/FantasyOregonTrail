@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 784365946}
+  selectedFlowchart: {fileID: 2067402491}
 --- !u!4 &1142995876
 Transform:
   m_ObjectHideFlags: 1
@@ -2291,7 +2291,7 @@ GameObject:
   - component: {fileID: 1613721409}
   - component: {fileID: 1613721408}
   m_Layer: 0
-  m_Name: CharacterCragSlag
+  m_Name: Fungus_CharacterCragSlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2677,7 +2677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -1323.8147, y: 208.80449}
+  scrollPos: {x: -675.53906, y: -10.160918}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -2689,8 +2689,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 2067402606}
-  selectedCommands: []
+  - {fileID: 2067402591}
+  selectedCommands:
+  - {fileID: 2067402590}
   variables: []
   description: 
   stepPause: 0
@@ -2793,7 +2794,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2067402496
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2067402490}
@@ -3011,7 +3012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 962
+    x: 963.7241
     y: 221.72414
     width: 120
     height: 40

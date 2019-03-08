@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
+using Fungus; // Try from other script
 
 public class GameManager_1 : MonoBehaviour {
+	public Flowchart flowchart;
+
 	public int gameTime = 0;
 	public Vector3Int startPos = new Vector3Int (0, 0, 0);
 
@@ -27,6 +30,7 @@ public class GameManager_1 : MonoBehaviour {
 	public int camSpeed = 5;
 
 	private bool battleOver = true;
+	private bool inConversation = false;
 
 	void Awake() {
 		battleMGR = this.GetComponent<BattleManager> ();
@@ -45,6 +49,11 @@ public class GameManager_1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyUp (KeyCode.Y)) {
+			flowchart.ExecuteBlock ("test_block");
+			inConversation = true;
+		}
+
 		if (battleOver && Input.GetMouseButtonUp (0)) {
 			gridinfo.getTile ();
 			movePlayer ();
@@ -88,7 +97,7 @@ public class GameManager_1 : MonoBehaviour {
 	void movePlayer() {
 		Vector3 cellPoint = grid.CellToWorld (gridinfo.clickedPos);
 		//make sure tile is land one space away
-		if ((gridinfo.tileName != "hexart_1_11") && checkPossibleMove(gridinfo.clickedPos)) {
+		if (!inConversation && (gridinfo.tileName != "hexart_1_11") && checkPossibleMove(gridinfo.clickedPos)) {
 			//remove enter town button (will reappear if moving to a town)
 			if(enterTownBTN.IsActive()) { 
 				enterTownBTN.gameObject.SetActive(false); 
@@ -242,4 +251,6 @@ public class GameManager_1 : MonoBehaviour {
 		yield return null;
 	}
 		
+
+	public void endConversation(){ Debug.Log ("convo ended"); inConversation = false; }
 }
