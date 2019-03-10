@@ -26,8 +26,8 @@ public class PlayerScript : MonoBehaviour {
 
 	// PLAYER FUNCTIONS
 
+	#region Health Functions
 
-	//Health Functions
 	public float getMaxHealth() { return max_health; }
 	public float getHealth()    { return health; }
 	public void addHealth(float val){
@@ -43,8 +43,10 @@ public class PlayerScript : MonoBehaviour {
 		if (health > max_health)
 			health = max_health;
 	}
+	#endregion
 
-	//Stamina Functions
+	#region STAMINA Functions
+
 	public float getMaxStamina(){
 		return max_stamina;
 	}
@@ -64,8 +66,10 @@ public class PlayerScript : MonoBehaviour {
 		if (stamina > max_stamina)
 			stamina = max_stamina;
 	}
+	#endregion
 
-	// Strength Functions
+	#region STRENGTH Functions
+
 	public int getStrength(){
 		return strength;
 	}
@@ -73,8 +77,10 @@ public class PlayerScript : MonoBehaviour {
 	public void setStrength(int val){
 		strength = val;
 	}
+	#endregion
 
-	// Speed Functions
+	#region SPEED Functions
+
 	public int getSpeed(){
 		return speed;
 	}
@@ -82,8 +88,9 @@ public class PlayerScript : MonoBehaviour {
 	public void setSpeed(int val){
 		speed = val;
 	}
+	#endregion
 
-
+	#region UPGRADE Functions
 	// Upgrade Handling Functions
 	public void boostStats(){
 		// 6 possible upgrade locations
@@ -123,7 +130,9 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 	}
+	#endregion
 
+	#region RENOWN Functions
 	// Renown Functions
 	public int getRenown(){
 		return renown;
@@ -134,11 +143,8 @@ public class PlayerScript : MonoBehaviour {
 	public void setRenown(int val){
 		renown = val;
 	}
-
-
-	#region SAVE CONTROLS
-
 	#endregion
+
 
 
 }

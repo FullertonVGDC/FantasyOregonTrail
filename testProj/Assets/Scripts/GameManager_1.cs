@@ -18,11 +18,13 @@ public class GameManager_1 : MonoBehaviour {
 	public Tilemap hiddenTiles;
 	protected PlayerScript playerinfo;
 
+	public GameObject lvlLoad;
 	public GameObject pauseMenu;
 	public Text PauseText;
 	List<string> logList;
 	public Text log_whole;
 	public Button enterTownBTN;
+	public Button potionBTN;
 
 	private BattleManager battleMGR;
 
@@ -31,6 +33,8 @@ public class GameManager_1 : MonoBehaviour {
 
 	private bool battleOver = true;
 	private bool inConversation = false;
+
+	public Animator battleTranAnim;
 
 	void Awake() {
 		battleMGR = this.GetComponent<BattleManager> ();
@@ -49,10 +53,7 @@ public class GameManager_1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyUp (KeyCode.Y)) {
-			flowchart.ExecuteBlock ("test_block");
-			inConversation = true;
-		}
+		if (Input.GetKeyUp (KeyCode.Y)) {battleTranAnim.SetTrigger("BattleTranTrigger");}
 
 		if (battleOver && Input.GetMouseButtonUp (0)) {
 			gridinfo.getTile ();
@@ -61,16 +62,7 @@ public class GameManager_1 : MonoBehaviour {
 		}
 
 		if (Input.GetKeyUp (KeyCode.Escape)) {
-			if (pauseMenu.activeSelf)
-				pauseMenu.SetActive (false);
-			else {
-				PauseText.text = "Stats:\nHealth: " + playerinfo.getHealth () + " / " + playerinfo.getMaxHealth ()
-				+ "\nStamina: " + playerinfo.getStamina () + " / " + playerinfo.getMaxStamina ()
-				+ "\nSpeed: " + playerinfo.getSpeed () + "\nStrength: " + playerinfo.getStrength ()
-				+ "\nRenown: " + playerinfo.getRenown ();
-				pauseMenu.SetActive (true);
-			}
-				
+			setPauseMenu ();				
 		}
 
 		//move camera left
@@ -154,8 +146,9 @@ public class GameManager_1 : MonoBehaviour {
 
 		switch (tileName) {
 		case "hexart_1_1": //town
-			playerinfo.setStamina (playerinfo.getMaxStamina());
-			playerinfo.setHealth (playerinfo.getMaxHealth());
+			playerinfo.setStamina (playerinfo.getMaxStamina ());
+			playerinfo.setHealth (playerinfo.getMaxHealth ());
+			potionBTN.interactable = true;
 			SaveStateScript.saveControl.Save(playerinfo.getMaxHealth(),playerinfo.getMaxStamina(),playerinfo.getStrength(),playerinfo.getSpeed(),playerinfo.getRenown(),playerinfo.currPos,playerinfo.upgrades);
 			enterTownBTN.gameObject.SetActive(true);
 			break;
@@ -178,7 +171,8 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_6": // Hidden Cave
 			//reveal hidden space
 			AddLogItem ("You find a hidden Cave!\n");
-			StartCoroutine (BattleControl (tileName));
+			startConversation("CheckCave_1");
+			//StartCoroutine (BattleControl (tileName)); //handled in fightConversation
 			checkHiddenTiles(playerinfo.currPos);
 			break;
 		case "hexart_1_7": //Volcanoes
@@ -205,7 +199,7 @@ public class GameManager_1 : MonoBehaviour {
 				AddLogItem("You simply suck at this. [-10HP]\n");
 			}
 			else if (rand < 30f) //20% chance
-			{	StartCoroutine(BattleControl (tileName)); }
+			{	battleTranAnim.SetTrigger("BattleTranTrigger"); StartCoroutine(BattleControl (tileName)); }
 			break;
 		default:
 			break;
@@ -238,10 +232,12 @@ public class GameManager_1 : MonoBehaviour {
 	public void EnterTownOnClick(){
 		Vector3Int location = playerinfo.currPos;
 		if (location.x==0 && location.y==0) {
-			this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_1");
+			//this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_1");
+			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_1");
 		}
 		else if (location.x == -4 && location.y == -5) {
-			this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_2");
+			//this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_2");
+			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_2");
 		}
 	}
 		
@@ -251,6 +247,28 @@ public class GameManager_1 : MonoBehaviour {
 		yield return null;
 	}
 		
-
+	public void startConversation(string block){ inConversation = true; flowchart.ExecuteBlock (block);	}
 	public void endConversation(){ Debug.Log ("convo ended"); inConversation = false; }
+	public void fightConversation(string tileName){
+		inConversation = false;
+		battleTranAnim.SetTrigger("BattleTranTrigger");
+		StartCoroutine (BattleControl (tileName));
+	}
+
+	public void setPauseMenu(){
+		if (pauseMenu.activeSelf)
+			pauseMenu.SetActive (false);
+		else {
+			PauseText.text = "Stats:\nHealth: " + playerinfo.getHealth () + " / " + playerinfo.getMaxHealth ()
+				+ "\nStamina: " + playerinfo.getStamina () + " / " + playerinfo.getMaxStamina ()
+				+ "\nSpeed: " + playerinfo.getSpeed () + "\nStrength: " + playerinfo.getStrength ()
+				+ "\nRenown: " + playerinfo.getRenown ();
+			pauseMenu.SetActive (true);
+		}
+	}
+
+	public void usePotionOnClick(){
+		playerinfo.addHealth (20);
+		potionBTN.interactable = false;
+	}
 }

@@ -1,14 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SwitchScenes : MonoBehaviour {
 
+	public Animator animator;
+
+	private string levelName;
+
 	public void LoadScene(string name) {
-		SceneManager.LoadScene (sceneName: name);
+		levelName = name;
+		animator.SetTrigger ("FadeOut");
+
 	}
 
+	public void OnFadeComplete () {
+		SceneManager.LoadScene (sceneName: levelName);
+	}
 
 		
 
