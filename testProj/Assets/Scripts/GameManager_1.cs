@@ -32,7 +32,7 @@ public class GameManager_1 : MonoBehaviour {
 	public int camSpeed = 5;
 
 	private bool battleOver = true;
-	private bool inConversation = false;
+	private bool canMove = true;
 
 	public Animator battleTranAnim;
 
@@ -40,15 +40,16 @@ public class GameManager_1 : MonoBehaviour {
 		battleMGR = this.GetComponent<BattleManager> ();
 		gridinfo = grid.GetComponent<GridScript> ();
 		playerinfo = playerObj.GetComponent<PlayerScript> ();
+
+		SaveStateScript.saveControl.Load(playerinfo);
+		//playerinfo.currPos = startPos; // replace with last saved location
+		playerObj.transform.SetPositionAndRotation (grid.CellToWorld(playerinfo.currPos), Quaternion.identity);
+		//mainCam.transform.position = playerObj.transform.position;
 	}
 	// Use this for initialization
 	void Start () {
 		logList = new List<string>(); // refresh List
 		//SaveStateScript.saveControl.Load(playerinfo.setMaxHealth(),playerinfo.setMaxStamina(),playerinfo.setStrength(),playerinfo.setSpeed(),playerinfo.setRenown(),startPos,playerinfo.upgrades);
-		SaveStateScript.saveControl.Load(playerinfo);
-		//playerinfo.currPos = startPos; // replace with last saved location
-		playerObj.transform.SetPositionAndRotation (grid.CellToWorld(playerinfo.currPos), Quaternion.identity);
-		//mainCam.transform.position = playerObj.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -89,7 +90,7 @@ public class GameManager_1 : MonoBehaviour {
 	void movePlayer() {
 		Vector3 cellPoint = grid.CellToWorld (gridinfo.clickedPos);
 		//make sure tile is land one space away
-		if (!inConversation && (gridinfo.tileName != "hexart_1_11") && checkPossibleMove(gridinfo.clickedPos)) {
+		if (canMove && (gridinfo.tileName != "hexart_1_11") && checkPossibleMove(gridinfo.clickedPos)) {
 			//remove enter town button (will reappear if moving to a town)
 			if(enterTownBTN.IsActive()) { 
 				enterTownBTN.gameObject.SetActive(false); 
@@ -247,18 +248,21 @@ public class GameManager_1 : MonoBehaviour {
 		yield return null;
 	}
 		
-	public void startConversation(string block){ inConversation = true; flowchart.ExecuteBlock (block);	}
-	public void endConversation(){ Debug.Log ("convo ended"); inConversation = false; }
+	public void startConversation(string block){ canMove = false; flowchart.ExecuteBlock (block);	}
+	public void endConversation(){ Debug.Log ("convo ended"); canMove = true; }
 	public void fightConversation(string tileName){
-		inConversation = false;
+		canMove = true;
 		battleTranAnim.SetTrigger("BattleTranTrigger");
 		StartCoroutine (BattleControl (tileName));
 	}
 
 	public void setPauseMenu(){
-		if (pauseMenu.activeSelf)
+		if (pauseMenu.activeSelf) {
 			pauseMenu.SetActive (false);
+			canMove = true;
+		}
 		else {
+			canMove = false;
 			PauseText.text = "Stats:\nHealth: " + playerinfo.getHealth () + " / " + playerinfo.getMaxHealth ()
 				+ "\nStamina: " + playerinfo.getStamina () + " / " + playerinfo.getMaxStamina ()
 				+ "\nSpeed: " + playerinfo.getSpeed () + "\nStrength: " + playerinfo.getStrength ()

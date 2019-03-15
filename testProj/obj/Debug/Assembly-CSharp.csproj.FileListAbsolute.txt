@@ -320,3 +320,4 @@ D:\GitHubRepo\CSUF_repo\FantasyOregonTrail\testProj\Temp\bin\Debug\UnityEngine.S
 D:\GitHubRepo\CSUF_repo\FantasyOregonTrail\testProj\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\GitHubRepo\CSUF_repo\FantasyOregonTrail\testProj\obj\Debug\Assembly-CSharp.dll
 D:\GitHubRepo\CSUF_repo\FantasyOregonTrail\testProj\obj\Debug\Assembly-CSharp.pdb
+D:\GitHubRepo\CSUF_repo\FantasyOregonTrail\testProj\Temp\bin\Debug\Facebook.Unity.Settings.dll

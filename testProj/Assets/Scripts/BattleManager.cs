@@ -264,6 +264,7 @@ public class BattleManager : GameManager_1 {
 		}
 		yield return null;
 	}
+
 	// For 1 enemies Turn
 	public IEnumerator EnemyTurn(GameObject currentEnemy) {
 		battleInfo_Text.text = "Enemy Turn";
@@ -273,8 +274,8 @@ public class BattleManager : GameManager_1 {
 		float damage = enemyInfo.Attack1(); // choose attack
 		yield return m_turnWait;
 		StartCoroutine (MovingAnim(currentEnemy, new Vector3(-2,0,0)));
-		playerinfo.addHealth(damage); // example attack
 
+		playerinfo.addHealth(damage); // example attack
 		//or other Attacks...
 
 	}
@@ -406,8 +407,7 @@ public class BattleManager : GameManager_1 {
 
 	public void GameOver(){
 		Debug.Log ("Game Over");
-		//Lose Renown
-		//Move to a town and continue
+		//Reload last town passage
 		SceneManager.LoadScene (sceneName: "WorldMap_Scene");
 	}
 
