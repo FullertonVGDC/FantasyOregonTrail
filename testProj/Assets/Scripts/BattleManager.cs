@@ -322,30 +322,30 @@ public class BattleManager : GameManager_1 {
 	public void Attack1_OnClick(){
 		//deal attack 1 dmg
 		if(isPlayerTurn){
+			isPlayerTurn = false;
 			Debug.Log ("You attack1");
 			StartCoroutine (MovingAnim(playerObj_Battle, new Vector3(2,0,0)));
 			DealDamage (playerinfo.getStrength (), targetEnemy);
 			playerinfo.addStamina (5);
-			isPlayerTurn = false;
 		}
 	}
 	public void Attack2_OnClick(){
 		//deal attack 2 dmg
 		if (isPlayerTurn && playerinfo.getStamina() >= 20) {
+			isPlayerTurn = false;
 			Debug.Log ("You attack2");
 			StartCoroutine (MovingAnim(playerObj_Battle, new Vector3(2,0,0)));
 			playerinfo.addStamina (-20);
 			DealDamage (playerinfo.getStrength()*2, targetEnemy);
-			isPlayerTurn = false;
 		}
 	}
 	public void Attack3_OnClick(){
 		//deal attack 3 dmg
 		if (isPlayerTurn && playerinfo.getStamina() >= 30) {
+			isPlayerTurn = false;
 			Debug.Log ("You attack3");
 			playerinfo.addStamina (-30);
 			playerinfo.addHealth (20);
-			isPlayerTurn = false;
 		}
 	}
 	public void Flee_OnClick(){

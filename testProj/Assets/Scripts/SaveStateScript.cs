@@ -45,7 +45,7 @@ public class SaveStateScript : MonoBehaviour {
 		}
 
 		//Testing features below: uncomment below to reset all info
-		ResetSavedData();
+		//ResetSavedData();
 	}
 
 

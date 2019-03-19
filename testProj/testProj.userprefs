@@ -5,13 +5,13 @@
       <File FileName="Assets\Scripts\SaveStateScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GridScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameManager_1.cs" Line="52" Column="191" />
+      <File FileName="Assets\Scripts\GameManager_1.cs" Line="97" Column="5" />
       <File FileName="Assets\Scripts\BarScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BattleManager.cs" Line="290" Column="6" />
+      <File FileName="Assets\Scripts\BattleManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EnemiesScipt.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EnemyBarScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ButtonHover_Script.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SwitchScenes.cs" Line="17" Column="47" />
+      <File FileName="Assets\Scripts\SwitchScenes.cs" Line="1" Column="1" />
       <File FileName="Assets\Fungus\Scripts\Components\SayDialog.cs" Line="487" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>

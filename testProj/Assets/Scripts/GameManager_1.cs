@@ -90,7 +90,7 @@ public class GameManager_1 : MonoBehaviour {
 	void movePlayer() {
 		Vector3 cellPoint = grid.CellToWorld (gridinfo.clickedPos);
 		//make sure tile is land one space away
-		if (canMove && (gridinfo.tileName != "hexart_1_11") && checkPossibleMove(gridinfo.clickedPos)) {
+		if (canMove && (gridinfo.tileName != "hexart_1_11") && (gridinfo.tileName != "hexart_1_12") && checkPossibleMove(gridinfo.clickedPos)) {
 			//remove enter town button (will reappear if moving to a town)
 			if(enterTownBTN.IsActive()) { 
 				enterTownBTN.gameObject.SetActive(false); 
