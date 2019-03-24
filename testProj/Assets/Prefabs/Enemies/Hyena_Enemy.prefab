@@ -56,7 +56,7 @@ MonoBehaviour:
   enemy_id: 1
   health: 20
   maxHealth: 20
-  strength: 3
+  strength: 6
   speed: 6
 --- !u!114 &114876639767219682
 MonoBehaviour:

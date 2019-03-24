@@ -1193,11 +1193,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114846677258702348, guid: 1351f9af736a7544da3d5b3dfb3c4b7f,
-        type: 2}
-      propertyPath: portraits.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4179912497208936, guid: 1351f9af736a7544da3d5b3dfb3c4b7f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1229,17 +1224,6 @@ Prefab:
     - target: {fileID: 4179912497208936, guid: 1351f9af736a7544da3d5b3dfb3c4b7f, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114846677258702348, guid: 1351f9af736a7544da3d5b3dfb3c4b7f,
-        type: 2}
-      propertyPath: portraits.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: e3ebde5ffe31bda4aa08024ebb233d47,
-        type: 3}
-    - target: {fileID: 114846677258702348, guid: 1351f9af736a7544da3d5b3dfb3c4b7f,
-        type: 2}
-      propertyPath: portraitsFace
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1351f9af736a7544da3d5b3dfb3c4b7f, type: 2}
@@ -1548,7 +1532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 0}
+  selectedFlowchart: {fileID: 1417549988}
 --- !u!4 &1142995876
 Transform:
   m_ObjectHideFlags: 1
@@ -2117,6 +2101,28 @@ GameObject:
   - component: {fileID: 1417550005}
   - component: {fileID: 1417550020}
   - component: {fileID: 1417550021}
+  - component: {fileID: 1417550029}
+  - component: {fileID: 1417550027}
+  - component: {fileID: 1417550026}
+  - component: {fileID: 1417550025}
+  - component: {fileID: 1417550024}
+  - component: {fileID: 1417550023}
+  - component: {fileID: 1417550022}
+  - component: {fileID: 1417550034}
+  - component: {fileID: 1417550028}
+  - component: {fileID: 1417550030}
+  - component: {fileID: 1417550031}
+  - component: {fileID: 1417550032}
+  - component: {fileID: 1417550033}
+  - component: {fileID: 1417550037}
+  - component: {fileID: 1417550036}
+  - component: {fileID: 1417550035}
+  - component: {fileID: 1417550038}
+  - component: {fileID: 1417550039}
+  - component: {fileID: 1417550040}
+  - component: {fileID: 1417550041}
+  - component: {fileID: 1417550042}
+  - component: {fileID: 1417550043}
   m_Layer: 0
   m_Name: FL_Opening
   m_TagString: Untagged
@@ -2140,7 +2146,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1193.7098
     y: 69.03555
-    width: 124.39022
+    width: 120.90903
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2165,20 +2171,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -844.26465, y: 60.997772}
+  scrollPos: {x: -697.5507, y: 59.99589}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.82000023
+  zoom: 0.5500005
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1417550029}
   selectedCommands: []
-  variables: []
+  variables:
+  - {fileID: 1417550027}
+  - {fileID: 1417550026}
+  - {fileID: 1417550025}
+  - {fileID: 1417550024}
+  - {fileID: 1417550023}
+  - {fileID: 1417550022}
+  - {fileID: 1417550037}
+  - {fileID: 1417550036}
+  - {fileID: 1417550035}
+  - {fileID: 1417550041}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -2950,7 +2967,7 @@ MonoBehaviour:
   itemId: 309
   indentLevel: 0
   targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 1417549990}
+  targetBlock: {fileID: 1417550029}
   startLabel:
     stringRef: {fileID: 0}
     stringVal: 
@@ -2969,9 +2986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 941.2156
-    y: 44.002167
-    width: 124.39022
+    x: 943.0339
+    y: 64.00215
+    width: 120.90903
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3021,6 +3038,351 @@ MonoBehaviour:
     floatRef: {fileID: 0}
     floatVal: 2
   durationOLD: 0
+--- !u!114 &1417550022
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: A_talked
+  value: 0
+--- !u!114 &1417550023
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: C_talked
+  value: 0
+--- !u!114 &1417550024
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: S_talked
+  value: 0
+--- !u!114 &1417550025
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: A_Joins
+  value: 0
+--- !u!114 &1417550026
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: C_Joins
+  value: 0
+--- !u!114 &1417550027
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: S_Joins
+  value: 0
+--- !u!114 &1417550028
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 330
+  indentLevel: 0
+  key: talkedToAlafare
+  variable: {fileID: 1417550022}
+--- !u!114 &1417550029
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 722.42816
+    y: 113.75253
+    width: 188.1817
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 327
+  blockName: RESET ALL FUNGUS VARS
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1417550034}
+  - {fileID: 1417550033}
+  - {fileID: 1417550032}
+  - {fileID: 1417550031}
+  - {fileID: 1417550030}
+  - {fileID: 1417550028}
+  - {fileID: 1417550038}
+  - {fileID: 1417550040}
+  - {fileID: 1417550039}
+  - {fileID: 1417550042}
+  - {fileID: 1417550043}
+--- !u!114 &1417550030
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 331
+  indentLevel: 0
+  key: talkedToCrag
+  variable: {fileID: 1417550023}
+--- !u!114 &1417550031
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 332
+  indentLevel: 0
+  key: talkedToSkaen
+  variable: {fileID: 1417550024}
+--- !u!114 &1417550032
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 333
+  indentLevel: 0
+  key: AlafareJoins
+  variable: {fileID: 1417550025}
+--- !u!114 &1417550033
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 334
+  indentLevel: 0
+  key: CragJoins
+  variable: {fileID: 1417550026}
+--- !u!114 &1417550034
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 329
+  indentLevel: 0
+  key: SkaenJoins
+  variable: {fileID: 1417550027}
+--- !u!114 &1417550035
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: A_campConv
+  value: 0
+--- !u!114 &1417550036
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: C_campConv
+  value: 0
+--- !u!114 &1417550037
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: S_campConv
+  value: 0
+--- !u!114 &1417550038
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 335
+  indentLevel: 0
+  key: S_CampConv
+  variable: {fileID: 1417550037}
+--- !u!114 &1417550039
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 336
+  indentLevel: 0
+  key: A_CampConv
+  variable: {fileID: 1417550035}
+--- !u!114 &1417550040
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 337
+  indentLevel: 0
+  key: C_CampConv
+  variable: {fileID: 1417550036}
+--- !u!114 &1417550041
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: MSF
+  value: 0
+--- !u!114 &1417550042
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 338
+  indentLevel: 0
+  key: MainStoryFights
+  variable: {fileID: 1417550041}
+--- !u!114 &1417550043
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 339
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 1417549990}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
 --- !u!114 &1417550080
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3125,7 +3487,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 1180862397}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: e3ebde5ffe31bda4aa08024ebb233d47, type: 3}
+  portrait: {fileID: 21300000, guid: c1c01673794c81144ab55ad28327eaed, type: 3}
   offset: 0
   fromPosition: {fileID: 413017285}
   toPosition: {fileID: 63697792}

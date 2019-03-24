@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BattleManager : GameManager_1 {
-	public Text DEMOTEXT; //for demo
 
 	public Camera battleCam;
 	public GameObject battlePanel;
@@ -16,6 +15,7 @@ public class BattleManager : GameManager_1 {
 	public Text battleInfo_Text;
 	public bool forTheWin = false;
 	public bool isfleeing = false;
+	public GameObject background;
 
 	private int enemyTotal = 0;
 	public GameObject targetEnemy;
@@ -78,6 +78,7 @@ public class BattleManager : GameManager_1 {
 	public IEnumerator SetupBattle(string battleLoc){
 		enemyList = new List<GameObject>(); // refresh List
 		yield return StartCoroutine (SetupEnemies(battleLoc, enemyList));
+		background.GetComponent<BackgroundManager> ().SetBackground (battleLoc); //chanage Background accordingly
 		yield return StartCoroutine(SetupUI());
 		yield return StartCoroutine(StartBattle(enemyList));
 		yield return StartCoroutine (EndBattle (battleLoc));
@@ -90,10 +91,10 @@ public class BattleManager : GameManager_1 {
 
 		//Enemy_1
 		enemy_1 = Instantiate(ChooseMonster(battleLoc));
-		if (battleLoc == "hexart_1_8") {enemyTotal = 2;  forTheWin = true;} // for DEMO
+		if (battleLoc == "hexart_1_8") {enemyTotal = 2;  }
 		enemyBar_1.setEnemyBar(enemy_1);
 		enemy_1.transform.parent = Fighter_Space.transform;
-		enemy_1.transform.localPosition = new Vector3 (-8, -10, 0);
+		enemy_1.transform.localPosition = new Vector3 (-8, -9.5f, 0);
 		enemy_1.GetComponent<EnemiesScipt> ().setEnemyNum (1);
 		targetEnemy = enemy_1;
 		targetIndex = 0;
@@ -102,12 +103,12 @@ public class BattleManager : GameManager_1 {
 
 		if (enemyTotal == 2) {
 			//Enemy_2
-			if (battleLoc == "hexart_1_8") {enemy_2 = Instantiate(gnollMonster);}  // for DEMO
+			if (battleLoc == "hexart_1_8") {enemy_2 = Instantiate(gnollMonster);}
 			else
 				enemy_2 = Instantiate(ChooseMonster(battleLoc));
 			enemyBar_2.setEnemyBar (enemy_2);
 			enemy_2.transform.parent = Fighter_Space.transform;
-			enemy_2.transform.localPosition = new Vector3 (-6, -11, 0);
+			enemy_2.transform.localPosition = new Vector3 (-5, -10.5f, 0);
 			enemy_2.GetComponent<EnemiesScipt> ().setEnemyNum (2);
 			enemy_2.GetComponent<SpriteRenderer> ().sortingOrder = 1;
 			enemyList.Add (enemy_2);
@@ -195,8 +196,6 @@ public class BattleManager : GameManager_1 {
 
 	#region TurnControl
 	public IEnumerator StartBattle(List<GameObject> enemyList){
-		//turnOrder = new List<GameObject>();
-		//StartCoroutine(SetupTurnOrder(turnOrder));
 
 		battleInProgress = true;
 		//Loop the Battle Here
@@ -214,7 +213,6 @@ public class BattleManager : GameManager_1 {
 				yield return null;
 			}
 			else if (fighter.tag == "Player") {
-				isPlayerTurn = true;
 				yield return StartCoroutine (PlayerTurn ());
 				yield return StartCoroutine (checkBattleOver ());
 				if (!battleInProgress)
@@ -259,6 +257,7 @@ public class BattleManager : GameManager_1 {
 	public IEnumerator PlayerTurn() {
 		Debug.Log ("Players Turn");
 		battleInfo_Text.text = "Vigil's Turn";
+		isPlayerTurn = true;
 		while(isPlayerTurn){
 			yield return null;
 		}
@@ -286,7 +285,6 @@ public class BattleManager : GameManager_1 {
 			battleInfo_Text.text = "Battle Over";
 			Debug.Log ("You won the battle!");
 			playerinfo.addRenown (100);
-			if (forTheWin) {Debug.Log ("You beat the game");  DEMOTEXT.gameObject.SetActive(true);} // for DEMO
 			yield return m_turnWait;
 		}
 		else if (playerinfo.getHealth () <= 0){

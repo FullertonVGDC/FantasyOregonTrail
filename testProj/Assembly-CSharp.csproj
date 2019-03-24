@@ -592,6 +592,8 @@
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrCacheSurrogate.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrParams.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrSynth.cs" />
+     <Compile Include="Assets\Scripts\AllyScript.cs" />
+     <Compile Include="Assets\Scripts\BackgroundManager.cs" />
      <Compile Include="Assets\Scripts\BarScript.cs" />
      <Compile Include="Assets\Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\ButtonHover_Script.cs" />

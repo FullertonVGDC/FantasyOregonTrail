@@ -44,7 +44,7 @@ public class GameManager_1 : MonoBehaviour {
 		SaveStateScript.saveControl.Load(playerinfo);
 		//playerinfo.currPos = startPos; // replace with last saved location
 		playerObj.transform.SetPositionAndRotation (grid.CellToWorld(playerinfo.currPos), Quaternion.identity);
-		//mainCam.transform.position = playerObj.transform.position;
+		mainCam.transform.position = playerObj.transform.position + new Vector3(0,0,-1);
 	}
 	// Use this for initialization
 	void Start () {
@@ -187,7 +187,13 @@ public class GameManager_1 : MonoBehaviour {
 			{	StartCoroutine(BattleControl (tileName)); }
 			break;
 		case "hexart_1_8": //dungeon
-			StartCoroutine(BattleControl (tileName));
+			flowchart.ExecuteBlock ("LoadVariables");
+			int prog = flowchart.GetIntegerVariable("StoryProg");
+			if(prog < 3)
+				startConversation("WL_notReady");
+			else
+				startConversation("WL_start");
+				//StartCoroutine(BattleControl (tileName)); // will auto trigger from flowchart block
 			break;
 		case "hexart_1_9": //forest
 			if (rand < 10f) //10% chance
@@ -208,7 +214,7 @@ public class GameManager_1 : MonoBehaviour {
 	}
 
 	// Access BattleManager script to control battle flow
-	private IEnumerator BattleControl(string battleLoc) {
+	private IEnumerator BattleControl(string battleLoc, bool isStory = false) {
 		AddLogItem("Fight for your right to party!\n");
 		log_whole.transform.parent.gameObject.SetActive (false);
 		battleOver = false;
@@ -217,6 +223,24 @@ public class GameManager_1 : MonoBehaviour {
 
 		AddLogItem("The Battle has ended!\n");
 		battleOver = true;
+		if (isStory) // Possibly use Enums to determine which story
+			StartCoroutine(storyProgression ());
+	}
+
+	public IEnumerator storyProgression(){
+		flowchart.ExecuteBlock ("LoadVariables");
+		int prog = flowchart.GetIntegerVariable ("StoryProg");
+		switch (prog) {
+		case 2:
+			startConversation ("GC_BattleOver");
+			break;
+		case 4:
+			startConversation ("WL_AfterBattle");
+			break;
+		default:
+			break;
+		}
+		yield return null;
 	}
 
 	public void AddLogItem(string txt=""){
@@ -233,12 +257,13 @@ public class GameManager_1 : MonoBehaviour {
 	public void EnterTownOnClick(){
 		Vector3Int location = playerinfo.currPos;
 		if (location.x==0 && location.y==0) {
-			//this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_1");
 			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_1");
 		}
 		else if (location.x == -4 && location.y == -5) {
-			//this.GetComponent<SwitchScenes> ().LoadScene ("TownScene_2");
 			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_2");
+		}
+		else if (location.x == 8 && location.y == -7) {
+			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_3");
 		}
 	}
 		
@@ -250,10 +275,10 @@ public class GameManager_1 : MonoBehaviour {
 		
 	public void startConversation(string block){ canMove = false; flowchart.ExecuteBlock (block);	}
 	public void endConversation(){ Debug.Log ("convo ended"); canMove = true; }
-	public void fightConversation(string tileName){
+	public void fightConversation(string tileName, bool isStory = false){
 		canMove = true;
 		battleTranAnim.SetTrigger("BattleTranTrigger");
-		StartCoroutine (BattleControl (tileName));
+		StartCoroutine (BattleControl (tileName, isStory));
 	}
 
 	public void setPauseMenu(){

@@ -54,7 +54,8 @@ MonoBehaviour:
   nameText: Chaitanya
   nameColor: {r: 0, g: 1, b: 0.98136926, a: 1}
   soundEffect: {fileID: 0}
-  portraits: []
-  portraitsFace: 0
+  portraits:
+  - {fileID: 21300000, guid: c1c01673794c81144ab55ad28327eaed, type: 3}
+  portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 
