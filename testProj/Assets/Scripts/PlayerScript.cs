@@ -107,7 +107,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 		else if (currPos.x==5 && currPos.y==11 && !upgrades[2]) {
 			upgrades [2] = true;
-			health += 50; // elixir of health [NEEDS TO BE IMPLEMENTED]
+			health += 50; // elixir of health
 			Debug.Log("Upgrade 3 Acquired");
 		}
 		else if (currPos.x==9 && currPos.y==14 && !upgrades[3]) {

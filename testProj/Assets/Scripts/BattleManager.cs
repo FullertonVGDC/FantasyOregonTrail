@@ -94,11 +94,11 @@ public class BattleManager : GameManager_1 {
 		if (battleLoc == "hexart_1_8") {enemyTotal = 2;  }
 		enemyBar_1.setEnemyBar(enemy_1);
 		enemy_1.transform.parent = Fighter_Space.transform;
-		enemy_1.transform.localPosition = new Vector3 (-8, -9.5f, 0);
+		enemy_1.transform.localPosition = new Vector3 (-8, -10.5f, 0);
 		enemy_1.GetComponent<EnemiesScipt> ().setEnemyNum (1);
 		targetEnemy = enemy_1;
 		targetIndex = 0;
-		targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,4,0);
+		targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,3.5f,0);
 		enemyList.Add (enemy_1);
 
 		if (enemyTotal == 2) {
@@ -108,7 +108,7 @@ public class BattleManager : GameManager_1 {
 				enemy_2 = Instantiate(ChooseMonster(battleLoc));
 			enemyBar_2.setEnemyBar (enemy_2);
 			enemy_2.transform.parent = Fighter_Space.transform;
-			enemy_2.transform.localPosition = new Vector3 (-5, -10.5f, 0);
+			enemy_2.transform.localPosition = new Vector3 (-5, -12f, 0);
 			enemy_2.GetComponent<EnemiesScipt> ().setEnemyNum (2);
 			enemy_2.GetComponent<SpriteRenderer> ().sortingOrder = 1;
 			enemyList.Add (enemy_2);
@@ -125,6 +125,8 @@ public class BattleManager : GameManager_1 {
 
 		switch (location) 
 		{
+		case "hexart_1_1": //town
+			return gnollMonster;
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grasslands
 			if (rand < 50)
@@ -170,7 +172,7 @@ public class BattleManager : GameManager_1 {
 		default:
 			break;
 		}
-		return banditMonster;
+		return gnollMonster;
 	}
 
 	//Turn on Proper camera & UI
@@ -188,6 +190,8 @@ public class BattleManager : GameManager_1 {
 
 		if (battleLoc == "hexart_1_6" && !isfleeing) {
 			playerinfo.boostStats();
+			//call Cave Ending Dialogue
+			startConversation(this.GetComponent<CaveManager>().selectCaveEnd(playerinfo.currPos));
 		}
 		isfleeing = false;
 		yield return null;
@@ -381,7 +385,7 @@ public class BattleManager : GameManager_1 {
 				targetIndex = 0;
 				targetEnemy = enemyList [targetIndex];
 			}
-			targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,4,0);
+			targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,3.5f,0);
 			Debug.Log ("New Target: " + targetEnemy);
 		}
 	}

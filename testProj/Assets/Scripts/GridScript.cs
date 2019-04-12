@@ -9,6 +9,8 @@ public class GridScript : MonoBehaviour {
 	Grid grid;
 	public Vector3Int clickedPos;
 	public string tileName;
+	[HideInInspector]
+	public Vector3Int prevPos;
 
 	// Use this for initialization
 	void Start () {
@@ -31,8 +33,13 @@ public class GridScript : MonoBehaviour {
 		Vector3Int position = grid.WorldToCell (worldPoint);
 		//Debug.Log ("position = " + position);
 		//Debug.Log(map2.GetTile(position).name);
+		prevPos = clickedPos;
 		clickedPos = position;
 		tileName = map2.GetTile (position).name;
+	}
+
+	public void resetPrevTile(){
+		clickedPos = prevPos;
 	}
 
 	// returns int value that represents time it takes to travel across

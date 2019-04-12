@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 using Fungus; // Try from other script
 
 public class GameManager_1 : MonoBehaviour {
+
 	public Flowchart flowchart;
 
 	public int gameTime = 0;
@@ -172,7 +173,8 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_6": // Hidden Cave
 			//reveal hidden space
 			AddLogItem ("You find a hidden Cave!\n");
-			startConversation("CheckCave_1");
+			string cave = this.GetComponent<CaveManager>().selectCaveStart(playerinfo.currPos);
+			startConversation(cave);
 			//StartCoroutine (BattleControl (tileName)); //handled in fightConversation
 			checkHiddenTiles(playerinfo.currPos);
 			break;
@@ -189,8 +191,10 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_8": //dungeon
 			flowchart.ExecuteBlock ("LoadVariables");
 			int prog = flowchart.GetIntegerVariable("StoryProg");
-			if(prog < 3)
+			if(prog < 3){
 				startConversation("WL_notReady");
+				moveToPrev();
+			}
 			else
 				startConversation("WL_start");
 				//StartCoroutine(BattleControl (tileName)); // will auto trigger from flowchart block
@@ -219,10 +223,10 @@ public class GameManager_1 : MonoBehaviour {
 		log_whole.transform.parent.gameObject.SetActive (false);
 		battleOver = false;
 		yield return StartCoroutine(battleMGR.SetupBattle (battleLoc)); //Check if stays here
-		log_whole.transform.parent.gameObject.SetActive (true);
-
+		//log_whole.transform.parent.gameObject.SetActive (true);
 		AddLogItem("The Battle has ended!\n");
 		battleOver = true;
+
 		if (isStory) // Possibly use Enums to determine which story
 			StartCoroutine(storyProgression ());
 	}
@@ -294,6 +298,13 @@ public class GameManager_1 : MonoBehaviour {
 				+ "\nRenown: " + playerinfo.getRenown ();
 			pauseMenu.SetActive (true);
 		}
+	}
+
+	public void moveToPrev(){
+		Vector3 cellPoint = grid.CellToWorld (gridinfo.prevPos);
+		playerObj.transform.SetPositionAndRotation (cellPoint, Quaternion.identity);
+		playerinfo.currPos = gridinfo.prevPos;
+		gridinfo.resetPrevTile ();
 	}
 
 	public void usePotionOnClick(){

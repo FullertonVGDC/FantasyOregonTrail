@@ -597,6 +597,7 @@
      <Compile Include="Assets\Scripts\BarScript.cs" />
      <Compile Include="Assets\Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\ButtonHover_Script.cs" />
+     <Compile Include="Assets\Scripts\CaveManager.cs" />
      <Compile Include="Assets\Scripts\EnemiesScipt.cs" />
      <Compile Include="Assets\Scripts\EnemyBarScript.cs" />
      <Compile Include="Assets\Scripts\GameManager_1.cs" />
