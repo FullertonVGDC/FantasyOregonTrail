@@ -154,6 +154,16 @@ public class GameManager_1 : MonoBehaviour {
 			SaveStateScript.saveControl.Save(playerinfo.getMaxHealth(),playerinfo.getMaxStamina(),playerinfo.getStrength(),playerinfo.getSpeed(),playerinfo.getRenown(),playerinfo.currPos,playerinfo.upgrades);
 			enterTownBTN.gameObject.SetActive(true);
 			break;
+		case "hexart_1_2": // Ice Castle
+			flowchart.ExecuteBlock ("LoadVariables");
+			int prog2 = flowchart.GetIntegerVariable("StoryProg");
+			if(prog2 < 5){
+				startConversation("WL_notReady");
+				moveToPrev();
+			}
+			else
+				startConversation("Final_1");
+			break;
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grassland
 			if (rand < 10f) //10% chance
@@ -195,7 +205,7 @@ public class GameManager_1 : MonoBehaviour {
 				startConversation("WL_notReady");
 				moveToPrev();
 			}
-			else
+			else if (prog == 3)
 				startConversation("WL_start");
 				//StartCoroutine(BattleControl (tileName)); // will auto trigger from flowchart block
 			break;
@@ -241,6 +251,15 @@ public class GameManager_1 : MonoBehaviour {
 		case 4:
 			startConversation ("WL_AfterBattle");
 			break;
+		case 6:
+			startConversation ("Final_2");
+			break;
+		case 7:
+			startConversation ("Final_3");
+			break;
+		case 8:
+			startConversation ("Final_4");
+			break;
 		default:
 			break;
 		}
@@ -268,6 +287,12 @@ public class GameManager_1 : MonoBehaviour {
 		}
 		else if (location.x == 8 && location.y == -7) {
 			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_3");
+		}
+		else if (location.x == 2 && location.y == 5) {
+			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_4");
+		}
+		else if (location.x == -4 && location.y == 23) {
+			lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("TownScene_5");
 		}
 	}
 		

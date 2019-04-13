@@ -572,7 +572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &224998016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2123,6 +2123,9 @@ GameObject:
   - component: {fileID: 1417550041}
   - component: {fileID: 1417550042}
   - component: {fileID: 1417550043}
+  - component: {fileID: 1417550044}
+  - component: {fileID: 1417550045}
+  - component: {fileID: 1417550046}
   m_Layer: 0
   m_Name: FL_Opening
   m_TagString: Untagged
@@ -2171,7 +2174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -697.5507, y: 59.99589}
+  scrollPos: {x: -675.7327, y: 72.72319}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -2184,7 +2187,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1417550029}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1417550046}
   variables:
   - {fileID: 1417550027}
   - {fileID: 1417550026}
@@ -2196,6 +2200,7 @@ MonoBehaviour:
   - {fileID: 1417550036}
   - {fileID: 1417550035}
   - {fileID: 1417550041}
+  - {fileID: 1417550045}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -2987,7 +2992,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 943.0339
-    y: 64.00215
+    y: 65.820335
     width: 120.90903
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3171,6 +3176,8 @@ MonoBehaviour:
   - {fileID: 1417550040}
   - {fileID: 1417550039}
   - {fileID: 1417550042}
+  - {fileID: 1417550046}
+  - {fileID: 1417550044}
   - {fileID: 1417550043}
 --- !u!114 &1417550030
 MonoBehaviour:
@@ -3383,6 +3390,62 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &1417550044
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 340
+  indentLevel: 0
+  description: RESET SAVE DATA
+  targetObject: {fileID: 0}
+  targetComponentAssemblyName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Transform
+  targetMethod: 
+  targetMethodText: 
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: 
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1417550045
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 0
+  key: HeroVillain
+  value: 0
+--- !u!114 &1417550046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417549986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 341
+  indentLevel: 0
+  key: Karma
+  variable: {fileID: 1417550045}
 --- !u!114 &1417550080
 MonoBehaviour:
   m_ObjectHideFlags: 2

@@ -106,7 +106,7 @@ public class SaveStateScript : MonoBehaviour {
 		
 
 
-	void ResetSavedData()
+	public void ResetSavedData()
 	{
 
 		/*

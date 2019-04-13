@@ -18,6 +18,21 @@ EditorBuildSettings:
     path: Assets/Scenes/WorldMap_Scene.unity
     guid: ad411e6fc0fa24c4cba081fa436a6849
   - enabled: 1
+    path: Assets/Scenes/Campfire_Scene.unity
+    guid: 520c4f2a2ba4e6e4c9655ba390eb1e5b
+  - enabled: 1
     path: Assets/Scenes/TownScene_2.unity
     guid: b55e5df132e49d24383dc49997d64bb2
+  - enabled: 1
+    path: Assets/Scenes/TownScene_3.unity
+    guid: e2c492af3b8b5fa45ba7161b2bafdfcf
+  - enabled: 1
+    path: Assets/Scenes/TownScene_4.unity
+    guid: 8c03a064ada16324886a1f115e69d70b
+  - enabled: 1
+    path: Assets/Scenes/TownScene_5.unity
+    guid: a4416b655d7e48a4eac3c42980b1ac44
+  - enabled: 1
+    path: Assets/Scenes/Final_Scene.unity
+    guid: 695c2800cf9bcb04288b3d1296f5a06c
   m_configObjects: {}
