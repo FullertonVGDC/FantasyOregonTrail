@@ -65,10 +65,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_id: 1
-  health: 30
-  maxHealth: 30
-  strength: 7
-  speed: 5
+  health: 130
+  maxHealth: 130
+  strength: 8
+  speed: 7
 --- !u!212 &212419608452734726
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 94933c3e1673d1540a54b9cd19994447, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1c01673794c81144ab55ad28327eaed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

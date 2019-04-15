@@ -2689,7 +2689,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 2067402628}
   selectedCommands:
-  - {fileID: 2067402634}
+  - {fileID: 2067402633}
   variables: []
   description: 
   stepPause: 0
@@ -2919,8 +2919,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 208
   indentLevel: 0
-  storyText: I've never been across the waters to the North West, but I've heard of
-    a treasure that lies in the mountains.
+  storyText: They say there's a cave in the forest to the East...Why would there be
+    a cave in the forest?
   description: 
   character: {fileID: 752601344}
   portrait: {fileID: 0}

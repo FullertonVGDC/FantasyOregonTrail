@@ -40,7 +40,7 @@ public class BattleManager : GameManager_1 {
 	public GameObject slimeMonster;
 	public GameObject hyenaMonster;
 	public GameObject gnollMonster;
-	public GameObject frostGoatMonster;
+	public GameObject iceQueenMonster;
 	public GameObject banditMonster;
 	public GameObject mimicMonster;
 	public GameObject fireElemMonster;
@@ -127,6 +127,8 @@ public class BattleManager : GameManager_1 {
 		{
 		case "hexart_1_1": //town
 			return gnollMonster;
+		case "hexart_1_2": //palace
+			return iceQueenMonster;
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grasslands
 			if (rand < 50)
@@ -154,7 +156,6 @@ public class BattleManager : GameManager_1 {
 			break;
 		case "hexart_1_8": //Boss Dungeon
 			return bossMonster;
-			break;
 		case "hexart_1_9": //forests
 			if (rand < 50)
 			{	return banditMonster;  }
