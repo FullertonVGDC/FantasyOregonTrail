@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour {
 	int strength = 5;
 	int speed = 5;
 	int renown = 0; // form of experience
+	float evadeChance = 0;
 
 	public bool[] upgrades = new bool[6];
 
@@ -87,6 +88,16 @@ public class PlayerScript : MonoBehaviour {
 
 	public void setSpeed(int val){
 		speed = val;
+	}
+	#endregion
+
+	#region EVADE Functions
+
+	public float getEvade(){
+		return evadeChance;
+	}
+	public void setEvade(float val){
+		evadeChance = val;
 	}
 	#endregion
 

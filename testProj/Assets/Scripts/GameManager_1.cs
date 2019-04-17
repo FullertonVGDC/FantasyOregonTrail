@@ -37,6 +37,7 @@ public class GameManager_1 : MonoBehaviour {
 
 	public Animator battleTranAnim;
 
+
 	void Awake() {
 		battleMGR = this.GetComponent<BattleManager> ();
 		gridinfo = grid.GetComponent<GridScript> ();
@@ -90,8 +91,18 @@ public class GameManager_1 : MonoBehaviour {
 
 	void movePlayer() {
 		Vector3 cellPoint = grid.CellToWorld (gridinfo.clickedPos);
+		bool stop = false;
+		if (gridinfo.tileName == "hexart_1_8") {
+			flowchart.ExecuteBlock ("LoadVariables");
+			int prog = flowchart.GetIntegerVariable ("StoryProg");
+			if (prog < 3) {
+				startConversation ("WL_notReady");
+				//moveToPrev ();
+				stop = true;
+			}
+		}
 		//make sure tile is land one space away
-		if (canMove && (gridinfo.tileName != "hexart_1_11") && (gridinfo.tileName != "hexart_1_12") && checkPossibleMove(gridinfo.clickedPos)) {
+		if (canMove && (gridinfo.tileName != "hexart_1_11") && (gridinfo.tileName != "hexart_1_12") && checkPossibleMove(gridinfo.clickedPos) && !stop) {
 			//remove enter town button (will reappear if moving to a town)
 			if(enterTownBTN.IsActive()) { 
 				enterTownBTN.gameObject.SetActive(false); 
@@ -168,13 +179,13 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_4": //grassland
 			if (rand < 10f) //10% chance
 			{
-				playerinfo.addStamina(-10);
+				//playerinfo.addStamina(-10);
 				AddLogItem("You're out of shape. [-10ST]\n");
 			}
 			else if (rand < 20f) //10% chance
 			{
-				playerinfo.addStamina(10);
-				playerinfo.addHealth (5);
+				//playerinfo.addStamina(10);
+				//playerinfo.addHealth (5);
 				AddLogItem("You find a relaxing spot to rest. [+10Stm, +5Hp]\n");
 			}
 			else if (rand < 30f) //10% chance
@@ -191,8 +202,8 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_7": //Volcanoes
 			if (rand < 50f)
 			{
-				playerinfo.addHealth(-20);
-				playerinfo.addStamina(-20);
+				//playerinfo.addHealth(-20);
+				//playerinfo.addStamina(-20);
 				AddLogItem("The Volcano erupts sending lava and molten rock everywhere. [-20Hp, -40Stm]\n");
 			}
 			else if (rand < 80f) //30% chance
@@ -216,11 +227,11 @@ public class GameManager_1 : MonoBehaviour {
 		case "hexart_1_10": //mountains
 			if (rand < 10f) //10% chance
 			{
-				playerinfo.addHealth(-10);
+				//playerinfo.addHealth(-10);
 				AddLogItem("You simply suck at this. [-10HP]\n");
 			}
 			else if (rand < 30f) //20% chance
-			{	battleTranAnim.SetTrigger("BattleTranTrigger"); StartCoroutine(BattleControl (tileName)); }
+			{StartCoroutine(BattleControl (tileName)); }
 			break;
 		default:
 			break;
@@ -230,8 +241,11 @@ public class GameManager_1 : MonoBehaviour {
 	// Access BattleManager script to control battle flow
 	private IEnumerator BattleControl(string battleLoc, bool isStory = false) {
 		AddLogItem("Fight for your right to party!\n");
+		battleTranAnim.SetTrigger("BattleTranTrigger"); // Battle Animation
+			//yield return StartCoroutine(WaitForAnimation(battleTranAnim)); // wait for Animation to Finish
 		log_whole.transform.parent.gameObject.SetActive (false);
 		battleOver = false;
+		yield return new WaitForSeconds(2f); // wait for Animation to Finish
 		yield return StartCoroutine(battleMGR.SetupBattle (battleLoc)); //Check if stays here
 		//log_whole.transform.parent.gameObject.SetActive (true);
 		AddLogItem("The Battle has ended!\n");
@@ -306,7 +320,6 @@ public class GameManager_1 : MonoBehaviour {
 	public void endConversation(){ Debug.Log ("convo ended"); canMove = true; }
 	public void fightConversation(string tileName, bool isStory = false){
 		canMove = true;
-		battleTranAnim.SetTrigger("BattleTranTrigger");
 		StartCoroutine (BattleControl (tileName, isStory));
 	}
 
@@ -335,5 +348,12 @@ public class GameManager_1 : MonoBehaviour {
 	public void usePotionOnClick(){
 		playerinfo.addHealth (20);
 		potionBTN.interactable = false;
+	}
+
+	private IEnumerator WaitForAnimation(Animation anim){
+		//Animation temp = anim.GetComponent<Animation> ();
+		do {
+			yield return null;
+		} while(  anim.isPlaying);
 	}
 }

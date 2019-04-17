@@ -3,7 +3,14 @@ guid: 5af15e0983856a748acf0dd42caf51e4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - grasslands: {fileID: 21300000, guid: 1b5b5de9f671846c2bbcdbbff863cf5a, type: 3}
+  - caves: {fileID: 21300000, guid: d817c88b72982064783612c34e56badf, type: 3}
+  - towns: {fileID: 21300000, guid: de1a70c4c21674e4594562623b7fa927, type: 3}
+  - volcanoes: {fileID: 21300000, guid: 1f7592549c51c438b9e40a51f245e4f8, type: 3}
+  - dungeon: {fileID: 21300000, guid: 1f7592549c51c438b9e40a51f245e4f8, type: 3}
+  - forest: {fileID: 21300000, guid: 1b5b5de9f671846c2bbcdbbff863cf5a, type: 3}
+  - mountains: {fileID: 21300000, guid: d817c88b72982064783612c34e56badf, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

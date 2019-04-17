@@ -10,6 +10,7 @@ public class BackgroundManager : MonoBehaviour {
 	public Sprite dungeon;
 	public Sprite forest;
 	public Sprite mountains;
+	public Sprite palace;
 
 	// Use this for initialization
 	public void SetBackground (string tileName) {
@@ -17,6 +18,9 @@ public class BackgroundManager : MonoBehaviour {
 
 		case "hexart_1_1": //towns
 			this.GetComponent<SpriteRenderer> ().sprite = towns;
+			break;
+		case "hexart_1_2": //palace
+			this.GetComponent<SpriteRenderer> ().sprite = palace;
 			break;
 		case "hexart_1_3": //hills
 		case "hexart_1_4": //grassland

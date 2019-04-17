@@ -51,6 +51,8 @@ public class BattleManager : GameManager_1 {
 	private GameObject enemy_2;
 	//private SlimeScript slimeInfo;
 
+	public Animator winFightAnim;
+
 	private float turnDelay = 1f;
 	//private float moveDelay = 0.5f;
 	private WaitForSeconds m_turnWait;
@@ -77,6 +79,7 @@ public class BattleManager : GameManager_1 {
 	// Setup Battle
 	public IEnumerator SetupBattle(string battleLoc){
 		enemyList = new List<GameObject>(); // refresh List
+		targetIndicator.SetActive (true);
 		yield return StartCoroutine (SetupEnemies(battleLoc, enemyList));
 		background.GetComponent<BackgroundManager> ().SetBackground (battleLoc); //chanage Background accordingly
 		yield return StartCoroutine(SetupUI());
@@ -262,6 +265,7 @@ public class BattleManager : GameManager_1 {
 	public IEnumerator PlayerTurn() {
 		Debug.Log ("Players Turn");
 		battleInfo_Text.text = "Vigil's Turn";
+		playerinfo.setEvade (0);
 		isPlayerTurn = true;
 		while(isPlayerTurn){
 			yield return null;
@@ -279,18 +283,24 @@ public class BattleManager : GameManager_1 {
 		yield return m_turnWait;
 		StartCoroutine (MovingAnim(currentEnemy, new Vector3(-2,0,0)));
 
-		playerinfo.addHealth(damage); // example attack
-		//or other Attacks...
+		float rand = Random.Range(1,100);
+		Debug.Log (rand);
+		if(rand > playerinfo.getEvade())
+			playerinfo.addHealth(damage); // example attack
+			// or other Attacks...
 
 	}
 
 	public IEnumerator checkBattleOver(){
 		if (enemyTotal <= 0) {
+			targetIndicator.SetActive (false);
+			winFightAnim.SetTrigger("WinTranTrigger");
+				//yield return new WaitForSeconds (winFightAnim.GetCurrentAnimatorStateInfo(0).length + winFightAnim.GetCurrentAnimatorStateInfo(0).normalizedTime);
 			battleInProgress = false;
 			battleInfo_Text.text = "Battle Over";
 			Debug.Log ("You won the battle!");
 			playerinfo.addRenown (100);
-			yield return m_turnWait;
+			yield return new WaitForSeconds(2f);
 		}
 		else if (playerinfo.getHealth () <= 0){
 			GameOver();
@@ -343,7 +353,7 @@ public class BattleManager : GameManager_1 {
 		}
 	}
 	public void Attack3_OnClick(){
-		//deal attack 3 dmg
+		//healing spell
 		if (isPlayerTurn && playerinfo.getStamina() >= 30) {
 			isPlayerTurn = false;
 			Debug.Log ("You attack3");
@@ -351,12 +361,21 @@ public class BattleManager : GameManager_1 {
 			playerinfo.addHealth (20);
 		}
 	}
+	public void Attack4_OnClick(){
+		//evade attacks
+		if (isPlayerTurn) {
+			isPlayerTurn = false;
+			Debug.Log ("You attack4");
+			playerinfo.addStamina (5);
+			playerinfo.setEvade (50);
+		}
+	}
 	public void Flee_OnClick(){
 		//you attempt to run
 		if (isPlayerTurn) {
+			isPlayerTurn = false;
 			isfleeing = true;
 			Debug.Log ("You successfully flee!");
-			isPlayerTurn = false;
 			battleInProgress = false;
 			if (enemyTotal > 1) {
 				GameObject.FindGameObjectWithTag("enemyHealthBar_2").SetActive(false);
