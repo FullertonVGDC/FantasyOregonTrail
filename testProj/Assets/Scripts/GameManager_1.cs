@@ -259,19 +259,19 @@ public class GameManager_1 : MonoBehaviour {
 		flowchart.ExecuteBlock ("LoadVariables");
 		int prog = flowchart.GetIntegerVariable ("StoryProg");
 		switch (prog) {
-		case 2:
+		case 1://2:
 			startConversation ("GC_BattleOver");
 			break;
-		case 4:
+		case 3://4:
 			startConversation ("WL_AfterBattle");
 			break;
-		case 6:
+		case 5://6:
 			startConversation ("Final_2");
 			break;
-		case 7:
+		case 6://7:
 			startConversation ("Final_3");
 			break;
-		case 8:
+		case 7://8:
 			startConversation ("Final_4");
 			break;
 		default:
@@ -346,7 +346,10 @@ public class GameManager_1 : MonoBehaviour {
 	}
 
 	public void usePotionOnClick(){
-		playerinfo.addHealth (20);
+		if (playerinfo.upgrades [2])
+			playerinfo.addHealth (50);
+		else
+			playerinfo.addHealth (20);
 		potionBTN.interactable = false;
 	}
 

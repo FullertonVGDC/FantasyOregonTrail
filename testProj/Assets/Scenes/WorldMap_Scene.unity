@@ -801,6 +801,8 @@ GameObject:
   - component: {fileID: 146438396}
   - component: {fileID: 146438395}
   - component: {fileID: 146438394}
+  - component: {fileID: 146438402}
+  - component: {fileID: 146438401}
   m_Layer: 0
   m_Name: FL_GnollCapt
   m_TagString: Untagged
@@ -821,7 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 53.719425, y: 75.52595}
+  scrollPos: {x: -3.8504868, y: -6.031604}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 480
@@ -833,7 +835,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 146438303}
+  - {fileID: 146438287}
   selectedCommands: []
   variables:
   - {fileID: 146438285}
@@ -1803,6 +1805,8 @@ MonoBehaviour:
   description: Start on MainStoryFights = 2
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 146438402}
+  - {fileID: 146438401}
   - {fileID: 146438356}
   - {fileID: 146438355}
   - {fileID: 146438318}
@@ -1850,7 +1854,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146438281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
@@ -1872,7 +1876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 87.580376
+    x: 89.17954
     y: 377.35492
     width: 120
     height: 40
@@ -2702,7 +2706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 75.19672
+    x: 76.79588
     y: 62.833824
     width: 134.7558
     height: 40
@@ -3303,7 +3307,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146438281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
   m_Name: 
@@ -4265,6 +4269,84 @@ MonoBehaviour:
   scope: 0
   key: HeroVillain
   value: 0
+--- !u!114 &146438401
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146438281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 139
+  indentLevel: 0
+  key: MainStoryFights
+  variable: {fileID: 146438371}
+--- !u!114 &146438402
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146438281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 138
+  indentLevel: 0
+  variable: {fileID: 146438371}
+  setOperator: 2
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
 --- !u!1 &165002333
 GameObject:
   m_ObjectHideFlags: 0
@@ -14034,7 +14116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 44.54717, y: 395.45325}
+  scrollPos: {x: 113.11851, y: 275.45282}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -15417,7 +15499,6 @@ GameObject:
   - component: {fileID: 700353317}
   - component: {fileID: 700353320}
   - component: {fileID: 700353321}
-  - component: {fileID: 700353319}
   - component: {fileID: 700353323}
   - component: {fileID: 700353322}
   - component: {fileID: 700353324}
@@ -15571,11 +15652,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -295.74774, y: -220.5497}
+  scrollPos: {x: -554.6343, y: 139.43112}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 400
-  zoom: 0.49000046
+  zoom: 0.64000034
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -15760,7 +15841,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 432.3838
     y: 71.79355
-    width: 123.46932
+    width: 126.56246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15775,7 +15856,6 @@ MonoBehaviour:
   - {fileID: 700353281}
   - {fileID: 700353280}
   - {fileID: 700353285}
-  - {fileID: 700353319}
   - {fileID: 700353292}
   - {fileID: 700353315}
   - {fileID: 700353287}
@@ -16047,7 +16127,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 437.62253
     y: -50.087986
-    width: 120
+    width: 121.87496
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16444,7 +16524,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 597.54443
     y: -48.635918
-    width: 120
+    width: 121.87496
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16525,7 +16605,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 700353271}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
@@ -16773,8 +16853,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 592.6601
-    y: 68.07323
-    width: 123.46932
+    y: 69.63573
+    width: 126.56246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -16798,7 +16878,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 700353271}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
@@ -16881,32 +16961,6 @@ MonoBehaviour:
   targetObject: {fileID: 1514833528}
   methodName: endConversation
   delay: 0
---- !u!114 &700353319
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 700353271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 45
-  indentLevel: 0
-  storyText: You find some new Armor! [+20 Max Hp]
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 0
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
 --- !u!114 &700353320
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -17086,7 +17140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 199
   indentLevel: 0
-  storyText: You find a new upgrade!
+  storyText: You find some new form fit armor! +20 max stamina
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -17441,7 +17495,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1209.5497
     y: 58.028915
-    width: 123.46932
+    width: 126.56246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -17601,7 +17655,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1212.4783
     y: -55.231636
-    width: 120
+    width: 121.87496
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -17644,7 +17698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 180
   indentLevel: 0
-  storyText: You find a new upgrade!
+  storyText: With new boots like these, you gotta go fast! +2 speed
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -17999,7 +18053,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1057.3108
     y: 58.029007
-    width: 123.46932
+    width: 126.56246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18159,7 +18213,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1060.2394
     y: -55.23163
-    width: 120
+    width: 121.87496
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18202,7 +18256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 161
   indentLevel: 0
-  storyText: You find a new upgrade!
+  storyText: You're not really into shields, but you got one now! +30 max hp
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -18557,7 +18611,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 915.5196
     y: 55.043983
-    width: 123.46932
+    width: 126.56246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18717,7 +18771,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 918.4482
     y: -58.21673
-    width: 120
+    width: 121.87496
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -18760,7 +18814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 142
   indentLevel: 0
-  storyText: You find a new upgrade!
+  storyText: You find a bigger potion bottle! Potion now heals 50hp
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -19115,7 +19169,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 763.62366
     y: 63.611855
-    width: 123.46932
+    width: 126.56246
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -19275,7 +19329,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 765.0597
     y: -49.648964
-    width: 120
+    width: 121.87496
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -22100,6 +22154,8 @@ GameObject:
   - component: {fileID: 1009422960}
   - component: {fileID: 1009422959}
   - component: {fileID: 1009422958}
+  - component: {fileID: 1009422966}
+  - component: {fileID: 1009422965}
   m_Layer: 0
   m_Name: FL_WarLord_Encounter
   m_TagString: Untagged
@@ -22120,7 +22176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -26.308868, y: -296.3645}
+  scrollPos: {x: 135.98611, y: -68.49579}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 406
@@ -22132,9 +22188,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1009422858}
+  - {fileID: 1009422922}
   selectedCommands:
-  - {fileID: 1009422948}
+  - {fileID: 1009422944}
   variables:
   - {fileID: 1009422857}
   - {fileID: 1009422856}
@@ -22455,7 +22511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 380.7723
+    x: 379.13297
     y: 837.7865
     width: 120
     height: 40
@@ -22632,6 +22688,8 @@ MonoBehaviour:
   description: MainStoryFight = 4
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1009422966}
+  - {fileID: 1009422965}
   - {fileID: 1009422941}
   - {fileID: 1009422920}
   - {fileID: 1009422940}
@@ -25071,7 +25129,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009422844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
@@ -25086,7 +25144,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009422844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
   m_Name: 
@@ -25442,6 +25500,84 @@ MonoBehaviour:
   scope: 0
   key: HeroVillain
   value: 0
+--- !u!114 &1009422965
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009422844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 141
+  indentLevel: 0
+  key: MainStoryFights
+  variable: {fileID: 1009422947}
+--- !u!114 &1009422966
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009422844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 140
+  indentLevel: 0
+  variable: {fileID: 1009422947}
+  setOperator: 2
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
 --- !u!1 &1038076876
 GameObject:
   m_ObjectHideFlags: 1
@@ -25469,7 +25605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 611405712}
+  selectedFlowchart: {fileID: 1637674584}
 --- !u!4 &1038076878
 Transform:
   m_ObjectHideFlags: 1
@@ -27884,6 +28020,12 @@ GameObject:
   - component: {fileID: 1637674686}
   - component: {fileID: 1637674685}
   - component: {fileID: 1637674683}
+  - component: {fileID: 1637674810}
+  - component: {fileID: 1637674809}
+  - component: {fileID: 1637674808}
+  - component: {fileID: 1637674807}
+  - component: {fileID: 1637674806}
+  - component: {fileID: 1637674805}
   m_Layer: 0
   m_Name: FL_Final
   m_TagString: Untagged
@@ -27904,11 +28046,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -276.27402, y: 114.72469}
+  scrollPos: {x: -988.323, y: 116.62748}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 400
-  zoom: 0.43000045
+  zoom: 0.5500004
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -28024,7 +28166,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 503.1539
     y: 790.3847
-    width: 131.39526
+    width: 129.99994
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -29689,7 +29831,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 518.1538
     y: 444.38446
-    width: 126.7441
+    width: 128.18176
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30182,7 +30324,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 511.07697
     y: 360.84583
-    width: 138.37201
+    width: 139.09085
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -30920,7 +31062,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 521.5902
     y: 289.5922
-    width: 126.7441
+    width: 126.36358
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31069,7 +31211,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 526.35614
     y: 150.1237
-    width: 126.7441
+    width: 126.36358
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31244,7 +31386,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 530.68915
     y: -47.03797
-    width: 136.04642
+    width: 137.27266
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -31253,6 +31395,8 @@ MonoBehaviour:
   description: MainStoryFight = 6
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1637674810}
+  - {fileID: 1637674809}
   - {fileID: 1637674697}
   - {fileID: 1637674691}
   - {fileID: 1637674696}
@@ -31323,7 +31467,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637674583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
@@ -31338,7 +31482,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637674583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
   m_Name: 
@@ -31439,7 +31583,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 256.0408
     y: 154
-    width: 133.72084
+    width: 137.27266
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -32197,7 +32341,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637674583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
@@ -32212,7 +32356,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637674583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
   m_Name: 
@@ -32444,7 +32588,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637674583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
@@ -32459,7 +32603,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637674583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
   m_Name: 
@@ -32956,6 +33100,8 @@ MonoBehaviour:
   description: MainStoryFight = 8
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1637674806}
+  - {fileID: 1637674805}
   - {fileID: 1637674728}
   - {fileID: 1637674752}
   - {fileID: 1637674726}
@@ -33071,7 +33217,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1059.7358
     y: 369.26874
-    width: 131.39526
+    width: 126.36358
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -33367,7 +33513,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1056.4747
     y: 50.13852
-    width: 138.37201
+    width: 135.45447
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -33376,6 +33522,8 @@ MonoBehaviour:
   description: MainStoryFight = 7
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1637674808}
+  - {fileID: 1637674807}
   - {fileID: 1637674768}
   - {fileID: 1637674766}
   - {fileID: 1637674767}
@@ -33580,7 +33728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 301
   indentLevel: 0
-  description: Start Final Fight
+  description: Go to end Scene
   targetObject: {fileID: 499867998}
   targetComponentAssemblyName: SwitchScenes, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
@@ -33646,7 +33794,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1415.0586
     y: 202.16917
-    width: 152.32547
+    width: 144.54538
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -33871,7 +34019,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 533.2457
     y: 22.169456
-    width: 126.7441
+    width: 126.36358
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -34374,6 +34522,240 @@ MonoBehaviour:
   - {fileID: 1637674794}
   - {fileID: 1637674792}
   - {fileID: 1637674790}
+--- !u!114 &1637674805
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 346
+  indentLevel: 0
+  key: MainStoryFights
+  variable: {fileID: 1637674585}
+--- !u!114 &1637674806
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 345
+  indentLevel: 0
+  variable: {fileID: 1637674585}
+  setOperator: 2
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &1637674807
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 344
+  indentLevel: 0
+  key: MainStoryFights
+  variable: {fileID: 1637674585}
+--- !u!114 &1637674808
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 343
+  indentLevel: 0
+  variable: {fileID: 1637674585}
+  setOperator: 2
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &1637674809
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 342
+  indentLevel: 0
+  key: MainStoryFights
+  variable: {fileID: 1637674585}
+--- !u!114 &1637674810
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 341
+  indentLevel: 0
+  variable: {fileID: 1637674585}
+  setOperator: 2
+  booleanData:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  integerData:
+    integerRef: {fileID: 0}
+    integerVal: 1
+  floatData:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  stringData:
+    stringRef: {fileID: 0}
+    stringVal: 
+  animatorData:
+    animatorRef: {fileID: 0}
+    animatorVal: {fileID: 0}
+  audioSourceData:
+    audioSourceRef: {fileID: 0}
+    audioSourceVal: {fileID: 0}
+  colorData:
+    colorRef: {fileID: 0}
+    colorVal: {r: 0, g: 0, b: 0, a: 0}
+  gameObjectData:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 0}
+  materialData:
+    materialRef: {fileID: 0}
+    materialVal: {fileID: 0}
+  objectData:
+    objectRef: {fileID: 0}
+    objectVal: {fileID: 0}
+  rigidbody2DData:
+    rigidbody2DRef: {fileID: 0}
+    rigidbody2DVal: {fileID: 0}
+  spriteData:
+    spriteRef: {fileID: 0}
+    spriteVal: {fileID: 0}
+  textureData:
+    textureRef: {fileID: 0}
+    textureVal: {fileID: 0}
+  transformData:
+    transformRef: {fileID: 0}
+    transformVal: {fileID: 0}
+  vector2Data:
+    vector2Ref: {fileID: 0}
+    vector2Val: {x: 0, y: 0}
+  vector3Data:
+    vector3Ref: {fileID: 0}
+    vector3Val: {x: 0, y: 0, z: 0}
 --- !u!1001 &1689960743
 Prefab:
   m_ObjectHideFlags: 0
