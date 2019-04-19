@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-D:/GitHubRepo/CSUF_repo/FantasyOregonTrail/testProj/Builds/Vigil Nights.exe
+D:/GitHubRepo/CSUF_repo/FantasyOregonTrail/testProj/Builds/VigilNights_4_18_19/Vigil Nights.exe
 SceneListBegin?
 Assets/Scenes/MainMenu_Scene.unity
 Assets/Scenes/Opening_Scene.unity

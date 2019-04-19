@@ -47,6 +47,7 @@ public class GameManager_1 : MonoBehaviour {
 		//playerinfo.currPos = startPos; // replace with last saved location
 		playerObj.transform.SetPositionAndRotation (grid.CellToWorld(playerinfo.currPos), Quaternion.identity);
 		mainCam.transform.position = playerObj.transform.position + new Vector3(0,0,-1);
+		startConversation ("GnollCapt Start");
 	}
 	// Use this for initialization
 	void Start () {
@@ -162,8 +163,13 @@ public class GameManager_1 : MonoBehaviour {
 			playerinfo.setStamina (playerinfo.getMaxStamina ());
 			playerinfo.setHealth (playerinfo.getMaxHealth ());
 			potionBTN.interactable = true;
-			SaveStateScript.saveControl.Save(playerinfo.getMaxHealth(),playerinfo.getMaxStamina(),playerinfo.getStrength(),playerinfo.getSpeed(),playerinfo.getRenown(),playerinfo.currPos,playerinfo.upgrades);
-			enterTownBTN.gameObject.SetActive(true);
+			SaveStateScript.saveControl.Save (playerinfo.getMaxHealth (), playerinfo.getMaxStamina (), playerinfo.getStrength (), playerinfo.getSpeed (), playerinfo.getRenown (), playerinfo.currPos, playerinfo.upgrades);
+			//flowchart.ExecuteBlock ("LoadVariables");
+			//int prog3 = flowchart.GetIntegerVariable ("StoryProg");
+			//if (prog3 == 1)
+			//	startConversation ("GnollCapt Start");
+			//else
+				enterTownBTN.gameObject.SetActive(true);
 			break;
 		case "hexart_1_2": // Ice Castle
 			flowchart.ExecuteBlock ("LoadVariables");
@@ -176,6 +182,9 @@ public class GameManager_1 : MonoBehaviour {
 				startConversation("Final_1");
 			break;
 		case "hexart_1_3": //hills
+			if (rand < 10f) //10% chance
+			{	StartCoroutine (BattleControl (tileName)); }
+			break;
 		case "hexart_1_4": //grassland
 			if (rand < 10f) //10% chance
 			{

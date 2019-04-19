@@ -67,7 +67,7 @@ MonoBehaviour:
   enemy_id: 1
   health: 100
   maxHealth: 100
-  strength: 14
+  strength: 12
   speed: 3
 --- !u!212 &212596861461446026
 SpriteRenderer:

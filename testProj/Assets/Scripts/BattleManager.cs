@@ -133,21 +133,25 @@ public class BattleManager : GameManager_1 {
 		case "hexart_1_2": //palace
 			return iceQueenMonster;
 		case "hexart_1_3": //hills
+			if (rand < 50)
+			{	return hyenaMonster;   }
+			else
+			{	return slimeMonster;   }
 		case "hexart_1_4": //grasslands
 			if (rand < 50)
 			{	return goblinMonster;  }
 			else if (rand < 80)
 			{	return hyenaMonster;   }
 			else if (rand < 100)
-			{	return gnollMonster;   }
+			{	return slimeMonster;   }
 			break;
 		case "hexart_1_6": //cave
 			if (rand < 50)
-			{	return goblinMonster;  }
+			{	return banditMonster;  }
 			else if (rand < 80)
 			{	return goblinMonster;   }
 			else if (rand < 100)
-			{	return banditMonster;   }
+			{	return slimeMonster;   }
 			break;
 		case "hexart_1_7": //volcanoes
 			if (rand < 50) {
@@ -366,7 +370,7 @@ public class BattleManager : GameManager_1 {
 		if (isPlayerTurn) {
 			isPlayerTurn = false;
 			Debug.Log ("You attack4");
-			playerinfo.addStamina (5);
+			playerinfo.addStamina (15);
 			playerinfo.setEvade (50);
 		}
 	}

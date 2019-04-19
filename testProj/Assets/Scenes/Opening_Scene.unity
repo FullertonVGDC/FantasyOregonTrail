@@ -2149,12 +2149,6 @@ GameObject:
   - component: {fileID: 1417550020}
   - component: {fileID: 1417550021}
   - component: {fileID: 1417550029}
-  - component: {fileID: 1417550027}
-  - component: {fileID: 1417550026}
-  - component: {fileID: 1417550025}
-  - component: {fileID: 1417550024}
-  - component: {fileID: 1417550023}
-  - component: {fileID: 1417550022}
   - component: {fileID: 1417550034}
   - component: {fileID: 1417550028}
   - component: {fileID: 1417550030}
@@ -2162,17 +2156,20 @@ GameObject:
   - component: {fileID: 1417550032}
   - component: {fileID: 1417550033}
   - component: {fileID: 1417550037}
-  - component: {fileID: 1417550036}
-  - component: {fileID: 1417550035}
   - component: {fileID: 1417550038}
   - component: {fileID: 1417550039}
   - component: {fileID: 1417550040}
-  - component: {fileID: 1417550041}
   - component: {fileID: 1417550042}
   - component: {fileID: 1417550043}
-  - component: {fileID: 1417550045}
   - component: {fileID: 1417550046}
   - component: {fileID: 1417550044}
+  - component: {fileID: 1417550022}
+  - component: {fileID: 1417550035}
+  - component: {fileID: 1417550023}
+  - component: {fileID: 1417550024}
+  - component: {fileID: 1417550025}
+  - component: {fileID: 1417550026}
+  - component: {fileID: 1417550027}
   m_Layer: 0
   m_Name: FL_Opening
   m_TagString: Untagged
@@ -2196,7 +2193,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1193.7098
     y: 69.03555
-    width: 120.90903
+    width: 124.99992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2221,11 +2218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -675.7327, y: 72.72319}
+  scrollPos: {x: -755.5885, y: 151.40742}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.5500005
+  zoom: 0.5200005
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2236,17 +2233,8 @@ MonoBehaviour:
   - {fileID: 1417549987}
   selectedCommands: []
   variables:
-  - {fileID: 1417550027}
-  - {fileID: 1417550026}
-  - {fileID: 1417550025}
-  - {fileID: 1417550024}
-  - {fileID: 1417550023}
-  - {fileID: 1417550022}
   - {fileID: 1417550037}
-  - {fileID: 1417550036}
-  - {fileID: 1417550035}
-  - {fileID: 1417550041}
-  - {fileID: 1417550045}
+  - {fileID: 1417550022}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -2584,7 +2572,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 1193.0487
-    y: 273.1485
+    y: 275.07156
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3039,7 +3027,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 943.0339
     y: 65.820335
-    width: 120.90903
+    width: 124.99992
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3101,7 +3089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: A_talked
+  key: boolReset
   value: 0
 --- !u!114 &1417550023
 MonoBehaviour:
@@ -3111,12 +3099,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417549986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
-  key: C_talked
-  value: 0
+  itemId: 344
+  indentLevel: 0
+  key: vc6
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550024
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3125,12 +3114,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417549986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
-  key: S_talked
-  value: 0
+  itemId: 345
+  indentLevel: 0
+  key: vc5
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550025
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3139,12 +3129,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417549986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
-  key: A_Joins
-  value: 0
+  itemId: 346
+  indentLevel: 0
+  key: vc4
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550026
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3153,12 +3144,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417549986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
-  key: C_Joins
-  value: 0
+  itemId: 347
+  indentLevel: 0
+  key: vc3
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550027
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3167,12 +3159,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417549986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
-  key: S_Joins
-  value: 0
+  itemId: 348
+  indentLevel: 0
+  key: vc2
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550028
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3203,7 +3196,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 722.42816
     y: 113.75253
-    width: 188.1817
+    width: 196.1537
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3223,6 +3216,12 @@ MonoBehaviour:
   - {fileID: 1417550039}
   - {fileID: 1417550042}
   - {fileID: 1417550046}
+  - {fileID: 1417550035}
+  - {fileID: 1417550027}
+  - {fileID: 1417550026}
+  - {fileID: 1417550025}
+  - {fileID: 1417550024}
+  - {fileID: 1417550023}
   - {fileID: 1417550044}
   - {fileID: 1417550043}
 --- !u!114 &1417550030
@@ -3239,7 +3238,7 @@ MonoBehaviour:
   itemId: 331
   indentLevel: 0
   key: talkedToCrag
-  variable: {fileID: 1417550023}
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550031
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3254,7 +3253,7 @@ MonoBehaviour:
   itemId: 332
   indentLevel: 0
   key: talkedToSkaen
-  variable: {fileID: 1417550024}
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550032
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3269,7 +3268,7 @@ MonoBehaviour:
   itemId: 333
   indentLevel: 0
   key: AlafareJoins
-  variable: {fileID: 1417550025}
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550033
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3284,7 +3283,7 @@ MonoBehaviour:
   itemId: 334
   indentLevel: 0
   key: CragJoins
-  variable: {fileID: 1417550026}
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550034
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3299,7 +3298,7 @@ MonoBehaviour:
   itemId: 329
   indentLevel: 0
   key: SkaenJoins
-  variable: {fileID: 1417550027}
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550035
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3308,26 +3307,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417549986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bef7966140464bd5a3ef4da2ff236b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scope: 0
-  key: A_campConv
-  value: 0
---- !u!114 &1417550036
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417549986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scope: 0
-  key: C_campConv
-  value: 0
+  itemId: 343
+  indentLevel: 0
+  key: vc1
+  variable: {fileID: 1417550022}
 --- !u!114 &1417550037
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3340,7 +3326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scope: 0
-  key: S_campConv
+  key: intReset
   value: 0
 --- !u!114 &1417550038
 MonoBehaviour:
@@ -3371,7 +3357,7 @@ MonoBehaviour:
   itemId: 336
   indentLevel: 0
   key: A_CampConv
-  variable: {fileID: 1417550035}
+  variable: {fileID: 1417550037}
 --- !u!114 &1417550040
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3386,21 +3372,7 @@ MonoBehaviour:
   itemId: 337
   indentLevel: 0
   key: C_CampConv
-  variable: {fileID: 1417550036}
---- !u!114 &1417550041
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417549986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scope: 0
-  key: MSF
-  value: 0
+  variable: {fileID: 1417550037}
 --- !u!114 &1417550042
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3415,7 +3387,7 @@ MonoBehaviour:
   itemId: 338
   indentLevel: 0
   key: MainStoryFights
-  variable: {fileID: 1417550041}
+  variable: {fileID: 1417550037}
 --- !u!114 &1417550043
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3438,7 +3410,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &1417550044
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417549986}
@@ -3463,23 +3435,9 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &1417550045
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417549986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb91b566ceda411bad1e9d3c3243ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scope: 0
-  key: HeroVillain
-  value: 0
 --- !u!114 &1417550046
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417549986}
@@ -3491,7 +3449,7 @@ MonoBehaviour:
   itemId: 341
   indentLevel: 0
   key: Karma
-  variable: {fileID: 1417550045}
+  variable: {fileID: 1417550037}
 --- !u!114 &1417550080
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -4154,7 +4112,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c83c05a87acb49848e32982864ba8be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d040301117504fb43a947ea73b79c0be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4172,8 +4130,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1893671370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9977207, y: 1.4482983, z: 1.3155088}
+  m_LocalPosition: {x: 4.1, y: 0.4, z: 0}
+  m_LocalScale: {x: 1.6202892, y: 1.1746699, z: 1.0669684}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15

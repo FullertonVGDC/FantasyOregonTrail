@@ -57,7 +57,7 @@ MonoBehaviour:
   health: 40
   maxHealth: 40
   strength: 10
-  speed: 1
+  speed: 4
 --- !u!114 &114790594074500912
 MonoBehaviour:
   m_ObjectHideFlags: 1
