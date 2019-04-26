@@ -438,8 +438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -460.43, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: -460.43, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &63697793
 MonoBehaviour:
@@ -907,8 +907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1300, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: -1300, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &413017286
 MonoBehaviour:
@@ -1150,8 +1150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 0, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &725231113
 MonoBehaviour:
@@ -1419,8 +1419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1300, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 1300, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &999219621
 MonoBehaviour:
@@ -2212,7 +2212,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1019.4296
     y: 16.902668
-    width: 139.65512
+    width: 124.999916
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2239,11 +2239,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -530.2063, y: -819.83606}
+  scrollPos: {x: -516.0837, y: -199.4183}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.5800004
+  zoom: 0.40000045
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2251,10 +2251,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1417550170}
+  - {fileID: 1417550081}
   selectedCommands:
-  - {fileID: 1417550172}
-  - {fileID: 1417550171}
+  - {fileID: 1417550054}
   variables:
   - {fileID: 1417550088}
   - {fileID: 1417550087}
@@ -3366,7 +3365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 220
+  itemId: 439
   indentLevel: 0
   storyText: How can I be sure you've even seen her?
   description: 
@@ -3866,7 +3865,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 563293445}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: a44aa243cd273430b80da088ce4eceaa, type: 3}
+  portrait: {fileID: 21300000, guid: 83c7e5ee557854546971ad093c863001, type: 3}
   offset: 0
   fromPosition: {fileID: 413017285}
   toPosition: {fileID: 63697792}
@@ -5102,7 +5101,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 355.9896
     y: 183.18968
-    width: 129.31029
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5199,7 +5198,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 352.01578
     y: 69.67345
-    width: 125.862015
+    width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5800,7 +5799,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 126.824875
     y: 70.70065
-    width: 149.99994
+    width: 137.49991
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6891,7 +6890,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1008.6543
     y: 1164.4908
-    width: 136.20685
+    width: 127.49991
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6912,7 +6911,7 @@ MonoBehaviour:
   - {fileID: 1417550162}
 --- !u!114 &1417550171
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417549986}
@@ -6927,7 +6926,7 @@ MonoBehaviour:
   variable: {fileID: 1417550073}
 --- !u!114 &1417550172
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417549986}
@@ -7431,8 +7430,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 460.43, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 460.43, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1728230969
 MonoBehaviour:

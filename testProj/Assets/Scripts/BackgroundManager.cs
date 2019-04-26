@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour {
-	public Sprite grasslands;
+	public Sprite grasslands; // & hillands
 	public Sprite caves;
 	public Sprite towns;
 	public Sprite volcanoes;
@@ -11,9 +11,13 @@ public class BackgroundManager : MonoBehaviour {
 	public Sprite forest;
 	public Sprite mountains;
 	public Sprite palace;
+	public GameObject foreground;
 
 	// Use this for initialization
-	public void SetBackground (string tileName) {
+	public void SetBackground (string tileName, bool isBack = true) {
+		if (isBack)
+			foreground.GetComponent<BackgroundManager> ().SetBackground (tileName, false);
+		
 		switch (tileName) {
 
 		case "hexart_1_1": //towns

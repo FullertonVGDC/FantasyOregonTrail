@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: Chaitanya
-  nameColor: {r: 0, g: 1, b: 0.98136926, a: 1}
+  nameColor: {r: 0.49056602, g: 0.108757555, b: 0.11183656, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: c1c01673794c81144ab55ad28327eaed, type: 3}
+  - {fileID: 21300000, guid: bdc62e0c5df086446aa4ac657264f185, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 

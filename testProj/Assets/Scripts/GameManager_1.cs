@@ -70,16 +70,16 @@ public class GameManager_1 : MonoBehaviour {
 		}
 
 		//move camera left
-		if (Input.GetKey (KeyCode.A) && mainCam.transform.position.x  > -2.75) {
+		if (Input.GetKey (KeyCode.A) && mainCam.transform.position.x  > playerinfo.transform.position.x - 4) { //-2.75
 			mainCam.transform.transform.position -= (new Vector3(camSpeed * Time.deltaTime,0,0));
 		}
-		if (Input.GetKey (KeyCode.D) && mainCam.transform.position.x  < 17.75) {
+		if (Input.GetKey (KeyCode.D) && mainCam.transform.position.x  < playerinfo.transform.position.x + 4) { //17.75
 			mainCam.transform.transform.position += (new Vector3(camSpeed * Time.deltaTime,0,0));
 		}
-		if (Input.GetKey (KeyCode.W) && mainCam.transform.position.y  < 8.75) {
+		if (Input.GetKey (KeyCode.W) && mainCam.transform.position.y  < playerinfo.transform.position.y + 2) { //8.75
 			mainCam.transform.transform.position += (new Vector3(0,camSpeed * Time.deltaTime,0));
 		}
-		if (Input.GetKey (KeyCode.S) && mainCam.transform.position.y  > -4.5) {
+		if (Input.GetKey (KeyCode.S) && mainCam.transform.position.y  > playerinfo.transform.position.y - 2) { //-4.5
 			mainCam.transform.transform.position -= (new Vector3(0,camSpeed * Time.deltaTime,0));
 		}
 

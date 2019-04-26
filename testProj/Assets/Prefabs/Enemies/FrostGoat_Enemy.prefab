@@ -69,6 +69,7 @@ MonoBehaviour:
   maxHealth: 130
   strength: 8
   speed: 7
+  evasion: 10
 --- !u!212 &212419608452734726
 SpriteRenderer:
   m_ObjectHideFlags: 1

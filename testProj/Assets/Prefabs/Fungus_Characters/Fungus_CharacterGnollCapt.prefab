@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: Gnoll Captain
-  nameColor: {r: 0.4486568, g: 0.4811321, b: 0.21560164, a: 1}
+  nameColor: {r: 0.49056602, g: 0.108757555, b: 0.11183656, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 4aae7c6a9f1b26e49ba1a5ffec0793f1, type: 3}
+  - {fileID: 21300000, guid: ab4c583b47f79c147a1996da1f82a5c5, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 

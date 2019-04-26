@@ -46,6 +46,7 @@ public class BattleManager : GameManager_1 {
 	public GameObject fireElemMonster;
 	public GameObject goblinMonster;
 	public GameObject bossMonster;
+	public GameObject undeadBoss;
 
 	private GameObject enemy_1;
 	private GameObject enemy_2;
@@ -94,7 +95,8 @@ public class BattleManager : GameManager_1 {
 
 		//Enemy_1
 		enemy_1 = Instantiate(ChooseMonster(battleLoc));
-		if (battleLoc == "hexart_1_8") {enemyTotal = 2;  }
+		if (battleLoc == "hexart_1_8" || battleLoc == "hexart_1_1") { enemyTotal = 2; } 
+		else if (battleLoc == "hexart_1_2" || battleLoc == "undead") { enemyTotal = 1; }
 		enemyBar_1.setEnemyBar(enemy_1);
 		enemy_1.transform.parent = Fighter_Space.transform;
 		enemy_1.transform.localPosition = new Vector3 (-8, -10.5f, 0);
@@ -103,10 +105,10 @@ public class BattleManager : GameManager_1 {
 		targetIndex = 0;
 		targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,3.5f,0);
 		enemyList.Add (enemy_1);
-
+		//Enemy_2
 		if (enemyTotal == 2) {
-			//Enemy_2
-			if (battleLoc == "hexart_1_8") {enemy_2 = Instantiate(gnollMonster);}
+			// First 2 story fights should have normal gnoll as 2nd enemy
+			if (battleLoc == "hexart_1_8" || battleLoc == "hexart_1_1") {enemy_2 = Instantiate(gnollMonster);}
 			else
 				enemy_2 = Instantiate(ChooseMonster(battleLoc));
 			enemyBar_2.setEnemyBar (enemy_2);
@@ -128,6 +130,8 @@ public class BattleManager : GameManager_1 {
 
 		switch (location) 
 		{
+		case "undead": //2nd to last fight
+			return undeadBoss;
 		case "hexart_1_1": //town
 			return gnollMonster;
 		case "hexart_1_2": //palace
@@ -171,11 +175,11 @@ public class BattleManager : GameManager_1 {
 			break;
 		case "hexart_1_10": //mountains
 			if (rand < 50) {
-				return banditMonster;}//return slimeMonster;  }
+				return banditMonster;}
 			else if (rand < 80)
 			{	return banditMonster;   }
 			else if (rand < 100)
-				{	return banditMonster;}//return frostGoatMonster;   }
+				{	return slimeMonster;}
 			break;
 		default:
 			break;
@@ -269,7 +273,7 @@ public class BattleManager : GameManager_1 {
 	public IEnumerator PlayerTurn() {
 		Debug.Log ("Players Turn");
 		battleInfo_Text.text = "Vigil's Turn";
-		playerinfo.setEvade (0);
+		playerinfo.setEvade (5);
 		isPlayerTurn = true;
 		while(isPlayerTurn){
 			yield return null;
@@ -282,15 +286,21 @@ public class BattleManager : GameManager_1 {
 		battleInfo_Text.text = "Enemy Turn";
 		Debug.Log ("Enemy Attacks");
 		EnemiesScipt enemyInfo = currentEnemy.GetComponent<EnemiesScipt> ();
-		// Attack_1
-		float damage = enemyInfo.Attack1(); // choose attack
+		// Attack_Choice
+		float rand = Random.Range(1,100);
+		float damage = 0;
+		if (rand < 90) // 90% chance to choose attack 1
+			damage = enemyInfo.Attack1 (); // Attack 1
+		else
+			damage = enemyInfo.Attack2 (); // Attack 2
 		yield return m_turnWait;
 		StartCoroutine (MovingAnim(currentEnemy, new Vector3(-2,0,0)));
 
-		float rand = Random.Range(1,100);
+		//Check to see if Attack hits based on Evasion stat
+		rand = Random.Range(1,100);
 		Debug.Log (rand);
-		if(rand > playerinfo.getEvade())
-			playerinfo.addHealth(damage); // example attack
+		if(rand > playerinfo.getEvade()) //if above evasion chance, it hits
+			playerinfo.addHealth(damage); // if a damage attack
 			// or other Attacks...
 
 	}
@@ -418,8 +428,10 @@ public class BattleManager : GameManager_1 {
 	#region Damage Control
 	public void DealDamage(int damage, GameObject targEnemy){ //make enemy choice 2nd parameter
 		EnemiesScipt enemyInfo = targEnemy.GetComponent<EnemiesScipt> ();
-
-		enemyInfo.health -= damage;
+		float rand = Random.Range(1,100);
+		if(rand > enemyInfo.evasion) //if above enemy evasion, attack hits
+			enemyInfo.health -= damage;
+		
 		if (enemyInfo.health <= 0) {
 			Destroy (targEnemy);
 			enemyList.Remove(targEnemy);

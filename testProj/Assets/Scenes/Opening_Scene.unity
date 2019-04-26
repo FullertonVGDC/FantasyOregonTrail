@@ -438,8 +438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -460.43, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: -460.43, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &63697793
 MonoBehaviour:
@@ -946,8 +946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1300, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: -1300, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &413017286
 MonoBehaviour:
@@ -1072,8 +1072,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 0, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &725231113
 MonoBehaviour:
@@ -1383,8 +1383,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1300, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 1300, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &999219621
 MonoBehaviour:
@@ -2218,7 +2218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -755.5885, y: 151.40742}
+  scrollPos: {x: -565.20416, y: 162.94589}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -2230,7 +2230,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1417549987}
+  - {fileID: 1417550001}
   selectedCommands: []
   variables:
   - {fileID: 1417550037}
@@ -2520,7 +2520,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 1125503884}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: 3c244b738805b12428d78a4229afc502, type: 3}
+  portrait: {fileID: 21300000, guid: c4aeedffebce07b4c8abc8ad46474c56, type: 3}
   offset: 0
   fromPosition: {fileID: 999219620}
   toPosition: {fileID: 1728230968}
@@ -3554,7 +3554,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 1180862397}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: c1c01673794c81144ab55ad28327eaed, type: 3}
+  portrait: {fileID: 21300000, guid: bdc62e0c5df086446aa4ac657264f185, type: 3}
   offset: 0
   fromPosition: {fileID: 413017285}
   toPosition: {fileID: 63697792}
@@ -3980,8 +3980,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 460.43, y: -1000}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 460.43, y: -1200}
+  m_SizeDelta: {x: 1200, y: 1200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1728230969
 MonoBehaviour:

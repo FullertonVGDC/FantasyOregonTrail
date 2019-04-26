@@ -52,10 +52,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: Franjeh-Tur
-  nameColor: {r: 0.5660378, g: 0.07742971, b: 0.081850395, a: 1}
+  nameColor: {r: 0.49056602, g: 0.108757555, b: 0.11183656, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 21300000, guid: 3c244b738805b12428d78a4229afc502, type: 3}
+  - {fileID: 21300000, guid: c4aeedffebce07b4c8abc8ad46474c56, type: 3}
+  - {fileID: 21300000, guid: 29dc3c3b03aea0f4f8ab903a6f7c5688, type: 3}
   portraitsFace: 1
   setSayDialog: {fileID: 0}
   description: 
