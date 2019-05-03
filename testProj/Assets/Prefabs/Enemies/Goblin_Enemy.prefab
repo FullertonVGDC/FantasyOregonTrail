@@ -53,11 +53,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fba99752f91c70419e48fff06f328d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyName: Bandit
   enemy_id: 1
   health: 20
   maxHealth: 20
   strength: 6
   speed: 4
+  evasion: 5
 --- !u!114 &114316855262258258
 MonoBehaviour:
   m_ObjectHideFlags: 1

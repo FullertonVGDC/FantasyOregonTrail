@@ -13,13 +13,14 @@ public class PlayerScript : MonoBehaviour {
 	int strength = 5;
 	int speed = 5;
 	int renown = 0; // form of experience
-	float evadeChance = 0;
+	float evadeChance = 5f;
 
 	public bool[] upgrades = new bool[6];
 
 	float max_health = 100;
 	float max_stamina = 100;
 	int max_speed = 5;
+	float max_baseEvadeChance = 5f;
 
 	// PLAYER FUNCTIONS
 
@@ -95,6 +96,12 @@ public class PlayerScript : MonoBehaviour {
 	public void setEvade(float val){
 		evadeChance = val;
 	}
+	public float getMaxEvade(){
+		return max_baseEvadeChance;
+	}
+	public void setMaxEvade(float val){
+		max_baseEvadeChance = val;
+	}
 	#endregion
 
 	#region UPGRADE Functions
@@ -114,7 +121,7 @@ public class PlayerScript : MonoBehaviour {
 		}
 		else if (currPos.x==5 && currPos.y==11 && !upgrades[2]) {
 			upgrades [2] = true;
-			health += 50; // elixir of health
+			max_baseEvadeChance = 7f; // cape of evasion
 			Debug.Log("Upgrade 3 Acquired");
 		}
 		else if (currPos.x==9 && currPos.y==14 && !upgrades[3]) {
@@ -132,7 +139,7 @@ public class PlayerScript : MonoBehaviour {
 		else if (currPos.x==-2 && currPos.y==25 && !upgrades[5]) {
 			upgrades [5] = true;
 			max_stamina += 20; 
-			stamina += 20; // form fit armor
+			stamina += 20; // form fit Padding
 			Debug.Log("Upgrade 6 Acquired");
 		}
 

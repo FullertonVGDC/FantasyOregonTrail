@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemiesScipt : MonoBehaviour {
+	public string EnemyName = "Enemy";
 	public int enemy_id = 0;
 	public int health;
 	public int maxHealth;
@@ -34,7 +35,7 @@ public class EnemiesScipt : MonoBehaviour {
 
 	public float Attack2(){
 		int rand = Random.Range (1,100);
-		if (rand < 20) // 20% chance to deal double dmg
+		if (rand < 15) // 20% chance to deal double dmg
 			return -strength * 2;
 		else
 			return 0;

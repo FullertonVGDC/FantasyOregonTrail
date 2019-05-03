@@ -70,16 +70,16 @@ public class GameManager_1 : MonoBehaviour {
 		}
 
 		//move camera left
-		if (Input.GetKey (KeyCode.A) && mainCam.transform.position.x  > playerinfo.transform.position.x - 4) { //-2.75
+		if ((Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) && mainCam.transform.position.x  > playerinfo.transform.position.x - 4) { //-2.75
 			mainCam.transform.transform.position -= (new Vector3(camSpeed * Time.deltaTime,0,0));
 		}
-		if (Input.GetKey (KeyCode.D) && mainCam.transform.position.x  < playerinfo.transform.position.x + 4) { //17.75
+		if ((Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) && mainCam.transform.position.x  < playerinfo.transform.position.x + 4) { //17.75
 			mainCam.transform.transform.position += (new Vector3(camSpeed * Time.deltaTime,0,0));
 		}
-		if (Input.GetKey (KeyCode.W) && mainCam.transform.position.y  < playerinfo.transform.position.y + 2) { //8.75
+		if ((Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow)) && mainCam.transform.position.y  < playerinfo.transform.position.y + 2) { //8.75
 			mainCam.transform.transform.position += (new Vector3(0,camSpeed * Time.deltaTime,0));
 		}
-		if (Input.GetKey (KeyCode.S) && mainCam.transform.position.y  > playerinfo.transform.position.y - 2) { //-4.5
+		if ((Input.GetKey (KeyCode.S) || Input.GetKey (KeyCode.DownArrow)) && mainCam.transform.position.y  > playerinfo.transform.position.y - 2) { //-4.5
 			mainCam.transform.transform.position -= (new Vector3(0,camSpeed * Time.deltaTime,0));
 		}
 
@@ -115,9 +115,10 @@ public class GameManager_1 : MonoBehaviour {
 			//add player time
 			gameTime += gridinfo.getTileTime ();
 			if (gameTime >= 24) {
-				StartCoroutine(CampFireScene());
+				canMove = false;
 				AddLogItem ("New Day!\n");
 				gameTime = 0;
+				StartCoroutine(CampFireScene());
 			} else {
 				//check for random ecounter
 				randomEncounter(gridinfo.tileName);
@@ -248,7 +249,7 @@ public class GameManager_1 : MonoBehaviour {
 	}
 
 	// Access BattleManager script to control battle flow
-	private IEnumerator BattleControl(string battleLoc, bool isStory = false) {
+	private IEnumerator BattleControl(string battleLoc, bool isStory = false, bool loadVars = true) {
 		AddLogItem("Fight for your right to party!\n");
 		battleTranAnim.SetTrigger("BattleTranTrigger"); // Battle Animation
 			//yield return StartCoroutine(WaitForAnimation(battleTranAnim)); // wait for Animation to Finish
@@ -261,10 +262,11 @@ public class GameManager_1 : MonoBehaviour {
 		battleOver = true;
 
 		if (isStory) // Possibly use Enums to determine which story
-			StartCoroutine(storyProgression ());
+			StartCoroutine(storyProgression (loadVars));
 	}
 
-	public IEnumerator storyProgression(){
+	public IEnumerator storyProgression(bool loadVars){
+		//if (loadVars)
 		flowchart.ExecuteBlock ("LoadVariables");
 		int prog = flowchart.GetIntegerVariable ("StoryProg");
 		switch (prog) {
@@ -273,6 +275,9 @@ public class GameManager_1 : MonoBehaviour {
 			break;
 		case 3://4:
 			startConversation ("WL_AfterBattle");
+			break;
+		case 4:
+			startConversation ("End Warlord");
 			break;
 		case 5://6:
 			startConversation ("Final_2");
@@ -322,14 +327,16 @@ public class GameManager_1 : MonoBehaviour {
 
 	private IEnumerator CampFireScene(){
 		Debug.Log ("Campfire Scene Happens");
+		SaveStateScript.saveControl.Save (playerinfo.getMaxHealth (), playerinfo.getMaxStamina (), playerinfo.getStrength (), playerinfo.getSpeed (), playerinfo.getRenown (), playerinfo.currPos, playerinfo.upgrades);
+		lvlLoad.GetComponent<SwitchScenes> ().LoadScene ("Campfire_Scene");
 		yield return null;
 	}
 		
 	public void startConversation(string block){ canMove = false; flowchart.ExecuteBlock (block);	}
 	public void endConversation(){ Debug.Log ("convo ended"); canMove = true; }
-	public void fightConversation(string tileName, bool isStory = false){
+	public void fightConversation(string tileName, bool isStory = false, bool loadVars = true){
 		canMove = true;
-		StartCoroutine (BattleControl (tileName, isStory));
+		StartCoroutine (BattleControl (tileName, isStory, loadVars));
 	}
 
 	public void setPauseMenu(){
@@ -342,7 +349,7 @@ public class GameManager_1 : MonoBehaviour {
 			PauseText.text = "Stats:\nHealth: " + playerinfo.getHealth () + " / " + playerinfo.getMaxHealth ()
 				+ "\nStamina: " + playerinfo.getStamina () + " / " + playerinfo.getMaxStamina ()
 				+ "\nSpeed: " + playerinfo.getSpeed () + "\nStrength: " + playerinfo.getStrength ()
-				+ "\nRenown: " + playerinfo.getRenown ();
+				+ "\nEvasion: " + playerinfo.getMaxEvade() + "\nRenown: " + playerinfo.getRenown ();
 			pauseMenu.SetActive (true);
 		}
 	}

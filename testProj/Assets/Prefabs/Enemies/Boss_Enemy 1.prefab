@@ -64,10 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fba99752f91c70419e48fff06f328d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyName: Undead Franjeh-Tur
   enemy_id: 1
-  health: 100
-  maxHealth: 100
-  strength: 12
+  health: 60
+  maxHealth: 60
+  strength: 14
   speed: 3
   evasion: 5
 --- !u!212 &212596861461446026

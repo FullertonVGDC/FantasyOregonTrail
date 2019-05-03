@@ -47,13 +47,14 @@ public class GridScript : MonoBehaviour {
 		float rand = Random.value;
 		switch (tileName) {
 		case "hexart_1_3": // grasslands
-			return 1;
 		case "hexart_1_4": //tall grass
-			return 2;
+			return 1;
 		case "hexart_1_9": // forest
-			return 3;
-		case "hexart_1_10": // mountains
+			return 2;
+		case "hexart_1_7": //volcanoes
 			return 5;
+		case "hexart_1_10": // mountains
+			return 3;
 		default:
 			return 0;
 		}

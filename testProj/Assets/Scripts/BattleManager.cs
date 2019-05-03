@@ -72,7 +72,10 @@ public class BattleManager : GameManager_1 {
 	
 	// Update is called once per frame
 	void Update () {	// to use with Battle Manager make sure battle is happening
-		//if(battleInProgress){}
+		//Use for Testing only
+		if (Input.GetKey (KeyCode.K))
+			Flee_OnClick ();
+
 	}
 		
 
@@ -96,7 +99,7 @@ public class BattleManager : GameManager_1 {
 		//Enemy_1
 		enemy_1 = Instantiate(ChooseMonster(battleLoc));
 		if (battleLoc == "hexart_1_8" || battleLoc == "hexart_1_1") { enemyTotal = 2; } 
-		else if (battleLoc == "hexart_1_2" || battleLoc == "undead") { enemyTotal = 1; }
+		else if (battleLoc == "insidePalace" || battleLoc == "undead" || battleLoc == "hexart_1_2") { enemyTotal = 1; }
 		enemyBar_1.setEnemyBar(enemy_1);
 		enemy_1.transform.parent = Fighter_Space.transform;
 		enemy_1.transform.localPosition = new Vector3 (-8, -10.5f, 0);
@@ -105,10 +108,11 @@ public class BattleManager : GameManager_1 {
 		targetIndex = 0;
 		targetIndicator.transform.localPosition = targetEnemy.transform.localPosition + new Vector3 (0,3.5f,0);
 		enemyList.Add (enemy_1);
+		enemyHpBar_1.GetComponentInChildren<Text> ().text = enemy_1.GetComponent<EnemiesScipt> ().EnemyName;
 		//Enemy_2
 		if (enemyTotal == 2) {
 			// First 2 story fights should have normal gnoll as 2nd enemy
-			if (battleLoc == "hexart_1_8" || battleLoc == "hexart_1_1") {enemy_2 = Instantiate(gnollMonster);}
+			if (battleLoc == "hexart_1_8" || battleLoc == "hexart_1_1") {enemy_2 = Instantiate(hyenaMonster);}
 			else
 				enemy_2 = Instantiate(ChooseMonster(battleLoc));
 			enemyBar_2.setEnemyBar (enemy_2);
@@ -117,6 +121,7 @@ public class BattleManager : GameManager_1 {
 			enemy_2.GetComponent<EnemiesScipt> ().setEnemyNum (2);
 			enemy_2.GetComponent<SpriteRenderer> ().sortingOrder = 1;
 			enemyList.Add (enemy_2);
+			enemyHpBar_2.GetComponentInChildren<Text> ().text = enemy_2.GetComponent<EnemiesScipt> ().EnemyName;
 		}
 
 		turnOrder = new List<GameObject>();
@@ -134,6 +139,7 @@ public class BattleManager : GameManager_1 {
 			return undeadBoss;
 		case "hexart_1_1": //town
 			return gnollMonster;
+		case "insidePalace":
 		case "hexart_1_2": //palace
 			return iceQueenMonster;
 		case "hexart_1_3": //hills
@@ -184,7 +190,7 @@ public class BattleManager : GameManager_1 {
 		default:
 			break;
 		}
-		return gnollMonster;
+		return hyenaMonster;
 	}
 
 	//Turn on Proper camera & UI
@@ -273,7 +279,7 @@ public class BattleManager : GameManager_1 {
 	public IEnumerator PlayerTurn() {
 		Debug.Log ("Players Turn");
 		battleInfo_Text.text = "Vigil's Turn";
-		playerinfo.setEvade (5);
+		playerinfo.setEvade (playerinfo.getMaxEvade());
 		isPlayerTurn = true;
 		while(isPlayerTurn){
 			yield return null;
@@ -372,7 +378,7 @@ public class BattleManager : GameManager_1 {
 			isPlayerTurn = false;
 			Debug.Log ("You attack3");
 			playerinfo.addStamina (-30);
-			playerinfo.addHealth (20);
+			playerinfo.addHealth (30);
 		}
 	}
 	public void Attack4_OnClick(){
@@ -380,9 +386,15 @@ public class BattleManager : GameManager_1 {
 		if (isPlayerTurn) {
 			isPlayerTurn = false;
 			Debug.Log ("You attack4");
-			playerinfo.addStamina (15);
+			playerinfo.addStamina (20);
 			playerinfo.setEvade (50);
 		}
+	}
+	public void Attack5_OnClick(){
+		//enemy does double damage but has chance to hit itself
+	}
+	public void Attack6_OnClick(){
+		//vigil does half damage but has 50% evasion for the turn
 	}
 	public void Flee_OnClick(){
 		//you attempt to run
@@ -446,6 +458,7 @@ public class BattleManager : GameManager_1 {
 	public void GameOver(){
 		Debug.Log ("Game Over");
 		//Reload last town passage
+		flowchart.ExecuteBlock ("SetBackStoryProg");
 		SceneManager.LoadScene (sceneName: "WorldMap_Scene");
 	}
 

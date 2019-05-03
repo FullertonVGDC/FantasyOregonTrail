@@ -593,11 +593,13 @@
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrParams.cs" />
      <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrSynth.cs" />
      <Compile Include="Assets\Scripts\AllyScript.cs" />
+     <Compile Include="Assets\Scripts\AudioHandler.cs" />
      <Compile Include="Assets\Scripts\BackgroundManager.cs" />
      <Compile Include="Assets\Scripts\BarScript.cs" />
      <Compile Include="Assets\Scripts\BattleManager.cs" />
      <Compile Include="Assets\Scripts\ButtonHover_Script.cs" />
      <Compile Include="Assets\Scripts\CaveManager.cs" />
+     <Compile Include="Assets\Scripts\CheckSave.cs" />
      <Compile Include="Assets\Scripts\EnemiesScipt.cs" />
      <Compile Include="Assets\Scripts\EnemyBarScript.cs" />
      <Compile Include="Assets\Scripts\GameManager_1.cs" />
@@ -606,6 +608,7 @@
      <Compile Include="Assets\Scripts\SaveStateScript.cs" />
      <Compile Include="Assets\Scripts\SlimeScript.cs" />
      <Compile Include="Assets\Scripts\SwitchScenes.cs" />
+     <Compile Include="Assets\Scripts\Tutorial_Script.cs" />
      <None Include="Assets\Fungus\Thirdparty\ThirdPartyNotices.txt" />
      <None Include="Assets\Fungus\Thirdparty\FungusLua\Thirdparty\JSON\readme.txt" />
      <None Include="Assets\Fungus\Docs\README.txt" />

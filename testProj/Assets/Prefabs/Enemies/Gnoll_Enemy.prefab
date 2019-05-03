@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fba99752f91c70419e48fff06f328d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyName: Gnoll Captain
   enemy_id: 1
   health: 40
   maxHealth: 40
