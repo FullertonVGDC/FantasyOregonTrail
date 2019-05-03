@@ -10,6 +10,7 @@ public class BackgroundManager : MonoBehaviour {
 	public Sprite dungeon;
 	public Sprite forest;
 	public Sprite mountains;
+	public Sprite outsidePalace;
 	public Sprite palace;
 	public Sprite insidePalace;
 	public GameObject foreground;
@@ -24,7 +25,9 @@ public class BackgroundManager : MonoBehaviour {
 		case "hexart_1_1": //towns
 			this.GetComponent<SpriteRenderer> ().sprite = towns;
 			break;
-		case "PreBossFight2":
+		case "PreBossFight2": //outside palace fight
+			this.GetComponent<SpriteRenderer> ().sprite = outsidePalace;
+			break;
 		case "hexart_1_2": //palace
 			this.GetComponent<SpriteRenderer> ().sprite = palace;
 			break;

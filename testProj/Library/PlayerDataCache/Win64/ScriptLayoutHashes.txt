@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-D:/GitHubRepo/CSUF_repo/FantasyOregonTrail/testProj/Builds/VigilNights_5_3_19/Vigil Nights.exe
+D:/GitHubRepo/CSUF_repo/FantasyOregonTrail/testProj/Builds/VigiliNights_Showcase/Vigil Nights.exe
 SceneListBegin?
 Assets/Scenes/MainMenu_Scene.unity
 Assets/Scenes/Opening_Scene.unity
@@ -271,7 +271,7 @@ eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 730879f752e3f7241e4e2fd40d6b664d Assembly-CSharp.dll:.BattleManager
 0fdd7f143131e0c55182b842b898135f Assembly-CSharp.dll:Fungus.KeyPressed
 cecf74a4a014467f492fa5579fb4b397 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
-84e609898863a01b6dc6e36b8aa01463 Assembly-CSharp.dll:.BackgroundManager
+9a1d8fa48ad7dd58e4e0af351386aa5f Assembly-CSharp.dll:.BackgroundManager
 216b0f38d5be243bf0ba0207a4611439 Assembly-CSharp.dll:Fungus.SavePoint
 bc578cc395e017f13a4f73869351b3e6 Assembly-CSharp.dll:Fungus.ReloadScene
 0f438e68fb9b83a4d2584b01cd9e4c98 Assembly-CSharp.dll:Fungus.ToggleChanged
