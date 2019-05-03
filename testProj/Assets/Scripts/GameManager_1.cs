@@ -37,6 +37,7 @@ public class GameManager_1 : MonoBehaviour {
 
 	public Animator battleTranAnim;
 
+	public GameObject AudioMngr;
 
 	void Awake() {
 		battleMGR = this.GetComponent<BattleManager> ();
@@ -70,16 +71,16 @@ public class GameManager_1 : MonoBehaviour {
 		}
 
 		//move camera left
-		if ((Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) && mainCam.transform.position.x  > playerinfo.transform.position.x - 4) { //-2.75
+		if ((Input.GetKey (KeyCode.A) || Input.GetKey (KeyCode.LeftArrow)) && canMove && mainCam.transform.position.x  > playerinfo.transform.position.x - 4) { //-2.75
 			mainCam.transform.transform.position -= (new Vector3(camSpeed * Time.deltaTime,0,0));
 		}
-		if ((Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) && mainCam.transform.position.x  < playerinfo.transform.position.x + 4) { //17.75
+		if ((Input.GetKey (KeyCode.D) || Input.GetKey (KeyCode.RightArrow)) && canMove && mainCam.transform.position.x  < playerinfo.transform.position.x + 4) { //17.75
 			mainCam.transform.transform.position += (new Vector3(camSpeed * Time.deltaTime,0,0));
 		}
-		if ((Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow)) && mainCam.transform.position.y  < playerinfo.transform.position.y + 2) { //8.75
+		if ((Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow)) && canMove && mainCam.transform.position.y  < playerinfo.transform.position.y + 2) { //8.75
 			mainCam.transform.transform.position += (new Vector3(0,camSpeed * Time.deltaTime,0));
 		}
-		if ((Input.GetKey (KeyCode.S) || Input.GetKey (KeyCode.DownArrow)) && mainCam.transform.position.y  > playerinfo.transform.position.y - 2) { //-4.5
+		if ((Input.GetKey (KeyCode.S) || Input.GetKey (KeyCode.DownArrow)) && canMove && mainCam.transform.position.y  > playerinfo.transform.position.y - 2) { //-4.5
 			mainCam.transform.transform.position -= (new Vector3(0,camSpeed * Time.deltaTime,0));
 		}
 
@@ -252,6 +253,7 @@ public class GameManager_1 : MonoBehaviour {
 	private IEnumerator BattleControl(string battleLoc, bool isStory = false, bool loadVars = true) {
 		AddLogItem("Fight for your right to party!\n");
 		battleTranAnim.SetTrigger("BattleTranTrigger"); // Battle Animation
+		//AudioMngr.GetComponent<AudioHandler>().PlaySndFx("swordClash");
 			//yield return StartCoroutine(WaitForAnimation(battleTranAnim)); // wait for Animation to Finish
 		log_whole.transform.parent.gameObject.SetActive (false);
 		battleOver = false;
@@ -362,6 +364,7 @@ public class GameManager_1 : MonoBehaviour {
 	}
 
 	public void usePotionOnClick(){
+		AudioMngr.GetComponent<AudioHandler>().PlaySndFx("potion");
 		if (playerinfo.upgrades [2])
 			playerinfo.addHealth (50);
 		else

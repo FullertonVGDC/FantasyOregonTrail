@@ -121,7 +121,8 @@ public class PlayerScript : MonoBehaviour {
 		}
 		else if (currPos.x==5 && currPos.y==11 && !upgrades[2]) {
 			upgrades [2] = true;
-			max_baseEvadeChance = 7f; // cape of evasion
+			// potion bottle does more (Handled in GameManager under its OnClick for the potion)
+			//max_baseEvadeChance = 7f; // cape of evasion
 			Debug.Log("Upgrade 3 Acquired");
 		}
 		else if (currPos.x==9 && currPos.y==14 && !upgrades[3]) {

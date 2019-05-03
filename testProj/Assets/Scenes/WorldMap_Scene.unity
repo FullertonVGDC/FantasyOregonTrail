@@ -878,6 +878,8 @@ GameObject:
   - component: {fileID: 146438404}
   - component: {fileID: 146438403}
   - component: {fileID: 146438384}
+  - component: {fileID: 146438405}
+  - component: {fileID: 146438406}
   m_Layer: 0
   m_Name: FL_GnollCapt
   m_TagString: Untagged
@@ -898,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 48.868156, y: 83.36914}
+  scrollPos: {x: 119.03727, y: 0.40952206}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 480
@@ -910,7 +912,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 146438322}
+  - {fileID: 146438287}
   selectedCommands: []
   variables:
   - {fileID: 146438285}
@@ -1881,6 +1883,7 @@ MonoBehaviour:
   description: Start on MainStoryFights = 2
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 146438406}
   - {fileID: 146438402}
   - {fileID: 146438401}
   - {fileID: 146438356}
@@ -1968,6 +1971,7 @@ MonoBehaviour:
   - {fileID: 146438372}
   - {fileID: 146438321}
   - {fileID: 146438344}
+  - {fileID: 146438405}
 --- !u!114 &146438323
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2616,14 +2620,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 103
   indentLevel: 0
-  description: Start Gnoll Captain Fight
-  targetObject: {fileID: 1514833528}
-  targetComponentAssemblyName: GameManager_1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+  description: Play Boss Music
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameManager_1
-  targetMethod: fightConversation
-  targetMethodText: 'fightConversation (String, Boolean, Boolean): Void'
+  targetComponentText: AudioHandler
+  targetMethod: SetPlayMusic
+  targetMethodText: 'SetPlayMusic (String): Void'
   methodParameters:
   - objValue:
       typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
@@ -2632,41 +2636,7 @@ MonoBehaviour:
       intValue: 0
       boolValue: 0
       floatValue: 0
-      stringValue: hexart_1_1
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  - objValue:
-      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Boolean
-      intValue: 0
-      boolValue: 1
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  - objValue:
-      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Boolean
-      intValue: 0
-      boolValue: 1
-      floatValue: 0
-      stringValue: 
+      stringValue: boss
       colorValue: {r: 0, g: 0, b: 0, a: 0}
       gameObjectValue: {fileID: 0}
       materialValue: {fileID: 0}
@@ -2832,7 +2802,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &146438352
 MonoBehaviour:
@@ -4487,6 +4457,128 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 140
   indentLevel: 0
+--- !u!114 &146438405
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146438281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 144
+  indentLevel: 0
+  description: Start Gnoll Captain Fight
+  targetObject: {fileID: 1514833528}
+  targetComponentAssemblyName: GameManager_1, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: GameManager_1
+  targetMethod: fightConversation
+  targetMethodText: 'fightConversation (String, Boolean, Boolean): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: hexart_1_1
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  - objValue:
+      typeAssemblyname: System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Boolean
+      intValue: 0
+      boolValue: 1
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &146438406
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146438281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 145
+  indentLevel: 0
+  description: Play Map Music
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: SetPlayMusic
+  targetMethodText: 'SetPlayMusic (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: map
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &165002333
 GameObject:
   m_ObjectHideFlags: 0
@@ -22549,7 +22641,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &611405718
 MonoBehaviour:
@@ -24526,7 +24618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -210.34102, y: 160.91432}
+  scrollPos: {x: -12.515152, y: 297.87073}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 400
@@ -24538,8 +24630,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 700353396}
-  selectedCommands: []
+  - {fileID: 700353386}
+  selectedCommands:
+  - {fileID: 700353385}
   variables:
   - {fileID: 700353286}
   - {fileID: 700353297}
@@ -24641,7 +24734,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &700353277
 MonoBehaviour:
@@ -27774,7 +27867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 142
   indentLevel: 0
-  storyText: You find a cloak of Evasion! +2 evasion
+  storyText: You find a bigger potion bottle! Bottle now heals 50hp on click
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -27801,7 +27894,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 764.24695
-    y: 171.39024
+    y: 173.56415
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -30268,130 +30361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &813481144
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 813481146}
-  - component: {fileID: 813481145}
-  m_Layer: 0
-  m_Name: swordClash_snd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &813481145
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 813481144}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0dd97209d9b32dc4ea5bf82f98786b39, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.15
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &813481146
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 813481144}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 289.59714, y: 130.00293, z: 5.470967}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &842519997
 GameObject:
   m_ObjectHideFlags: 0
@@ -31044,6 +31013,9 @@ GameObject:
   - component: {fileID: 1009422970}
   - component: {fileID: 1009422969}
   - component: {fileID: 1009422968}
+  - component: {fileID: 1009422973}
+  - component: {fileID: 1009422972}
+  - component: {fileID: 1009422974}
   m_Layer: 0
   m_Name: FL_WarLord_Encounter
   m_TagString: Untagged
@@ -31076,8 +31048,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1009422971}
-  selectedCommands: []
+  - {fileID: 1009422900}
+  selectedCommands:
+  - {fileID: 1009422974}
   variables:
   - {fileID: 1009422857}
   - {fileID: 1009422856}
@@ -31498,7 +31471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1009422863
 MonoBehaviour:
@@ -32486,6 +32459,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1009422898}
+  - {fileID: 1009422974}
   - {fileID: 1009422934}
   - {fileID: 1009422897}
   - {fileID: 1009422896}
@@ -33141,6 +33115,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1009422952}
   - {fileID: 1009422951}
+  - {fileID: 1009422973}
   - {fileID: 1009422944}
 --- !u!114 &1009422923
 MonoBehaviour:
@@ -34129,7 +34104,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: -39.07025
-    y: 239.03467
+    y: 241.36024
     width: 129.06969
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -34662,9 +34637,142 @@ MonoBehaviour:
   description: story 4 to 5
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1009422972}
   - {fileID: 1009422970}
   - {fileID: 1009422969}
   - {fileID: 1009422968}
+--- !u!114 &1009422972
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009422844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 148
+  indentLevel: 0
+  description: Play Map Music
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: SetPlayMusic
+  targetMethodText: 'SetPlayMusic (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: map
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1009422973
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009422844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 147
+  indentLevel: 0
+  description: Play Boss Music
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: SetPlayMusic
+  targetMethodText: 'SetPlayMusic (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: boss
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1009422974
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009422844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 149
+  indentLevel: 0
+  description: Play Growl
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: PlaySndFx
+  targetMethodText: 'PlaySndFx (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: growl
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1001 &1033870337
 Prefab:
   m_ObjectHideFlags: 0
@@ -34808,7 +34916,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038618238
 GameObject:
@@ -35025,147 +35133,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1043536454}
   m_CullTransparentMesh: 0
---- !u!1 &1116991945
+--- !u!1 &1116991945 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1116991947}
-  - component: {fileID: 1116991946}
-  - component: {fileID: 1116991948}
-  m_Layer: 0
-  m_Name: BackgroundMusic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1116991946
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1116991945}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0c911f4663b1ade4dbdeaab514a00318, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1116991947
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1116991945}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9496657, y: 0.23518272, z: -9.919922}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1116991948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1116991945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b86ffa9dae1834b888c4507d826b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSrc: {fileID: 1116991946}
-  map_msc: {fileID: 8300000, guid: 0c911f4663b1ade4dbdeaab514a00318, type: 3}
-  town_msc: {fileID: 8300000, guid: 564e12dd749e0464b8ee2ab9764f789a, type: 3}
-  boss_msc: {fileID: 8300000, guid: 6eb17ee54de9cda43ad9ccd8eda64bb1, type: 3}
-  camp_msc: {fileID: 8300000, guid: 229f43d1ac647b5498cc567e7b7ef141, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1393371749798060, guid: d1c7291fc9916a6468600c62a452b1c7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1763076542}
 --- !u!1 &1141858915
 GameObject:
   m_ObjectHideFlags: 0
@@ -36571,6 +36543,7 @@ MonoBehaviour:
   mainCam: {fileID: 1255360825}
   camSpeed: 5
   battleTranAnim: {fileID: 1789421604}
+  AudioMngr: {fileID: 1116991945}
 --- !u!4 &1514833530
 Transform:
   m_ObjectHideFlags: 0
@@ -36610,6 +36583,7 @@ MonoBehaviour:
   mainCam: {fileID: 1255360825}
   camSpeed: 5
   battleTranAnim: {fileID: 0}
+  AudioMngr: {fileID: 1116991945}
   battleCam: {fileID: 1848030770}
   battlePanel: {fileID: 109746276}
   Fighter_Space: {fileID: 480488926}
@@ -36648,7 +36622,6 @@ MonoBehaviour:
     type: 2}
   undeadBoss: {fileID: 1932519231367158, guid: 0bfaee1b764eee04a990bc12490c43ea, type: 2}
   winFightAnim: {fileID: 2063978303}
-  swordClash_snd: {fileID: 813481145}
 --- !u!114 &1514833532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37375,6 +37348,10 @@ GameObject:
   - component: {fileID: 1637674815}
   - component: {fileID: 1637674814}
   - component: {fileID: 1637674813}
+  - component: {fileID: 1637674820}
+  - component: {fileID: 1637674819}
+  - component: {fileID: 1637674821}
+  - component: {fileID: 1637674822}
   m_Layer: 0
   m_Name: FL_Final
   m_TagString: Untagged
@@ -37395,11 +37372,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -158.05966, y: 119.2514}
+  scrollPos: {x: -182.30446, y: -55.796394}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 0
   blockViewHeight: 400
-  zoom: 0.40000045
+  zoom: 0.46195653
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -37407,8 +37384,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1637674804}
-  selectedCommands: []
+  - {fileID: 1637674706}
+  selectedCommands:
+  - {fileID: 1637674702}
   variables:
   - {fileID: 1637674588}
   - {fileID: 1637674587}
@@ -37516,7 +37494,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 503.83572
     y: 792.2029
-    width: 122.499916
+    width: 125.7647
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -37529,6 +37507,7 @@ MonoBehaviour:
   - {fileID: 1637674739}
   - {fileID: 1637674738}
   - {fileID: 1637674811}
+  - {fileID: 1637674820}
   - {fileID: 1637674812}
 --- !u!114 &1637674591
 MonoBehaviour:
@@ -38246,6 +38225,7 @@ MonoBehaviour:
   - {fileID: 1637674608}
   - {fileID: 1637674607}
   - {fileID: 1637674598}
+  - {fileID: 1637674821}
   - {fileID: 1637674594}
   - {fileID: 1637674603}
   - {fileID: 1637674606}
@@ -39182,7 +39162,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 518.1538
     y: 444.38446
-    width: 120
+    width: 121.435295
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -39674,8 +39654,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 511.07697
-    y: 360.84583
-    width: 127.49991
+    y: 363.01053
+    width: 132.25882
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -39684,6 +39664,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1637674822}
   - {fileID: 1637674662}
   - {fileID: 1637674816}
   - {fileID: 1637674663}
@@ -40415,7 +40396,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 521.5902
     y: 289.5922
-    width: 120
+    width: 121.435295
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -40565,7 +40546,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 526.35614
     y: 150.1237
-    width: 120
+    width: 121.435295
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -40741,7 +40722,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 530.68915
     y: -47.03797
-    width: 129.99991
+    width: 130.09412
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -40955,7 +40936,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 256.0408
     y: 155.81818
-    width: 127.49991
+    width: 127.92941
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -41383,7 +41364,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1637674721
 MonoBehaviour:
@@ -42472,6 +42453,7 @@ MonoBehaviour:
   description: MainStoryFight = 8
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 1637674819}
   - {fileID: 1637674806}
   - {fileID: 1637674805}
   - {fileID: 1637674728}
@@ -42589,7 +42571,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1059.7358
     y: 369.26874
-    width: 120
+    width: 125.7647
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -42886,7 +42868,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1058.9747
     y: 50.13852
-    width: 120
+    width: 132.25882
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -43167,7 +43149,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1415.0586
     y: 202.16917
-    width: 129.99991
+    width: 145.24706
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -43392,7 +43374,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 533.2457
     y: 26.92881
-    width: 120
+    width: 121.435295
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -44427,6 +44409,182 @@ MonoBehaviour:
   move: 1
   shiftIntoPlace: 0
   waitUntilFinished: 0
+--- !u!114 &1637674819
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 357
+  indentLevel: 0
+  description: Play end Music
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: SetPlayMusic
+  targetMethodText: 'SetPlayMusic (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: end
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1637674820
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 356
+  indentLevel: 0
+  description: Play Boss Music
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: SetPlayMusic
+  targetMethodText: 'SetPlayMusic (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: boss
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1637674821
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 358
+  indentLevel: 0
+  description: Play Growl
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: PlaySndFx
+  targetMethodText: 'PlaySndFx (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: growl
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &1637674822
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637674583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 359
+  indentLevel: 0
+  description: Play Boss Music
+  targetObject: {fileID: 1116991945}
+  targetComponentAssemblyName: AudioHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: AudioHandler
+  targetMethod: SetPlayMusic
+  targetMethodText: 'SetPlayMusic (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=2.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: boss
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1001 &1689960743
 Prefab:
   m_ObjectHideFlags: 0
@@ -44564,6 +44722,48 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1736974298}
   m_CullTransparentMesh: 0
+--- !u!1001 &1763076542
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 408.48264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 197.30348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4.7263637
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168865086364440, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d1c7291fc9916a6468600c62a452b1c7, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1789421599
 GameObject:
   m_ObjectHideFlags: 0
@@ -46218,7 +46418,7 @@ Transform:
   - {fileID: 179842667}
   - {fileID: 473656293}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2109884436
 GameObject:

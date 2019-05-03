@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-D:/GitHubRepo/CSUF_repo/FantasyOregonTrail/testProj/Builds/VigilNights_5_2_19/Vigil Nights.exe
+D:/GitHubRepo/CSUF_repo/FantasyOregonTrail/testProj/Builds/VigilNights_5_3_19/Vigil Nights.exe
 SceneListBegin?
 Assets/Scenes/MainMenu_Scene.unity
 Assets/Scenes/Opening_Scene.unity
@@ -251,6 +251,7 @@ a0e6dcf7a621c747404054e2d151ab00 Assembly-CSharp.dll:Fungus.FadeScreen
 a017372136b37fa4766fbe7cbcbac3a7 Assembly-CSharp.dll:Fungus.ScaleTo
 29161838f5300c8272f57db984a45b37 Assembly-CSharp.dll:Fungus.Inv
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
+8006b1e17b8c99b0b18f9472b34e4ae1 Assembly-CSharp.dll:.Tutorial_Script
 a7efeccc712c7126a15051b07619a957 Assembly-CSharp.dll:Fungus.Destroy
 d7e7fbe768682eef700f4b809805fab3 Assembly-CSharp.dll:Fungus.TextureVariable
 b339d49efa333b22ee1403474aa149a8 Assembly-CSharp.dll:Fungus.Round
@@ -267,13 +268,14 @@ eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 3d962c0eaa61baf5435d8a31efb3d0c6 Assembly-CSharp.dll:Fungus.OpenURL
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Fungus.EventDispatcher
 3da0026a62c1cef36b3c2c0a2539beac Assembly-CSharp.dll:Fungus.Parallax
-6a803776de28350caec0ed56b113a65b Assembly-CSharp.dll:.BattleManager
+730879f752e3f7241e4e2fd40d6b664d Assembly-CSharp.dll:.BattleManager
 0fdd7f143131e0c55182b842b898135f Assembly-CSharp.dll:Fungus.KeyPressed
 cecf74a4a014467f492fa5579fb4b397 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
-9cf595b351bf092652675c8005807fb5 Assembly-CSharp.dll:.BackgroundManager
+84e609898863a01b6dc6e36b8aa01463 Assembly-CSharp.dll:.BackgroundManager
 216b0f38d5be243bf0ba0207a4611439 Assembly-CSharp.dll:Fungus.SavePoint
 bc578cc395e017f13a4f73869351b3e6 Assembly-CSharp.dll:Fungus.ReloadScene
 0f438e68fb9b83a4d2584b01cd9e4c98 Assembly-CSharp.dll:Fungus.ToggleChanged
+5093abf6d5f3648806c06a5691406998 Assembly-CSharp.dll:.CheckSave
 709e1b497bd13e483ba0baaa597953b4 Assembly-CSharp.dll:Fungus.Log
 b322c043d0aa53b965d41afd26270eae Assembly-CSharp.dll:Fungus.SetMouseCursor
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Fungus.NarrativeLog
@@ -329,7 +331,7 @@ f17ee4c660be6ff5f0eccfc938b37b78 Assembly-CSharp.dll:Fungus.FungusPriorityDecrea
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 52555cd02946ca2e5840a1bfab79fa7e Assembly-CSharp.dll:Fungus.MoveToView
 149a99b7962600f85776176cfbe08a11 Assembly-CSharp.dll:Fungus.ApplicationState
-9c8c361962b2f2aa607164e03ddabe17 Assembly-CSharp.dll:.AudioHandler
+18a3577d6bf58b8d1bb8fc8d778a1ea4 Assembly-CSharp.dll:.AudioHandler
 b2b94981bca53861824e43f780895b4e Assembly-CSharp.dll:Fungus.StopTween
 f7e2655fd61d289931744f034f06ba72 Assembly-CSharp.dll:Fungus.MoveFrom
 1a90b221dc803408fbafa883c12bcab4 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
@@ -372,7 +374,7 @@ afaa953ff810eb7307d20e7e06da0dd3 Assembly-CSharp.dll:.GridScript
 6644640138f98d56f18d3dd28af04a0f Assembly-CSharp.dll:Fungus.SetClickable2D
 a58ac2c05506a2ab0f3ead368cd1711e Assembly-CSharp.dll:Fungus.RotateTo
 ff9fbaa94c13523f55f131b8ae7dd3ac Assembly-CSharp.dll:Fungus.StopBlock
-0711a8fc3c8f806e55bd3c67b6f6d51b Assembly-CSharp.dll:.GameManager_1
+5e1803a71bb16086529528be1ee749d8 Assembly-CSharp.dll:.GameManager_1
 0581556683e3e12a3e769a978f41fd39 Assembly-CSharp.dll:Fungus.Character
 0f109d636b89c3eedfa6ff7824a5d5f4 Assembly-CSharp.dll:Fungus.GameStarted
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:Fungus.SpriteFader

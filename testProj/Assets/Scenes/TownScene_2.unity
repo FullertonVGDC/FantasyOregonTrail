@@ -1768,11 +1768,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -586.6427, y: 231.64957}
+  scrollPos: {x: -617.6377, y: -484.04443}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.39510858
+  zoom: 0.66510844
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1780,7 +1780,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 2067402658}
+  - {fileID: 2067402556}
   selectedCommands: []
   variables:
   - {fileID: 2067402512}
@@ -1840,7 +1840,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 967.3556
     y: 101.2803
-    width: 130.99039
+    width: 131.18976
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2354,7 +2354,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -2398,8 +2398,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 794.4002
-    y: 270.70773
+    x: 792.89667
+    y: 272.21124
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3364,7 +3364,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3416,7 +3416,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: "That's your name? \n"
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -3490,7 +3490,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4144,7 +4144,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4198,7 +4198,7 @@ MonoBehaviour:
 
 '
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4270,7 +4270,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: You know it, don't you?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4296,7 +4296,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Well you can hang with me little, uhh- What's your name?
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4423,7 +4423,7 @@ MonoBehaviour:
   indentLevel: 0
   storyText: Welcome to the team then Crag-Slag!
   description: 
-  character: {fileID: 0}
+  character: {fileID: 1729826714}
   portrait: {fileID: 0}
   voiceOverClip: {fileID: 0}
   showAlways: 1
@@ -4475,7 +4475,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 450.63794
     y: 82.62282
-    width: 136.05229
+    width: 137.20383
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 1
@@ -4980,7 +4980,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 454.34058
     y: -25.404188
-    width: 120.86659
+    width: 123.672195
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5254,7 +5254,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 258.29596
     y: -22.769695
-    width: 138.58325
+    width: 141.71437
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6016,7 +6016,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 2169.2134
     y: 189.7706
-    width: 128.45944
+    width: 131.18976
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0

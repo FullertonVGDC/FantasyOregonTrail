@@ -60,7 +60,7 @@ public class BattleManager : GameManager_1 {
 	//private WaitForSeconds m_moveWait;
 
 	//Audio Variables
-	public AudioSource swordClash_snd;
+	//public AudioSource swordClash_snd;
 
 	// Use this for initialization
 	void Start () {
@@ -306,7 +306,10 @@ public class BattleManager : GameManager_1 {
 		rand = Random.Range(1,100);
 		Debug.Log (rand);
 		if(rand > playerinfo.getEvade()) //if above evasion chance, it hits
+		{
 			playerinfo.addHealth(damage); // if a damage attack
+			AudioMngr.GetComponent<AudioHandler>().PlaySndFx("goblinKnife");
+		}
 			// or other Attacks...
 
 	}
@@ -375,6 +378,7 @@ public class BattleManager : GameManager_1 {
 	public void Attack3_OnClick(){
 		//healing spell
 		if (isPlayerTurn && playerinfo.getStamina() >= 30) {
+			AudioMngr.GetComponent<AudioHandler>().PlaySndFx("potion");
 			isPlayerTurn = false;
 			Debug.Log ("You attack3");
 			playerinfo.addStamina (-30);
@@ -442,7 +446,10 @@ public class BattleManager : GameManager_1 {
 		EnemiesScipt enemyInfo = targEnemy.GetComponent<EnemiesScipt> ();
 		float rand = Random.Range(1,100);
 		if(rand > enemyInfo.evasion) //if above enemy evasion, attack hits
+		{
 			enemyInfo.health -= damage;
+			AudioMngr.GetComponent<AudioHandler>().PlaySndFx("swordClash");
+		}
 		
 		if (enemyInfo.health <= 0) {
 			Destroy (targEnemy);
@@ -451,7 +458,7 @@ public class BattleManager : GameManager_1 {
 			ChangeTarget_OnClick();
 			GameObject.FindGameObjectWithTag("enemyHealthBar_" + enemyInfo.enemy_id.ToString()).SetActive(false);
 		}
-		swordClash_snd.Play ();
+
 	}
 	#endregion
 

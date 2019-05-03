@@ -24,8 +24,8 @@ public class Tutorial_Script : MonoBehaviour {
 	}
 
 	void setTut(int val = 1){
-		if (val > 4 || val < 1)
-			val = 1;
+		if (val < 1 || val > 4)
+			currentTutInt = val = 1;
 		
 		switch (val) {
 		case 1:
